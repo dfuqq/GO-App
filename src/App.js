@@ -33,16 +33,16 @@ import {
     Hookah,
 } from "./panels/Exports_Panels";
 
-///////////////////////////////// ИМПОРТ КАРТОЧЕК ////////////////////////////////
-import Percicrd from "./business/Percicrd";
-import Nyccrd from "./business/Nyccrd";
-import Auditcrd from "./business/Auditcrd";
-import Kedrcrd from "./places/Kedrcrd";
-import Osnovcrd from "./places/Osnovcrd";
-import Saimacrd from "./places/Saimacrd";
-import Ssurcrd from "./places/Ssurcrd";
-import Univcrd from "./places/Univcrd";
-//////////////////////////// КОНЕЦ ИМПОРТА КАРТОЧЕК //////////////////////////////
+import {
+    Percicrd,
+    Auditcrd,
+    Nyccrd,
+    Kedrcrd,
+    Osnovcrd,
+    Saimacrd,
+    Ssurcrd,
+    Univcrd,
+} from "./Exports_Cards";
 
 import {
     Botanica,
@@ -70,116 +70,124 @@ import {
     Off,
 } from "./business/bars/Exports_Bars";
 
-/////////////////////////////// ИМПОРТ РЕСТОРАНОВ //////////////////////////////
-import Ajb from "./business/restaraunts/Ajb";
-import Ds from "./business/restaraunts/Ds";
-import Hurma from "./business/restaraunts/Hurma";
-import Joint from "./business/restaraunts/Joint";
-import Kitcha from "./business/restaraunts/Kitcha";
-import Klkv from "./business/restaraunts/Klyukva";
-import Mishka from "./business/restaraunts/Mishka";
-import Peoples from "./business/restaraunts/Peoples";
-import Perci from "./business/restaraunts/Perci";
-import Pivo from "./business/restaraunts/Pivo";
-import Seven from "./business/restaraunts/Seven";
-import Storia from "./business/restaraunts/Storia";
-import Veranda from "./business/restaraunts/Veranda";
-import Visota from "./business/restaraunts/Visota";
-import Wdn from "./business/restaraunts/Wdn";
-////////////////////////////// КОНЕЦ ИМПОРТА РЕСТОРАНОВ /////////////////////////
+import {
+    Ajb,
+    Ds,
+    Hurma,
+    Joint,
+    Kitcha,
+    Klkv,
+    Mishka,
+    Peoples,
+    Perci,
+    Pivo,
+    Seven,
+    Storia,
+    Veranda,
+    Visota,
+    Wdn,
+} from "./business/restaraunts/Exports_Rests";
 
-///////////////////////////////// ИМПОРТ КАЛЬЯННЫХ /////////////////////////////
-import Aloft from "./business/hookah/ArtLoft";
-import Brutal from "./business/hookah/Brutal";
-import Bsb from "./business/hookah/Bsb";
-import HPlace from "./business/hookah/HPlace";
-import Jin from "./business/hookah/Jin";
-import Light from "./business/hookah/Light";
-import Mint from "./business/hookah/Mint";
-import Mrmld from "./business/hookah/Mrmld";
-import Office from "./business/hookah/Office";
-import Pbar from "./business/hookah/ParoBar";
-//////////////////////////////// КОНЕЦ ИМПОРТА КАЛЬЯННЫХ //////////////////////
+import {
+    Aloft,
+    Brutal,
+    Bsb,
+    HPlace,
+    Jin,
+    Light,
+    Mint,
+    Mrmld,
+    Office,
+    Pbar,
+} from "./business/hookah/Exports_Hookah";
 
-import Agaz from "./places/cntr/Agaz";
-import Bben from "./places/cntr/Bben";
-import Bibl from "./places/cntr/Bibl";
-import Centr from "./places/cntr/Centr";
-import Ckid from "./places/cntr/Ckid";
-import Cmoll from "./places/cntr/Cmoll";
-import Cplos from "./places/cntr/Cplos";
-import Dneft from "./places/cntr/Dneft";
-import Dock from "./places/cntr/Dock";
-import Filarm from "./places/cntr/Filarm";
-import Gperer from "./places/cntr/Gperer";
-import Gpkio from "./places/cntr/Gpkio";
-import Gtrans from "./places/cntr/Gtrans";
-import Gzprm from "./places/cntr/Gzprm";
-import Human from "./places/cntr/Human";
-import Kedr from "./places/cntr/Kedr";
-import Kupec from "./places/cntr/Kupec";
-import Kuzn from "./places/cntr/Kuzn";
-import Lis from "./places/cntr/Lis";
-import Mneft from "./places/cntr/Mneft";
-import Mperv from "./places/cntr/Mperv";
-import Narod from "./places/cntr/Narod";
-import Osnov from "./places/cntr/Osnov";
-import Patr from "./places/cntr/Patr";
-import Pgaz from "./places/cntr/Pgaz";
-import Port from "./places/cntr/Port";
-import Pstro from "./places/cntr/Pstro";
-import Scentr from "./places/cntr/Scentr";
-import Sdet from "./places/cntr/Sdet";
-import Sener from "./places/cntr/Sener";
-import Slav from "./places/cntr/Slav";
-import Smld from "./places/cntr/Smld";
-import Snarod from "./places/cntr/Snarod";
-import Snezh from "./places/cntr/Snezh";
-import Sng from "./places/cntr/Sng";
-import Sstar from "./places/cntr/Sstar";
-import Ssur from "./places/cntr/Ssur";
-import Sterh from "./places/cntr/Sterh";
-import Surgu from "./places/cntr/Surgu";
-import Taras from "./places/cntr/Taras";
-import Tsgu from "./places/cntr/Tsgu";
-import Uchit from "./places/cntr/Uchit";
-import Voinam from "./places/cntr/Voinam";
-import Zags from "./places/cntr/Zags";
-import Zahar from "./places/cntr/Zahar";
+import {
+    Agaz,
+    Bben,
+    Bibl,
+    Centr,
+    Ckid,
+    Cmoll,
+    Cplos,
+    Dneft,
+    Dock,
+    Filarm,
+    Gperer,
+    Gpkio,
+    Gtrans,
+    Gzprm,
+    Human,
+    Kedr,
+    Kupec,
+    Kuzn,
+    Lis,
+    Mneft,
+    Mperv,
+    Narod,
+    Osnov,
+    Patr,
+    Pgaz,
+    Port,
+    Pstro,
+    Scentr,
+    Sdet,
+    Sener,
+    Slav,
+    Smld,
+    Snarod,
+    Snezh,
+    Sng,
+    Sstar,
+    Ssur,
+    Sterh,
+    Surgu,
+    Taras,
+    Tsgu,
+    Uchit,
+    Voinam,
+    Zags,
+    Zahar,
+} from "./places/cntr/Exports_Cntr";
 
-import Btrud from "./places/west/Btrud";
-import Budda from "./places/west/Budda";
-import Nab from "./places/west/Nab";
-import Nerozh from "./places/west/Nerozh";
-import Obel from "./places/west/Obel";
-import Pgeo from "./places/west/Pgeo";
-import Repres from "./places/west/Repres";
-import Rib from "./places/west/Rib";
-import Saima from "./places/west/Saima";
-import Salm from "./places/west/Salm";
-import Sgeo from "./places/west/Sgeo";
-import Stroit from "./places/west/Stroit";
-import Univ from "./places/west/Univ";
+import {
+    Btrud,
+    Budda,
+    Nab,
+    Nerozh,
+    Obel,
+    Pgeo,
+    Repres,
+    Rib,
+    Saima,
+    Salm,
+    Sgeo,
+    Stroit,
+    Univ,
+} from "./places/west/Exports_West";
 
-import Aerop from "./places/nl/Aerop";
-import Agora from "./places/nl/Agora";
-import Aura from "./places/nl/Aura";
-import Bridge from "./places/nl/Bridge";
-import Brmsm from "./places/nl/Brmsm";
-import Chaes from "./places/nl/Chaes";
-import Pavia from "./places/nl/Pavia";
-import Pkey from "./places/nl/Pkey";
-import Poezd from "./places/nl/Poezd";
-import Polet from "./places/nl/Polet";
-import Smdt from "./places/nl/Smdt";
-import Surgut from "./places/nl/Surgut";
-import Trakt from "./places/nl/Trakt";
+import {
+    Aerop,
+    Agora,
+    Aura,
+    Bridge,
+    Brmsm,
+    Chaes,
+    Pavia,
+    Pkey,
+    Poezd,
+    Polet,
+    Smdt,
+    Surgut,
+    Trakt,
+} from "./places/nl/Exports_Nl";
 
-import Musclx from "./places/nwl/Musclx";
-import Pmed from "./places/nwl/Pmed";
-import Sgusch from "./places/nwl/Sgusch";
-import Smile from "./places/nwl/Smile";
-import Vershina from "./places/nwl/Vershina";
+import {
+    Musclx,
+    Pmed,
+    Sgusch,
+    Smile,
+    Vershina,
+} from "./places/nwl/Exports_Nwl";
 
 import Test from "./panels/Test";
 import Testdva from "./panels/Testdva";
@@ -215,21 +223,15 @@ const App = () => {
         go(e);
     };
 
-    const slct1 = () => {
-        setF1(!f1);
-    };
-    const slct2 = () => {
-        setF2(!f2);
-    };
-    const slct3 = () => {
-        setF3(!f3);
-    };
-    const slct4 = () => {
-        setF4(!f4);
-    };
-    const slct5 = () => {
-        setF5(!f5);
-    };
+    const slct1 = () => setF1(!f1);
+
+    const slct2 = () => setF2(!f2);
+
+    const slct3 = () => setF3(!f3);
+
+    const slct4 = () => setF4(!f4);
+
+    const slct5 = () => setF5(!f5);
 
     const share = async function () {
         // bridge.send на кнопке "Поделиться"
@@ -327,9 +329,7 @@ const App = () => {
         setGeo(cords);
     };
 
-    const goInt = (e) => {
-        setActivePanel(e.currentTarget.dataset.to);
-    };
+    const goInt = (e) => setActivePanel(e.currentTarget.dataset.to);
 
     useEffect(() => {
         // Парсим данные пользователя
