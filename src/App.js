@@ -50,7 +50,6 @@ import {
     Dovlatov,
     Endorf,
     Friends,
-    Loft,
     Nyc,
     Trvls,
     Vkus,
@@ -706,7 +705,6 @@ const App = () => {
                     <Dovlatov id='dovlatov' geo={geo} />
                     <Endorf id='endorf' geo={geo} />
                     <Friends id='friends' geo={geo} />
-                    <Loft id='loft' geo={geo} />
                     <Nyc id='nyc' geo={geo} />
                     <Trvls id='trvls' geo={geo} />
                     <Vkus id='vkus' geo={geo} />
