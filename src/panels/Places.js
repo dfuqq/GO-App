@@ -18,7 +18,7 @@ import {
 
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 
-const Places = ({ id, mode, page, places, f1, f2, f3, f4, f5 }) => {
+const Places = ({ id, go, mode, page, places, f1, f2, f3, f4, f5 }) => {
 	return (
 		<Panel id={id}>
 			<PanelHeader
