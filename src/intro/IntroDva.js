@@ -4,7 +4,9 @@ import { Panel, Button, FixedLayout, Group, Div } from '@vkontakte/vkui';
 
 import Think from './think.png';
 
-const IntroDva = ({ id, check, goInt, getGeoIntro }) => (
+let check = false;
+
+const IntroDva = ({ id, nextIntroPage, getCoordinates }) => (
 	<Panel id={id} centered={true}>
 		<div
 			style={{
@@ -32,7 +34,13 @@ const IntroDva = ({ id, check, goInt, getGeoIntro }) => (
 					</h4>
 					<Div
 						style={{ padding: 0, display: 'flex', justifyContent: 'center' }}>
-						<Button size='m' mode='overlay_primary' onClick={getGeoIntro}>
+						<Button
+							size='m'
+							mode='overlay_primary'
+							onClick={() => {
+								getCoordinates();
+								check = true;
+							}}>
 							Дать доступ
 						</Button>
 					</Div>
@@ -40,16 +48,16 @@ const IntroDva = ({ id, check, goInt, getGeoIntro }) => (
 				<FixedLayout vertical='bottom'>
 					<Div>
 						<Fragment>
-							{check === false && (
+							{!check && (
 								<Button disabled size='xl' mode='commerce'>
 									Продолжить
 								</Button>
 							)}
-							{check === true && (
+							{check && (
 								<Button
 									size='xl'
 									mode='commerce'
-									onClick={goInt}
+									onClick={nextIntroPage}
 									data-to='introtri'>
 									Продолжить
 								</Button>

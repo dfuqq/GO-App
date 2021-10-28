@@ -9,7 +9,7 @@ import {
 	Footer,
 } from '@vkontakte/vkui';
 
-const Bars = ({ id, go }) => (
+const Bars = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -28,7 +28,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='audit'
 			description='Клуб на Мира 31/1'>
 			Auditorium
@@ -41,7 +41,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='frank'
 			description='Бар на Мелик-Карамова 4/4'>
 			Frank
@@ -54,7 +54,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='hops'
 			description='Паб на Мира 31/1'>
 			Hops Pub
@@ -67,7 +67,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='jaws'
 			description='Паб на Юности 8'>
 			Jawsspot
@@ -80,7 +80,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='rnb'
 			description='Бар на Мелик-Карамова 4/4'>
 			Rock N Burger
@@ -93,7 +93,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='dpub'
 			description='Паб на Университетской 9'>
 			The Dock Pub
@@ -106,7 +106,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='pints'
 			description='Паб на Ленина 39'>
 			Две Пинты
@@ -119,7 +119,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='mars'
 			description='Клуб на Нефтеюганском ш. 27/1с4'>
 			Марс
@@ -132,7 +132,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='bird'
 			description='Караоке-Бар на Мира 31/1'>
 			Спой, Птичка!
@@ -145,7 +145,7 @@ const Bars = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='off'
 			description='Сеть ресторанов'>
 			ШашлыкoFF

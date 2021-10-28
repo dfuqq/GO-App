@@ -9,7 +9,7 @@ import {
 	Footer,
 } from '@vkontakte/vkui';
 
-const Restaraunts = ({ id, go }) => (
+const Restaraunts = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -28,7 +28,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='seven'
 			description='Ресторан на Генерала Иванова 1'>
 			Cafe Seven
@@ -41,7 +41,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='hurma'
 			description='Грузинский ресторан на Мира 31/1'>
 			Hurma
@@ -54,7 +54,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='joint'
 			description='Ирландский ресторан на Ленина 39'>
 			Joint
@@ -67,7 +67,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='storia'
 			description='Ресторан на Энтузиастов 44А'>
 			La Storia
@@ -80,7 +80,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='mishka'
 			description='Ресторан на Мира 2Б'>
 			Mishka Bar
@@ -93,7 +93,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='peoples'
 			description='Ресторан на Островского 14/1'>
 			People's
@@ -106,7 +106,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='kitcha'
 			description='True Cost ресторан на Энгельса, 15'>
 			The Kitcha
@@ -119,7 +119,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='wdn'
 			description='Ресторан-бар на Энергетиков 4'>
 			Wooden Restobar
@@ -132,7 +132,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='ajb'
 			description='Морской ресторан на пр. Комсомольский 13'>
 			Адмирал Джон Бенбоу
@@ -145,7 +145,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='veranda'
 			description='Ресторан на Ленина 43'>
 			Веранда
@@ -158,7 +158,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='ds'
 			description='Сеть ресторанов'>
 			Диван-Сарай
@@ -171,7 +171,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='klkv'
 			description='Ресторан на Крылова 23/1'>
 			Клюква
@@ -184,7 +184,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='visota'
 			description='Ресторан на Гагарина 12'>
 			На Высоте
@@ -197,7 +197,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='perci'
 			description='Итальянский ресторан на Ленина 17'>
 			Перчини
@@ -210,7 +210,7 @@ const Restaraunts = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='pivo'
 			description='Ресторан-пивоварня на Генерала Иванова 1'>
 			Пивная №1

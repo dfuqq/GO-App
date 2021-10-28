@@ -6,7 +6,7 @@ import './Intro.css';
 
 import Vidt from './RenderT.mp4';
 
-const Intro = ({ id, snackbarError, fetchedUser, userHasSeenIntro, goInt }) => {
+const Intro = ({ id, snackbarError, fetchedUser, nextIntroPage }) => {
 	return (
 		<Panel id={id} centered={true}>
 			<div
@@ -18,7 +18,7 @@ const Intro = ({ id, snackbarError, fetchedUser, userHasSeenIntro, goInt }) => {
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}>
-				{!userHasSeenIntro && fetchedUser && (
+				{fetchedUser && (
 					<Fragment>
 						<Group>
 							<Div
@@ -55,7 +55,7 @@ const Intro = ({ id, snackbarError, fetchedUser, userHasSeenIntro, goInt }) => {
 									className='Gogogo'
 									mode='commerce'
 									size='xl'
-									onClick={goInt}
+									onClick={nextIntroPage}
 									data-to='introdva'>
 									Круто!
 								</Button>

@@ -12,7 +12,7 @@ import {
 	Separator,
 } from '@vkontakte/vkui';
 
-const Business = ({ id, go }) => (
+const Business = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -45,7 +45,7 @@ const Business = ({ id, go }) => (
 					backgroundColor: '#000',
 				}}
 				alt='nyccrd'
-				onClick={go}
+				onClick={changePanel}
 				data-to='nyccrd'
 			/>
 			<img
@@ -58,7 +58,7 @@ const Business = ({ id, go }) => (
 					backgroundColor: '#000',
 				}}
 				alt='percicrd'
-				onClick={go}
+				onClick={changePanel}
 				data-to='percicrd'
 			/>
 			<img
@@ -71,7 +71,7 @@ const Business = ({ id, go }) => (
 					backgroundColor: '#000',
 				}}
 				alt='auditcrd'
-				onClick={go}
+				onClick={changePanel}
 				data-to='auditcrd'
 			/>
 		</Gallery>
@@ -91,7 +91,7 @@ const Business = ({ id, go }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='cafes'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Кафе</h3>
 				</Card>
@@ -106,7 +106,7 @@ const Business = ({ id, go }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='bars'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Бары</h3>
 				</Card>
@@ -122,7 +122,7 @@ const Business = ({ id, go }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='restaraunts'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Рестораны</h3>
 				</Card>
@@ -138,7 +138,7 @@ const Business = ({ id, go }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='hookah'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Кальянные</h3>
 				</Card>

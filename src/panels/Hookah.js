@@ -9,7 +9,7 @@ import {
 	Footer,
 } from '@vkontakte/vkui';
 
-const Hookah = ({ id, go }) => (
+const Hookah = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -28,7 +28,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='aloft'
 			description='Лаунж-бар на Ленина 26'>
 			Art Loft
@@ -41,7 +41,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='bsb'
 			description='Лаунж-бар на Университетской 29'>
 			Baker Street 221B
@@ -54,7 +54,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='brutal'
 			description='Сеть кальянных'>
 			Brutal Avenue
@@ -67,7 +67,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='hplace'
 			description='Лаунж-бар на 30 Лет Победы 50'>
 			HookahPlace
@@ -80,7 +80,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='jin'
 			description='Лаунж-бар на Энергетиков 7'>
 			Jin
@@ -93,7 +93,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='light'
 			description='Кальянная на 30 Лет Победы 37'>
 			Light Дым
@@ -106,7 +106,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='office'
 			description='Кальянная на Энгельса 11'>
 			The OFFICE Nargilia
@@ -119,7 +119,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='mrmld'
 			description='Лаунж-бар на Иосифа Каролинского 4'>
 			Мармелад
@@ -132,7 +132,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='mint'
 			description='Лаунж-бар на Мира 47/2'>
 			Мята
@@ -145,7 +145,7 @@ const Hookah = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='pbar'
 			description='Вейп-бар на Игоря Киртбая 18'>
 			ПароБар

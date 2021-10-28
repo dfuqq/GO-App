@@ -13,7 +13,7 @@ import {
 	Card,
 } from '@vkontakte/vkui';
 
-const About = ({ id, go }) => (
+const About = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -51,7 +51,7 @@ const About = ({ id, go }) => (
 						display: 'flex',
 						justifyContent: 'center',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='credits'>
 					<img
 						style={{ height: 82, width: 82 }}
@@ -67,7 +67,7 @@ const About = ({ id, go }) => (
 						display: 'flex',
 						justifyContent: 'center',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='attention'>
 					<img
 						style={{ height: 82, width: 82 }}
@@ -83,7 +83,7 @@ const About = ({ id, go }) => (
 						display: 'flex',
 						justifyContent: 'center',
 					}}
-					onClick={go}
+					onClick={changePanel}
 					data-to='projects'>
 					<img
 						style={{ height: 82, width: 82 }}

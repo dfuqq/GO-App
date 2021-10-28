@@ -9,7 +9,7 @@ import {
 	Footer,
 } from '@vkontakte/vkui';
 
-const Cafes = ({ id, go }) => (
+const Cafes = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -27,7 +27,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='nyc'
 			description='Антикафе на Ленина 18'>
 			New York Coffee
@@ -40,7 +40,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='trvls'
 			description='Сеть кофеен'>
 			Traveler's Coffee
@@ -53,7 +53,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='vkus'
 			description='Кофейня на Ленина 16'>
 			Академия Вкуса
@@ -66,7 +66,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='botanica'
 			description='Кафе на Энергетиков 12'>
 			Ботаника
@@ -79,7 +79,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='dovlatov'
 			description='Кафе на Сибирской 15'>
 			Довлатов
@@ -92,7 +92,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='friends'
 			description='Кофейня на Энгельса 11'>
 			Друзья
@@ -105,7 +105,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='zerno'
 			description='Кофейня на пр. Пролетарский 11'>
 			Зерно
@@ -118,7 +118,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='cofein'
 			description='Кофейня на Бульвар Свободы 1'>
 			Кофеин
@@ -131,7 +131,7 @@ const Cafes = ({ id, go }) => (
 					size={56}
 				/>
 			}
-			onClick={go}
+			onClick={changePanel}
 			data-to='endorf'
 			description='Кофейня на Университетской 19'>
 			Эндорфин
