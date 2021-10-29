@@ -18,7 +18,7 @@ import Icon24AddSquareOutline from '@vkontakte/icons/dist/24/add_square_outline'
 
 const osName = platform();
 
-const Home = ({ id, changePanel, placesGo, shareButtonAction }) => {
+const Home = ({ id, changePanel, changePanelToPlaces, shareButtonAction }) => {
 	useEffect(() => {
 		const joinGroup = async function () {
 			await bridge.send('VKWebAppJoinGroup', {
@@ -53,7 +53,7 @@ const Home = ({ id, changePanel, placesGo, shareButtonAction }) => {
 						<Button
 							mode='overlay_primary'
 							size='l'
-							onClick={placesGo}
+							onClick={changePanelToPlaces}
 							data-to='places'>
 							Посмотреть
 						</Button>

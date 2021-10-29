@@ -22,8 +22,8 @@ const Places = ({
 	id,
 	changePanel,
 	area,
-	page,
-	places,
+	openFilters,
+	openAreaFilters,
 	parksFilter,
 	museumsFilter,
 	monumentsFilter,
@@ -42,7 +42,7 @@ const Places = ({
 			{area === 'cntr' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={page}>
+						<Button size='xl' mode='primary' onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -720,7 +720,7 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={places}>
+										<Button size='xl' mode='primary' onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -733,7 +733,7 @@ const Places = ({
 			{area === 'west' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={page}>
+						<Button size='xl' mode='primary' onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -963,7 +963,7 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={places}>
+										<Button size='xl' mode='primary' onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -1024,7 +1024,7 @@ const Places = ({
 						</Cell>
 						<FixedLayout vertical='bottom'>
 							<Div>
-								<Button size='xl' mode='primary' onClick={places}>
+								<Button size='xl' mode='primary' onClick={openAreaFilters}>
 									Выбрать район
 								</Button>
 							</Div>
@@ -1035,7 +1035,7 @@ const Places = ({
 			{area === 'nl' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={page}>
+						<Button size='xl' mode='primary' onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -1265,7 +1265,7 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={places}>
+										<Button size='xl' mode='primary' onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -1278,7 +1278,7 @@ const Places = ({
 			{area === 'all' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={page}>
+						<Button size='xl' mode='primary' onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -2390,7 +2390,7 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={places}>
+										<Button size='xl' mode='primary' onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -2492,7 +2492,7 @@ const Places = ({
 							icon={<Icon56InfoOutline />}
 							header='Выберите район'
 							action={
-								<Button size='xl' mode='primary' onClick={places}>
+								<Button size='xl' mode='primary' onClick={openAreaFilters}>
 									Выбрать
 								</Button>
 							}>

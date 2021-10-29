@@ -189,10 +189,6 @@ import {
 	Vershina,
 } from './places/nwl/Exports_Nwl';
 
-import Test from './panels/Test';
-import Testdva from './panels/Testdva';
-import Testtri from './panels/Testtri';
-
 const STORAGE_KEYS = { STATUS: 'status' };
 
 const App = ({ startPage }) => {
@@ -208,9 +204,8 @@ const App = ({ startPage }) => {
 	const [architectureFilter, setArchitectureFilter] = useState(false);
 	const [area, setArea] = useState(null);
 	const [history, setHistory] = useState(['home']);
-	history;
 
-	const placesGo = (e) => {
+	const changePanelToPlaces = (e) => {
 		setParksFilter(false);
 		setMuseumsFilter(false);
 		setMonumentsFilter(false);
@@ -252,24 +247,24 @@ const App = ({ startPage }) => {
 		}
 	};
 
-	const [swipe, setSwipe] = useState(() => changePanelWithSwipe); // Управление доступом к свайпу, блокируется при открытых модалках
+	// Управление доступом к свайпу, блокируется при открытых модалках
+	const [swipe, setSwipe] = useState(() => changePanelWithSwipe);
 
-	const page = () => {
+	const openFilters = () => {
 		setActiveModal('filters');
 		setSwipe(null);
 	};
-	const places = () => {
+
+	const openAreaFilters = () => {
 		setActiveModal('places');
 		setSwipe(null);
 	};
+
 	const selectAreaInModal = (e) => {
 		setArea(e.currentTarget.dataset.area);
 		setActiveModal(null);
 		setSwipe(() => changePanelWithSwipe);
 	};
-
-	const [cords, setCords] = useState([]); // ! Временный массив для получения координат
-	const [geo, setGeo] = useState([]); // ! Основной массив с координатами
 
 	const showSnackbar = (text) => {
 		setSnackbar(
@@ -291,27 +286,30 @@ const App = ({ startPage }) => {
 		);
 	};
 
+	const [tempCords, setTempCords] = useState([]); // ! Временный массив для получения координат
+	const [geo, setGeo] = useState([]); // ! Основной массив с координатами
+
 	const getCoordinates = async function () {
 		try {
-			setCords([]);
+			setTempCords([]);
 			const getCords = await bridge.send('VKWebAppGetGeodata');
 			if (getCords.available === 1) {
 				// Если координаты доступны
-				cords.push(getCords.long);
-				cords.push(getCords.lat);
+				tempCords.push(getCords.long);
+				tempCords.push(getCords.lat);
 			} else {
 				// Если координаты разрешены но недоступны
 				showSnackbar('Не получили координаты... :(');
-				setCords(null);
+				setTempCords(null);
 			}
 		} catch (error) {
 			// Если доступ к координатам запрещён
 			console.log('GEO_DENIED');
 			showSnackbar('Не получили координаты... :(');
-			setCords(null);
+			setTempCords(null);
 		}
 		requestAnimationFrame(Testdva);
-		setGeo(cords);
+		setGeo(tempCords);
 	};
 
 	const nextIntroPage = (e) => setActivePanel(e.currentTarget.dataset.to);
@@ -520,15 +518,15 @@ const App = ({ startPage }) => {
 						shareButtonAction={shareButtonAction}
 						fetchedUser={fetchedUser}
 						changePanel={changePanel}
-						placesGo={placesGo}
+						changePanelToPlaces={changePanelToPlaces}
 						snackbarError={snackbar}
 					/>
 					<Places
 						id='places'
 						changePanel={changePanel}
-						page={page}
+						openFilters={openFilters}
 						area={area}
-						places={places}
+						openAreaFilters={openAreaFilters}
 						parksFilter={parksFilter}
 						museumsFilter={museumsFilter}
 						monumentsFilter={monumentsFilter}
@@ -672,13 +670,6 @@ const App = ({ startPage }) => {
 					<Credits id='credits' />
 					<Attention id='attention' />
 					<Projects id='projects' />
-					<Test id='test' fetchedUser={fetchedUser} />
-					<Testdva
-						id='testdva'
-						getCoordinates={getCoordinates}
-						nextIntroPage={nextIntroPage}
-					/>
-					<Testtri id='testtri' endIntroWatch={endIntroWatch} />
 				</View>
 			</Root>
 		</ConfigProvider>
