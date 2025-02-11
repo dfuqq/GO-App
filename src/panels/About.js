@@ -13,12 +13,16 @@ import {
 	Card,
 } from '@vkontakte/vkui';
 
-const About = ({ id, changePanel }) => (
+const About = ({ id, changePanel, setActiveView }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
 				<PanelHeaderBack
-					onClick={() => window.history.back()}></PanelHeaderBack>
+					onClick={(e) => {
+						setActiveView('home');
+						changePanel(e);
+					}}
+					data-to='home'></PanelHeaderBack>
 			}>
 			О приложении
 		</PanelHeader>

@@ -10,14 +10,16 @@ import { Intro, Introdva, Introtri } from './intro/Exports_Intro';
 
 import {
 	View,
-	Root,
 	Snackbar,
 	Avatar,
 	ScreenSpinner,
 	ModalRoot,
 	ModalCard,
 	Cell,
-	ConfigProvider,
+	AppRoot,
+	SplitLayout,
+	SplitCol,
+	Root,
 } from '@vkontakte/vkui';
 
 import {
@@ -194,6 +196,7 @@ const STORAGE_KEYS = { STATUS: 'status' };
 const App = ({ startPage }) => {
 	const [activePanel, setActivePanel] = useState(startPage);
 	const [activeModal, setActiveModal] = useState(null);
+	const [activeView, setActiveView] = useState('home');
 	const [fetchedUser, setUser] = useState(null);
 	const [snackbar, setSnackbar] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
@@ -277,7 +280,11 @@ const App = ({ startPage }) => {
 						style={{
 							backgroundColor: 'var(--dynamic-red)',
 						}}>
-						<Icon24Error fill='#fff' width={14} height={14} />
+						<Icon24Error
+							fill='#fff'
+							width={14}
+							height={14}
+						/>
 					</Avatar>
 				}
 				duration={1000}>
@@ -308,7 +315,7 @@ const App = ({ startPage }) => {
 			showSnackbar('Не получили координаты... :(');
 			setTempCords(null);
 		}
-		requestAnimationFrame(Testdva);
+		// requestAnimationFrame(Testdva);
 		setGeo(tempCords);
 	};
 
@@ -402,28 +409,36 @@ const App = ({ startPage }) => {
 				<Cell
 					onClick={() => setMuseumsFilter(!museumsFilter)}
 					asideContent={
-						museumsFilter ? <Icon24Done fill='var(--accent)' /> : null
+						museumsFilter ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Музеи
 				</Cell>
 				<Cell
 					onClick={() => setMonumentsFilter(!monumentsFilter)}
 					asideContent={
-						monumentsFilter ? <Icon24Done fill='var(--accent)' /> : null
+						monumentsFilter ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Памятники
 				</Cell>
 				<Cell
 					onClick={() => setEntertaimentFilter(!entertaimentFilter)}
 					asideContent={
-						entertaimentFilter ? <Icon24Done fill='var(--accent)' /> : null
+						entertaimentFilter ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Спорт и Развлечения
 				</Cell>
 				<Cell
 					onClick={() => setArchitectureFilter(!architectureFilter)}
 					asideContent={
-						architectureFilter ? <Icon24Done fill='var(--accent)' /> : null
+						architectureFilter ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Архитектура
 				</Cell>
@@ -451,7 +466,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='cntr'
 					asideContent={
-						area === 'cntr' ? <Icon24Done fill='var(--accent)' /> : null
+						area === 'cntr' ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Центральный район
 				</Cell>
@@ -459,7 +476,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='west'
 					asideContent={
-						area === 'west' ? <Icon24Done fill='var(--accent)' /> : null
+						area === 'west' ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Восточный район
 				</Cell>
@@ -467,7 +486,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='nwl'
 					asideContent={
-						area === 'nwl' ? <Icon24Done fill='var(--accent)' /> : null
+						area === 'nwl' ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Северо-Восточный Жилой район
 				</Cell>
@@ -475,7 +496,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='nl'
 					asideContent={
-						area === 'nl' ? <Icon24Done fill='var(--accent)' /> : null
+						area === 'nl' ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Северный Жилой район
 				</Cell>
@@ -483,7 +506,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='all'
 					asideContent={
-						area === 'all' ? <Icon24Done fill='var(--accent)' /> : null
+						area === 'all' ? (
+							<Icon24Done fill='var(--accent)' />
+						) : null
 					}>
 					Все районы
 				</Cell>
@@ -492,187 +517,615 @@ const App = ({ startPage }) => {
 	);
 
 	return (
-		<ConfigProvider>
-			<Root>
-				<View
-					activeModal={activeModal}
-					activePanel={activePanel}
-					popout={popout}
-					modal={modal}
-					history={history}
-					onSwipeBack={swipe}>
-					<Intro
-						id='introodin'
-						fetchedUser={fetchedUser}
-						nextIntroPage={nextIntroPage}
-						snackbarError={snackbar}
-					/>
-					<Introdva
-						id='introdva'
-						nextIntroPage={nextIntroPage}
-						getCoordinates={getCoordinates}
-					/>
-					<Introtri id='introtri' endIntroWatch={endIntroWatch} />
-					<Home
-						id='home'
-						shareButtonAction={shareButtonAction}
-						fetchedUser={fetchedUser}
-						changePanel={changePanel}
-						changePanelToPlaces={changePanelToPlaces}
-						snackbarError={snackbar}
-					/>
-					<Places
-						id='places'
-						changePanel={changePanel}
-						openFilters={openFilters}
-						area={area}
-						openAreaFilters={openAreaFilters}
-						parksFilter={parksFilter}
-						museumsFilter={museumsFilter}
-						monumentsFilter={monumentsFilter}
-						entertaimentFilter={entertaimentFilter}
-						architectureFilter={architectureFilter}
-					/>
-					<Osnovcrd id='osnovcrd' geo={geo} />
-					<Ssurcrd id='ssurcrd' geo={geo} />
-					<Kedrcrd id='kedrcrd' geo={geo} />
-					<Saimacrd id='saimacrd' geo={geo} />
-					<Univcrd id='univcrd' geo={geo} />
-					<Agaz id='agaz' geo={geo} />
-					<Bben id='bben' geo={geo} />
-					<Bibl id='bibl' geo={geo} />
-					<Centr id='centr' geo={geo} />
-					<Ckid id='ckid' geo={geo} />
-					<Cmoll id='cmoll' geo={geo} />
-					<Cplos id='cplos' geo={geo} />
-					<Dneft id='dneft' geo={geo} />
-					<Dock id='dock' geo={geo} />
-					<Filarm id='filarm' geo={geo} />
-					<Gperer id='gperer' geo={geo} />
-					<Gpkio id='gpkio' geo={geo} />
-					<Gtrans id='gtrans' geo={geo} />
-					<Gzprm id='gzprm' geo={geo} />
-					<Human id='human' geo={geo} />
-					<Kedr id='kedr' geo={geo} />
-					<Kupec id='kupec' geo={geo} />
-					<Kuzn id='kuzn' geo={geo} />
-					<Lis id='lis' geo={geo} />
-					<Mneft id='mneft' geo={geo} />
-					<Mperv id='mperv' geo={geo} />
-					<Narod id='narod' geo={geo} />
-					<Osnov id='osnov' geo={geo} />
-					<Patr id='patr' geo={geo} />
-					<Pgaz id='pgaz' geo={geo} />
-					<Port id='port' geo={geo} />
-					<Pstro id='pstro' geo={geo} />
-					<Scentr id='scentr' geo={geo} />
-					<Sdet id='sdet' geo={geo} />
-					<Sener id='sener' geo={geo} />
-					<Slav id='slav' geo={geo} />
-					<Smld id='smld' geo={geo} />
-					<Snarod id='snarod' geo={geo} />
-					<Snezh id='snezh' geo={geo} />
-					<Sng id='sng' geo={geo} />
-					<Sstar id='sstar' geo={geo} />
-					<Ssur id='ssur' geo={geo} />
-					<Sterh id='sterh' geo={geo} />
-					<Surgu id='surgu' geo={geo} />
-					<Taras id='taras' geo={geo} />
-					<Tsgu id='tsgu' geo={geo} />
-					<Uchit id='uchit' geo={geo} />
-					<Voinam id='voinam' geo={geo} />
-					<Zags id='zags' geo={geo} />
-					<Zahar id='zahar' geo={geo} />
-					<Btrud id='btrud' geo={geo} />
-					<Budda id='budda' geo={geo} />
-					<Nab id='nab' geo={geo} />
-					<Nerozh id='nerozh' geo={geo} />
-					<Obel id='obel' geo={geo} />
-					<Pgeo id='pgeo' geo={geo} />
-					<Repres id='repres' geo={geo} />
-					<Rib id='rib' geo={geo} />
-					<Saima id='saima' geo={geo} />
-					<Salm id='salm' geo={geo} />
-					<Sgeo id='sgeo' geo={geo} />
-					<Stroit id='stroit' geo={geo} />
-					<Univ id='univ' geo={geo} />
-					<Musclx id='musclx' geo={geo} />
-					<Pmed id='pmed' geo={geo} />
-					<Sgusch id='sgusch' geo={geo} />
-					<Smile id='smile' geo={geo} />
-					<Vershina id='vershina' geo={geo} />
-					<Aerop id='aerop' geo={geo} />
-					<Agora id='agora' geo={geo} />
-					<Aura id='aura' geo={geo} />
-					<Bridge id='bridge' geo={geo} />
-					<Brmsm id='brmsm' geo={geo} />
-					<Chaes id='chaes' geo={geo} />
-					<Pavia id='pavia' geo={geo} />
-					<Pkey id='pkey' geo={geo} />
-					<Poezd id='poezd' geo={geo} />
-					<Polet id='polet' geo={geo} />
-					<Smdt id='smdt' geo={geo} />
-					<Surgut id='surgut' geo={geo} />
-					<Trakt id='trakt' geo={geo} />
-					<Business id='business' changePanel={changePanel} />
-					<Percicrd id='percicrd' geo={geo} />
-					<Nyccrd id='nyccrd' geo={geo} />
-					<Auditcrd id='auditcrd' geo={geo} />
-					<Cafes id='cafes' changePanel={changePanel} />
-					<Botanica id='botanica' geo={geo} />
-					<Cofein id='cofein' geo={geo} />
-					<Dovlatov id='dovlatov' geo={geo} />
-					<Endorf id='endorf' geo={geo} />
-					<Friends id='friends' geo={geo} />
-					<Nyc id='nyc' geo={geo} />
-					<Trvls id='trvls' geo={geo} />
-					<Vkus id='vkus' geo={geo} />
-					<Zerno id='zerno' geo={geo} />
-					<Bars id='bars' changePanel={changePanel} />
-					<Audit id='audit' geo={geo} />
-					<Bird id='bird' geo={geo} />
-					<Dpub id='dpub' geo={geo} />
-					<Frank id='frank' geo={geo} />
-					<Hops id='hops' geo={geo} />
-					<Jaws id='jaws' geo={geo} />
-					<Mars id='mars' geo={geo} />
-					<Pints id='pints' geo={geo} />
-					<Rnb id='rnb' geo={geo} />
-					<Off id='off' geo={geo} />
-					<Restaraunts id='restaraunts' changePanel={changePanel} />
-					<Ajb id='ajb' geo={geo} />
-					<Ds id='ds' geo={geo} />
-					<Hurma id='hurma' geo={geo} />
-					<Joint id='joint' geo={geo} />
-					<Kitcha id='kitcha' geo={geo} />
-					<Klkv id='klkv' geo={geo} />
-					<Mishka id='mishka' geo={geo} />
-					<Peoples id='peoples' geo={geo} />
-					<Perci id='perci' geo={geo} />
-					<Pivo id='pivo' geo={geo} />
-					<Seven id='seven' geo={geo} />
-					<Storia id='storia' geo={geo} />
-					<Veranda id='veranda' geo={geo} />
-					<Visota id='visota' geo={geo} />
-					<Wdn id='wdn' geo={geo} />
-					<Hookah id='hookah' changePanel={changePanel} />
-					<Aloft id='aloft' geo={geo} />
-					<Brutal id='brutal' geo={geo} />
-					<Bsb id='bsb' geo={geo} />
-					<HPlace id='hplace' geo={geo} />
-					<Jin id='jin' geo={geo} />
-					<Light id='light' geo={geo} />
-					<Mint id='mint' geo={geo} />
-					<Mrmld id='mrmld' geo={geo} />
-					<Office id='office' geo={geo} />
-					<Pbar id='pbar' geo={geo} />
-					<About id='about' changePanel={changePanel} />
-					<Credits id='credits' />
-					<Attention id='attention' />
-					<Projects id='projects' />
-				</View>
-			</Root>
-		</ConfigProvider>
+		<AppRoot>
+			<SplitLayout>
+				<SplitCol animate>
+					<Root activeView={activeView}>
+						<View
+							id='home'
+							activeModal={activeModal}
+							activePanel={activePanel}
+							popout={popout}
+							modal={modal}
+							history={history}
+							onSwipeBack={swipe}>
+							<Intro
+								id='introodin'
+								fetchedUser={fetchedUser}
+								nextIntroPage={nextIntroPage}
+								snackbarError={snackbar}
+							/>
+							<Introdva
+								id='introdva'
+								nextIntroPage={nextIntroPage}
+								getCoordinates={getCoordinates}
+							/>
+							<Introtri
+								id='introtri'
+								endIntroWatch={endIntroWatch}
+							/>
+							<Home
+								id='home'
+								shareButtonAction={shareButtonAction}
+								fetchedUser={fetchedUser}
+								changePanel={changePanel}
+								changePanelToPlaces={changePanelToPlaces}
+								snackbarError={snackbar}
+								setActiveView={setActiveView}
+							/>
+							<Places
+								id='places'
+								changePanel={changePanel}
+								openFilters={openFilters}
+								area={area}
+								openAreaFilters={openAreaFilters}
+								parksFilter={parksFilter}
+								museumsFilter={museumsFilter}
+								monumentsFilter={monumentsFilter}
+								entertaimentFilter={entertaimentFilter}
+								architectureFilter={architectureFilter}
+							/>
+							<Osnovcrd
+								id='osnovcrd'
+								geo={geo}
+							/>
+							<Ssurcrd
+								id='ssurcrd'
+								geo={geo}
+							/>
+							<Kedrcrd
+								id='kedrcrd'
+								geo={geo}
+							/>
+							<Saimacrd
+								id='saimacrd'
+								geo={geo}
+							/>
+							<Univcrd
+								id='univcrd'
+								geo={geo}
+							/>
+							<Agaz
+								id='agaz'
+								geo={geo}
+							/>
+							<Bben
+								id='bben'
+								geo={geo}
+							/>
+							<Bibl
+								id='bibl'
+								geo={geo}
+							/>
+							<Centr
+								id='centr'
+								geo={geo}
+							/>
+							<Ckid
+								id='ckid'
+								geo={geo}
+							/>
+							<Cmoll
+								id='cmoll'
+								geo={geo}
+							/>
+							<Cplos
+								id='cplos'
+								geo={geo}
+							/>
+							<Dneft
+								id='dneft'
+								geo={geo}
+							/>
+							<Dock
+								id='dock'
+								geo={geo}
+							/>
+							<Filarm
+								id='filarm'
+								geo={geo}
+							/>
+							<Gperer
+								id='gperer'
+								geo={geo}
+							/>
+							<Gpkio
+								id='gpkio'
+								geo={geo}
+							/>
+							<Gtrans
+								id='gtrans'
+								geo={geo}
+							/>
+							<Gzprm
+								id='gzprm'
+								geo={geo}
+							/>
+							<Human
+								id='human'
+								geo={geo}
+							/>
+							<Kedr
+								id='kedr'
+								geo={geo}
+							/>
+							<Kupec
+								id='kupec'
+								geo={geo}
+							/>
+							<Kuzn
+								id='kuzn'
+								geo={geo}
+							/>
+							<Lis
+								id='lis'
+								geo={geo}
+							/>
+							<Mneft
+								id='mneft'
+								geo={geo}
+							/>
+							<Mperv
+								id='mperv'
+								geo={geo}
+							/>
+							<Narod
+								id='narod'
+								geo={geo}
+							/>
+							<Osnov
+								id='osnov'
+								geo={geo}
+							/>
+							<Patr
+								id='patr'
+								geo={geo}
+							/>
+							<Pgaz
+								id='pgaz'
+								geo={geo}
+							/>
+							<Port
+								id='port'
+								geo={geo}
+							/>
+							<Pstro
+								id='pstro'
+								geo={geo}
+							/>
+							<Scentr
+								id='scentr'
+								geo={geo}
+							/>
+							<Sdet
+								id='sdet'
+								geo={geo}
+							/>
+							<Sener
+								id='sener'
+								geo={geo}
+							/>
+							<Slav
+								id='slav'
+								geo={geo}
+							/>
+							<Smld
+								id='smld'
+								geo={geo}
+							/>
+							<Snarod
+								id='snarod'
+								geo={geo}
+							/>
+							<Snezh
+								id='snezh'
+								geo={geo}
+							/>
+							<Sng
+								id='sng'
+								geo={geo}
+							/>
+							<Sstar
+								id='sstar'
+								geo={geo}
+							/>
+							<Ssur
+								id='ssur'
+								geo={geo}
+							/>
+							<Sterh
+								id='sterh'
+								geo={geo}
+							/>
+							<Surgu
+								id='surgu'
+								geo={geo}
+							/>
+							<Taras
+								id='taras'
+								geo={geo}
+							/>
+							<Tsgu
+								id='tsgu'
+								geo={geo}
+							/>
+							<Uchit
+								id='uchit'
+								geo={geo}
+							/>
+							<Voinam
+								id='voinam'
+								geo={geo}
+							/>
+							<Zags
+								id='zags'
+								geo={geo}
+							/>
+							<Zahar
+								id='zahar'
+								geo={geo}
+							/>
+							<Btrud
+								id='btrud'
+								geo={geo}
+							/>
+							<Budda
+								id='budda'
+								geo={geo}
+							/>
+							<Nab
+								id='nab'
+								geo={geo}
+							/>
+							<Nerozh
+								id='nerozh'
+								geo={geo}
+							/>
+							<Obel
+								id='obel'
+								geo={geo}
+							/>
+							<Pgeo
+								id='pgeo'
+								geo={geo}
+							/>
+							<Repres
+								id='repres'
+								geo={geo}
+							/>
+							<Rib
+								id='rib'
+								geo={geo}
+							/>
+							<Saima
+								id='saima'
+								geo={geo}
+							/>
+							<Salm
+								id='salm'
+								geo={geo}
+							/>
+							<Sgeo
+								id='sgeo'
+								geo={geo}
+							/>
+							<Stroit
+								id='stroit'
+								geo={geo}
+							/>
+							<Univ
+								id='univ'
+								geo={geo}
+							/>
+							<Musclx
+								id='musclx'
+								geo={geo}
+							/>
+							<Pmed
+								id='pmed'
+								geo={geo}
+							/>
+							<Sgusch
+								id='sgusch'
+								geo={geo}
+							/>
+							<Smile
+								id='smile'
+								geo={geo}
+							/>
+							<Vershina
+								id='vershina'
+								geo={geo}
+							/>
+							<Aerop
+								id='aerop'
+								geo={geo}
+							/>
+							<Agora
+								id='agora'
+								geo={geo}
+							/>
+							<Aura
+								id='aura'
+								geo={geo}
+							/>
+							<Bridge
+								id='bridge'
+								geo={geo}
+							/>
+							<Brmsm
+								id='brmsm'
+								geo={geo}
+							/>
+							<Chaes
+								id='chaes'
+								geo={geo}
+							/>
+							<Pavia
+								id='pavia'
+								geo={geo}
+							/>
+							<Pkey
+								id='pkey'
+								geo={geo}
+							/>
+							<Poezd
+								id='poezd'
+								geo={geo}
+							/>
+							<Polet
+								id='polet'
+								geo={geo}
+							/>
+							<Smdt
+								id='smdt'
+								geo={geo}
+							/>
+							<Surgut
+								id='surgut'
+								geo={geo}
+							/>
+							<Trakt
+								id='trakt'
+								geo={geo}
+							/>
+
+							<Percicrd
+								id='percicrd'
+								geo={geo}
+							/>
+							<Nyccrd
+								id='nyccrd'
+								geo={geo}
+							/>
+							<Auditcrd
+								id='auditcrd'
+								geo={geo}
+							/>
+							<Botanica
+								id='botanica'
+								geo={geo}
+							/>
+							<Cofein
+								id='cofein'
+								geo={geo}
+							/>
+							<Dovlatov
+								id='dovlatov'
+								geo={geo}
+							/>
+							<Endorf
+								id='endorf'
+								geo={geo}
+							/>
+							<Friends
+								id='friends'
+								geo={geo}
+							/>
+							<Nyc
+								id='nyc'
+								geo={geo}
+							/>
+							<Trvls
+								id='trvls'
+								geo={geo}
+							/>
+							<Vkus
+								id='vkus'
+								geo={geo}
+							/>
+							<Zerno
+								id='zerno'
+								geo={geo}
+							/>
+							<Bars
+								id='bars'
+								changePanel={changePanel}
+							/>
+							<Audit
+								id='audit'
+								geo={geo}
+							/>
+							<Bird
+								id='bird'
+								geo={geo}
+							/>
+							<Dpub
+								id='dpub'
+								geo={geo}
+							/>
+							<Frank
+								id='frank'
+								geo={geo}
+							/>
+							<Hops
+								id='hops'
+								geo={geo}
+							/>
+							<Jaws
+								id='jaws'
+								geo={geo}
+							/>
+							<Mars
+								id='mars'
+								geo={geo}
+							/>
+							<Pints
+								id='pints'
+								geo={geo}
+							/>
+							<Rnb
+								id='rnb'
+								geo={geo}
+							/>
+							<Off
+								id='off'
+								geo={geo}
+							/>
+
+							<Ajb
+								id='ajb'
+								geo={geo}
+							/>
+							<Ds
+								id='ds'
+								geo={geo}
+							/>
+							<Hurma
+								id='hurma'
+								geo={geo}
+							/>
+							<Joint
+								id='joint'
+								geo={geo}
+							/>
+							<Kitcha
+								id='kitcha'
+								geo={geo}
+							/>
+							<Klkv
+								id='klkv'
+								geo={geo}
+							/>
+							<Mishka
+								id='mishka'
+								geo={geo}
+							/>
+							<Peoples
+								id='peoples'
+								geo={geo}
+							/>
+							<Perci
+								id='perci'
+								geo={geo}
+							/>
+							<Pivo
+								id='pivo'
+								geo={geo}
+							/>
+							<Seven
+								id='seven'
+								geo={geo}
+							/>
+							<Storia
+								id='storia'
+								geo={geo}
+							/>
+							<Veranda
+								id='veranda'
+								geo={geo}
+							/>
+							<Visota
+								id='visota'
+								geo={geo}
+							/>
+							<Wdn
+								id='wdn'
+								geo={geo}
+							/>
+
+							<Aloft
+								id='aloft'
+								geo={geo}
+							/>
+							<Brutal
+								id='brutal'
+								geo={geo}
+							/>
+							<Bsb
+								id='bsb'
+								geo={geo}
+							/>
+							<HPlace
+								id='hplace'
+								geo={geo}
+							/>
+							<Jin
+								id='jin'
+								geo={geo}
+							/>
+							<Light
+								id='light'
+								geo={geo}
+							/>
+							<Mint
+								id='mint'
+								geo={geo}
+							/>
+							<Mrmld
+								id='mrmld'
+								geo={geo}
+							/>
+							<Office
+								id='office'
+								geo={geo}
+							/>
+							<Pbar
+								id='pbar'
+								geo={geo}
+							/>
+						</View>
+						<View
+							id='business'
+							activePanel={activePanel}>
+							<Business
+								id='business'
+								changePanel={changePanel}
+								setActiveView={setActiveView}
+							/>
+							<Cafes
+								id='cafes'
+								changePanel={changePanel}
+							/>
+							<Restaraunts
+								id='restaraunts'
+								changePanel={changePanel}
+							/>
+							<Hookah
+								id='hookah'
+								changePanel={changePanel}
+							/>
+							<Bars
+								id='bars'
+								changePanel={changePanel}
+							/>
+						</View>
+						<View
+							id='about'
+							activePanel={activePanel}>
+							<About
+								id='about'
+								changePanel={changePanel}
+								setActiveView={setActiveView}
+							/>
+							<Credits id='credits' />
+							<Attention id='attention' />
+							<Projects id='projects' />
+						</View>
+					</Root>
+				</SplitCol>
+			</SplitLayout>
+		</AppRoot>
 	);
 };
 

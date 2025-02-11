@@ -18,7 +18,13 @@ import Icon24AddSquareOutline from '@vkontakte/icons/dist/24/add_square_outline'
 
 const osName = platform();
 
-const Home = ({ id, changePanel, changePanelToPlaces, shareButtonAction }) => {
+const Home = ({
+	id,
+	changePanel,
+	changePanelToPlaces,
+	shareButtonAction,
+	setActiveView,
+}) => {
 	useEffect(() => {
 		const joinGroup = async function () {
 			await bridge.send('VKWebAppJoinGroup', {
@@ -87,7 +93,10 @@ const Home = ({ id, changePanel, changePanelToPlaces, shareButtonAction }) => {
 						<Button
 							mode='overlay_primary'
 							size='l'
-							onClick={changePanel}
+							onClick={(e) => {
+								setActiveView('business');
+								changePanel(e);
+							}}
 							data-to='business'>
 							Узнать
 						</Button>
@@ -127,15 +136,25 @@ const Home = ({ id, changePanel, changePanelToPlaces, shareButtonAction }) => {
 			</Group>
 
 			<Group>
-				<Cell before={<Icon24Info />} onClick={changePanel} data-to='about'>
+				<Cell
+					before={<Icon24Info />}
+					onClick={(e) => {
+						setActiveView('about');
+						changePanel(e);
+					}}
+					data-to='about'>
 					О приложении
 				</Cell>
-				<Cell before={<Icon24ShareOutline />} onClick={shareButtonAction}>
+				<Cell
+					before={<Icon24ShareOutline />}
+					onClick={shareButtonAction}>
 					Поделиться
 				</Cell>
 				{osName === ANDROID && (
 					<Fragment>
-						<Cell before={<Icon24AddSquareOutline />} onClick={add}>
+						<Cell
+							before={<Icon24AddSquareOutline />}
+							onClick={add}>
 							Добавить на экран устройства
 						</Cell>
 					</Fragment>

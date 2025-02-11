@@ -5,17 +5,19 @@ import ReactDOM from 'react-dom';
 import bridge from '@vkontakte/vk-bridge';
 import App from './App';
 
+import { ConfigProvider, AdaptivityProvider } from '@vkontakte/vkui';
+
 // Самойлова Илона Михайловна лучшая девушка на свете.
 // vk.com/tolkonespeww
 // instagram.com/tolkonespew
 // <3
 
 // Для запуска в клиент:
-// vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=localhost --port=10888
+// npx vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=localhost --port=3000
 
 // TODO прокинуть mode и setMode на area и setArea
 
-let startPage = 'introodin';
+let startPage = 'home';
 
 const STORAGE_KEYS = { STATUS: 'status' };
 
@@ -32,19 +34,31 @@ async function getStartScreen() {
 					if (data[key].hasSeenIntro) {
 						startPage = 'home';
 						ReactDOM.render(
-							<App startPage={startPage} />,
+							<ConfigProvider>
+								<AdaptivityProvider>
+									<App startPage={startPage} />,
+								</AdaptivityProvider>
+							</ConfigProvider>,
 							document.getElementById('root')
 						);
 					} else {
 						ReactDOM.render(
-							<App startPage={startPage} />,
+							<ConfigProvider>
+								<AdaptivityProvider>
+									<App startPage={startPage} />,
+								</AdaptivityProvider>
+							</ConfigProvider>,
 							document.getElementById('root')
 						);
 					}
 					break;
 				default:
 					ReactDOM.render(
-						<App startPage={startPage} />,
+						<ConfigProvider>
+							<AdaptivityProvider>
+								<App startPage={startPage} />,
+							</AdaptivityProvider>
+						</ConfigProvider>,
 						document.getElementById('root')
 					);
 					break;

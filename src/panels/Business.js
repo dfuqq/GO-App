@@ -12,12 +12,16 @@ import {
 	Separator,
 } from '@vkontakte/vkui';
 
-const Business = ({ id, changePanel }) => (
+const Business = ({ id, changePanel, setActiveView }) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
-					onClick={() => window.history.back()}></PanelHeaderBack>
+					onClick={(e) => {
+						setActiveView('home');
+						changePanel(e);
+					}}
+					data-to='home'></PanelHeaderBack>
 			}>
 			Заведения
 		</PanelHeader>
@@ -34,7 +38,10 @@ const Business = ({ id, changePanel }) => (
 			}}>
 			Наши Фавориты
 		</Header>
-		<Gallery slideWidth='92%' style={{ height: 200 }} align='center'>
+		<Gallery
+			slideWidth='92%'
+			style={{ height: 200 }}
+			align='center'>
 			<img
 				src='https://sun9-70.userapi.com/s4wSW493Dz22_UyKJdI9xliZSPP7eFlCEgEwUw/YwVTTUyOHjU.jpg'
 				style={{
@@ -76,7 +83,10 @@ const Business = ({ id, changePanel }) => (
 			/>
 		</Gallery>
 
-		<Separator wide style={{ paddingBottom: '10px', marginTop: '10px' }} />
+		<Separator
+			wide
+			style={{ paddingBottom: '10px', marginTop: '10px' }}
+		/>
 
 		<Group style={{ paddingBottom: '12px' }}>
 			<CardGrid>
@@ -124,7 +134,9 @@ const Business = ({ id, changePanel }) => (
 					}}
 					onClick={changePanel}
 					data-to='restaraunts'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Рестораны</h3>
+					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+						Рестораны
+					</h3>
 				</Card>
 				<Card
 					size='l'
@@ -140,7 +152,9 @@ const Business = ({ id, changePanel }) => (
 					}}
 					onClick={changePanel}
 					data-to='hookah'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Кальянные</h3>
+					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+						Кальянные
+					</h3>
 				</Card>
 			</CardGrid>
 		</Group>
