@@ -10,7 +10,7 @@ import {
 import { Disclaimer } from '../../components';
 import { barsData } from './bars-data';
 
-const Bars = ({ id, changePanel }) => (
+export const Bars = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -41,5 +41,3 @@ const Bars = ({ id, changePanel }) => (
 		<Disclaimer />
 	</Panel>
 );
-
-export default Bars;

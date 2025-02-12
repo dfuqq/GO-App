@@ -4,6 +4,41 @@ export const cafesData = [
 		image: 'https://sun9-19.userapi.com/QlrHYrnSYimVruI0aytyvpx7M5Uj2Vpj6Yls7w/AKiGv9x6vh8.jpg',
 		subtitle: 'Антикафе на Ленина 18',
 		name: 'New York Coffee',
+		galleryImage: [
+			{
+				src: 'https://sun9-3.userapi.com/QcpKjNghCUWGwwTL8T_311MQzRw25pzNTPB0BQ/KjFpfJ3m7bk.jpg',
+				alt: "Cafe's Logo",
+			},
+			{
+				src: 'https://sun9-31.userapi.com/wfyAe7NBPg_yJOiPhL5bifp6juyY0uRkTlg8fg/rNRxQkxQxcI.jpg',
+				alt: "Cafe's Interior",
+			},
+			{
+				src: 'https://sun9-49.userapi.com/AlHsmofxzdixzdNBAScYSdoGkbACOB58LWI3zw/lJtr7E4DP7s.jpg',
+				alt: "Cafe's Interior",
+			},
+			{
+				src: 'https://sun9-14.userapi.com/Rg27RFFWZcBLLo2SATTaecTM67TwvpjMJO1VtQ/IqdX4RrEYp8.jpg',
+				alt: "Cafe's Interior",
+			},
+			{
+				src: 'https://sun9-50.userapi.com/nEJgYGNMDRP-2jLRkzgLMbIZMSGtZLc4CZouIg/_8xx-W56j0g.jpg',
+				alt: "Cafe's Staff",
+			},
+			{
+				src: 'https://sun9-30.userapi.com/BnpZW69LDjZ1KGfTN0GkAEI8AqbRwBdxidjkaw/isv_G2DkwjA.jpg',
+				alt: "Cafe's Food",
+			},
+		],
+		descriptionHeader: 'Самое атмосферное место',
+		description:
+			'"New York Coffee" не оставит равнодушным никого. \n\n Небольшое, но очень уютное заведение, в котором Вы останетесь, как \n минимум, на вечер. Как максимум — на всю жизнь. \n \n Отличный кофе, бесплатные закуски, настольные игры и игровые приставки. \n Приятный дизайн и великолепная, не отвлекающая музыка. Приветливый \n персонал, а самое главное — цены! Всё это надолго запомнится Вам, в \n результате чего Вы будете возвращаться снова и снова. \n \n Личная рекомендация РСД. \n \n Всё самое важное — ниже.',
+		address: 'Ленина, 18',
+		hours: '08:00 - 00:00',
+		priceFrom: '90',
+		priceTo: '600',
+		phone: '78-60-30',
+		social: '@ny_coffee_surgut',
 	},
 	{
 		id: 'trvls',

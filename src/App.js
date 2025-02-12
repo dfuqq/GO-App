@@ -22,19 +22,8 @@ import {
 	Root,
 } from '@vkontakte/vkui';
 
-import {
-	Home,
-	About,
-	Projects,
-	Credits,
-	Attention,
-	Places,
-	Business,
-	Cafes,
-	Bars,
-	Restaraunts,
-	Hookah,
-} from './panels/Exports_Panels';
+import * as Panels from './panels';
+import { TestCafes } from './components';
 
 import {
 	Percicrd,
@@ -207,6 +196,7 @@ const App = ({ startPage }) => {
 	const [architectureFilter, setArchitectureFilter] = useState(false);
 	const [area, setArea] = useState(null);
 	const [history, setHistory] = useState(['home']);
+	const [activeCard, setActiveCard] = useState({});
 
 	const changePanelToPlaces = (e) => {
 		setParksFilter(false);
@@ -544,7 +534,7 @@ const App = ({ startPage }) => {
 								id='introtri'
 								endIntroWatch={endIntroWatch}
 							/>
-							<Home
+							<Panels.Home
 								id='home'
 								shareButtonAction={shareButtonAction}
 								fetchedUser={fetchedUser}
@@ -553,7 +543,7 @@ const App = ({ startPage }) => {
 								snackbarError={snackbar}
 								setActiveView={setActiveView}
 							/>
-							<Places
+							<Panels.Places
 								id='places'
 								changePanel={changePanel}
 								openFilters={openFilters}
@@ -938,10 +928,7 @@ const App = ({ startPage }) => {
 								id='zerno'
 								geo={geo}
 							/>
-							<Bars
-								id='bars'
-								changePanel={changePanel}
-							/>
+
 							<Audit
 								id='audit'
 								geo={geo}
@@ -1088,24 +1075,30 @@ const App = ({ startPage }) => {
 						<View
 							id='business'
 							activePanel={activePanel}>
-							<Business
+							<Panels.Business
 								id='business'
 								changePanel={changePanel}
 								setActiveView={setActiveView}
 							/>
-							<Cafes
+							<Panels.Cafes
 								id='cafes'
 								changePanel={changePanel}
+								setActiveCard={setActiveCard}
 							/>
-							<Restaraunts
+							<TestCafes
+								id='testcaf'
+								geo={geo}
+								item={activeCard}
+							/>
+							<Panels.Restaraunts
 								id='restaraunts'
 								changePanel={changePanel}
 							/>
-							<Hookah
+							<Panels.Hookah
 								id='hookah'
 								changePanel={changePanel}
 							/>
-							<Bars
+							<Panels.Bars
 								id='bars'
 								changePanel={changePanel}
 							/>
@@ -1113,14 +1106,14 @@ const App = ({ startPage }) => {
 						<View
 							id='about'
 							activePanel={activePanel}>
-							<About
+							<Panels.About
 								id='about'
 								changePanel={changePanel}
 								setActiveView={setActiveView}
 							/>
-							<Credits id='credits' />
-							<Attention id='attention' />
-							<Projects id='projects' />
+							<Panels.Credits id='credits' />
+							<Panels.Attention id='attention' />
+							<Panels.Projects id='projects' />
 						</View>
 					</Root>
 				</SplitCol>

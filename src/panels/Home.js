@@ -18,7 +18,7 @@ import Icon24AddSquareOutline from '@vkontakte/icons/dist/24/add_square_outline'
 
 const osName = platform();
 
-const Home = ({
+export const Home = ({
 	id,
 	changePanel,
 	changePanelToPlaces,
@@ -165,5 +165,3 @@ const Home = ({
 		</Panel>
 	);
 };
-
-export default Home;

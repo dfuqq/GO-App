@@ -10,7 +10,7 @@ import {
 	SimpleCell,
 } from '@vkontakte/vkui';
 
-const Credits = ({ id }) => (
+export const Credits = ({ id }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -517,5 +517,3 @@ const Credits = ({ id }) => (
 		</Group>
 	</Panel>
 );
-
-export default Credits;

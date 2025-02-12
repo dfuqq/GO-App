@@ -10,7 +10,7 @@ import {
 import { restarauntsData } from './restaraunts-data';
 import { Disclaimer } from '../../components';
 
-const Restaraunts = ({ id, changePanel }) => (
+export const Restaraunts = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -41,5 +41,3 @@ const Restaraunts = ({ id, changePanel }) => (
 		<Disclaimer />
 	</Panel>
 );
-
-export default Restaraunts;

@@ -18,7 +18,7 @@ import {
 
 import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
 
-const Places = ({
+export const Places = ({
 	id,
 	changePanel,
 	area,
@@ -42,7 +42,10 @@ const Places = ({
 			{area === 'cntr' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={openFilters}>
+						<Button
+							size='xl'
+							mode='primary'
+							onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -720,7 +723,10 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={openAreaFilters}>
+										<Button
+											size='xl'
+											mode='primary'
+											onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -733,7 +739,10 @@ const Places = ({
 			{area === 'west' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={openFilters}>
+						<Button
+							size='xl'
+							mode='primary'
+							onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -963,7 +972,10 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={openAreaFilters}>
+										<Button
+											size='xl'
+											mode='primary'
+											onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -1024,7 +1036,10 @@ const Places = ({
 						</Cell>
 						<FixedLayout vertical='bottom'>
 							<Div>
-								<Button size='xl' mode='primary' onClick={openAreaFilters}>
+								<Button
+									size='xl'
+									mode='primary'
+									onClick={openAreaFilters}>
 									Выбрать район
 								</Button>
 							</Div>
@@ -1035,7 +1050,10 @@ const Places = ({
 			{area === 'nl' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={openFilters}>
+						<Button
+							size='xl'
+							mode='primary'
+							onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -1265,7 +1283,10 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={openAreaFilters}>
+										<Button
+											size='xl'
+											mode='primary'
+											onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -1278,7 +1299,10 @@ const Places = ({
 			{area === 'all' && (
 				<Fragment>
 					<Div>
-						<Button size='xl' mode='primary' onClick={openFilters}>
+						<Button
+							size='xl'
+							mode='primary'
+							onClick={openFilters}>
 							Фильтры
 						</Button>
 					</Div>
@@ -2390,7 +2414,10 @@ const Places = ({
 							<Div>
 								<FixedLayout vertical='bottom'>
 									<Div>
-										<Button size='xl' mode='primary' onClick={openAreaFilters}>
+										<Button
+											size='xl'
+											mode='primary'
+											onClick={openAreaFilters}>
 											Выбрать район
 										</Button>
 									</Div>
@@ -2414,7 +2441,10 @@ const Places = ({
 						}}>
 						Наши Фавориты
 					</Header>
-					<Gallery slideWidth='92%' style={{ height: 200 }} align='center'>
+					<Gallery
+						slideWidth='92%'
+						style={{ height: 200 }}
+						align='center'>
 						<img
 							src='https://sun9-55.userapi.com/yTKHn4Y6ptM-Jz-Y9A0HD-C8gZFMHaZuwS-K7g/KdONUzkzZM4.jpg'
 							style={{
@@ -2492,11 +2522,15 @@ const Places = ({
 							icon={<Icon56InfoOutline />}
 							header='Выберите район'
 							action={
-								<Button size='xl' mode='primary' onClick={openAreaFilters}>
+								<Button
+									size='xl'
+									mode='primary'
+									onClick={openAreaFilters}>
 									Выбрать
 								</Button>
 							}>
-							Чтобы показать Вам места, Вы должны выбрать желаемый район
+							Чтобы показать Вам места, Вы должны выбрать желаемый
+							район
 						</Placeholder>
 					</Group>
 				</Fragment>
@@ -2504,5 +2538,3 @@ const Places = ({
 		</Panel>
 	);
 };
-
-export default Places;

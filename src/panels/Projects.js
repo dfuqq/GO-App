@@ -10,7 +10,7 @@ import {
 	Button,
 } from '@vkontakte/vkui';
 
-const Projects = ({ id }) => (
+export const Projects = ({ id }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -43,7 +43,11 @@ const Projects = ({ id }) => (
 				романтика сургутских дворов
 			</h3>
 			<h4
-				style={{ paddingLeft: '20px', paddingRight: '20px', fontWeight: 400 }}>
+				style={{
+					paddingLeft: '20px',
+					paddingRight: '20px',
+					fontWeight: 400,
+				}}>
 				Наш главный проект,
 				<br />
 				показывающий красоту Сургута через фотографии его жителей.
@@ -82,7 +86,11 @@ const Projects = ({ id }) => (
 				романтика екатеринбургских дворов
 			</h3>
 			<h4
-				style={{ paddingLeft: '20px', paddingRight: '20px', fontWeight: 400 }}>
+				style={{
+					paddingLeft: '20px',
+					paddingRight: '20px',
+					fontWeight: 400,
+				}}>
 				Наш второй проект,
 				<br />
 				который раскрывает Екатеринбург с новой стороны.
@@ -115,7 +123,11 @@ const Projects = ({ id }) => (
 			</Div>
 			<h2>Instagram</h2>
 			<h4
-				style={{ paddingLeft: '20px', paddingRight: '20px', fontWeight: 400 }}>
+				style={{
+					paddingLeft: '20px',
+					paddingRight: '20px',
+					fontWeight: 400,
+				}}>
 				Мини-блог паблика,
 				<br />в котором мы иногда рассказываем о грядущих обновлениях.
 			</h4>
@@ -131,5 +143,3 @@ const Projects = ({ id }) => (
 		</Group>
 	</Panel>
 );
-
-export default Projects;

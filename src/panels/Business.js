@@ -12,7 +12,7 @@ import {
 	Separator,
 } from '@vkontakte/vkui';
 
-const Business = ({ id, changePanel, setActiveView }) => (
+export const Business = ({ id, changePanel, setActiveView }) => (
 	<Panel id={id}>
 		<PanelHeader
 			before={
@@ -160,5 +160,3 @@ const Business = ({ id, changePanel, setActiveView }) => (
 		</Group>
 	</Panel>
 );
-
-export default Business;

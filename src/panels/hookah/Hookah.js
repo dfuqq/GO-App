@@ -10,7 +10,7 @@ import {
 import { Disclaimer } from '../../components';
 import { hookahData } from './hookah-data';
 
-const Hookah = ({ id, changePanel }) => (
+export const Hookah = ({ id, changePanel }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -41,5 +41,3 @@ const Hookah = ({ id, changePanel }) => (
 		<Disclaimer />
 	</Panel>
 );
-
-export default Hookah;

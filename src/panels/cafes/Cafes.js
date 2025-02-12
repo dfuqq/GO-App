@@ -11,7 +11,7 @@ import {
 import { Disclaimer } from '../../components';
 import { cafesData } from './cafes-data';
 
-const Cafes = ({ id, changePanel }) => (
+export const Cafes = ({ id, changePanel, setActiveCard }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -30,8 +30,11 @@ const Cafes = ({ id, changePanel }) => (
 						size={56}
 					/>
 				}
-				onClick={changePanel}
-				data-to={cafe.id}
+				onClick={(e) => {
+					changePanel(e);
+					setActiveCard(cafe);
+				}}
+				data-to='testcaf'
 				subtitle={cafe.subtitle}
 				key={cafe.id}>
 				{cafe.name}
@@ -41,5 +44,3 @@ const Cafes = ({ id, changePanel }) => (
 		<Disclaimer />
 	</Panel>
 );
-
-export default Cafes;

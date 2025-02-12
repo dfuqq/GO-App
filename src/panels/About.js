@@ -13,7 +13,7 @@ import {
 	Card,
 } from '@vkontakte/vkui';
 
-const About = ({ id, changePanel, setActiveView }) => (
+export const About = ({ id, changePanel, setActiveView }) => (
 	<Panel id={id}>
 		<PanelHeader
 			left={
@@ -120,5 +120,3 @@ const About = ({ id, changePanel, setActiveView }) => (
 		</Group>
 	</Panel>
 );
-
-export default About;
