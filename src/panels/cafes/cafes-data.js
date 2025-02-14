@@ -1,7 +1,7 @@
 export const cafesData = [
 	{
-		id: 'nyc',
-		image: 'https://sun9-19.userapi.com/QlrHYrnSYimVruI0aytyvpx7M5Uj2Vpj6Yls7w/AKiGv9x6vh8.jpg',
+		slug: 'nyc',
+		logo: 'https://sun9-19.userapi.com/QlrHYrnSYimVruI0aytyvpx7M5Uj2Vpj6Yls7w/AKiGv9x6vh8.jpg',
 		subtitle: 'Антикафе на Ленина 18',
 		name: 'New York Coffee',
 		galleryImage: [
