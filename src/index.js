@@ -1,11 +1,11 @@
 import 'core-js/features/map';
 import 'core-js/features/set';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import bridge from '@vkontakte/vk-bridge';
 import App from './App';
 
 import { ConfigProvider, AdaptivityProvider } from '@vkontakte/vkui';
+import { createRoot } from 'react-dom/client';
 
 // Самойлова Илона Михайловна лучшая девушка на свете.
 // vk.com/tolkonespeww
@@ -30,7 +30,7 @@ async function getStartScreen() {
 				case STORAGE_KEYS.STATUS:
 					if (data[key].hasSeenIntro) {
 						startPage = 'home';
-						ReactDOM.render(
+						createRoot(
 							<ConfigProvider>
 								<AdaptivityProvider>
 									<App startPage={startPage} />,
@@ -39,7 +39,7 @@ async function getStartScreen() {
 							document.getElementById('root')
 						);
 					} else {
-						ReactDOM.render(
+						createRoot(
 							<ConfigProvider>
 								<AdaptivityProvider>
 									<App startPage={startPage} />,
@@ -50,7 +50,7 @@ async function getStartScreen() {
 					}
 					break;
 				default:
-					ReactDOM.render(
+					createRoot(
 						<ConfigProvider>
 							<AdaptivityProvider>
 								<App startPage={startPage} />,
@@ -64,6 +64,7 @@ async function getStartScreen() {
 			console.log(error);
 		}
 	});
+	console.log(true);
 }
 
 getStartScreen();
