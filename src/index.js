@@ -12,9 +12,6 @@ import { ConfigProvider, AdaptivityProvider } from '@vkontakte/vkui';
 // instagram.com/tolkonespew
 // <3
 
-// Для запуска в клиент:
-// npx vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=localhost --port=3000
-
 // TODO прокинуть mode и setMode на area и setArea
 
 let startPage = 'home';

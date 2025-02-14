@@ -18,6 +18,4 @@ package-lock.json
 .idea
 bundle.zip
 vk-hosting-config.json
-Test.js
-Testdva.js
-Testtri.js
+.env
