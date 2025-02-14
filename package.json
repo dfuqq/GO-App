@@ -26,10 +26,14 @@
 	"author": "Danila Ermakov",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/react": "^17.0.18",
+		"@types/react": "^17.0.83",
+		"@types/react-dom": "^19.0.3",
 		"cross-env": "^5.2.0",
+		"react": "^19.0.0",
 		"react-hot-loader": "^4.9.0",
 		"react-scripts": "5.0.1",
+		"source-map-loader": "^5.0.0",
+		"ts-loader": "^9.5.2",
 		"typescript": "^5.7.3"
 	},
 	"dependencies": {
@@ -49,7 +53,6 @@
 		"ngrok": "^3.3.0",
 		"prisma": "^6.3.1",
 		"prop-types": "^15.7.2",
-		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
 		"react-yandex-maps": "^4.6.0",
 		"ts-node": "^10.9.2"
