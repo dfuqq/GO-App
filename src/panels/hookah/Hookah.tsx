@@ -7,34 +7,39 @@ import {
 	Cell,
 	Avatar,
 } from '@vkontakte/vkui';
-import { restarauntsData } from './restaraunts-data';
 import { Disclaimer } from '../../components';
+import { HookahItem, hookahData } from './hookah-data';
 
-export const Restaraunts = ({ id, changePanel }) => (
+interface Props {
+	id: string;
+	changePanel: (e: React.MouseEvent) => void;
+}
+
+export const Hookah = ({ id, changePanel }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}
-			separator={false}>
-			Рестораны
+			delimiter='auto'>
+			Кальянные
 		</PanelHeader>
 
-		{restarauntsData.map((restaraunt) => (
+		{hookahData.map((hookah: HookahItem) => (
 			<Cell
-				expandable
+				chevron='always'
 				before={
 					<Avatar
-						src={restaraunt.image}
+						src={hookah.image}
 						size={56}
 					/>
 				}
 				onClick={changePanel}
-				data-to={restaraunt.id}
-				subtitle={restaraunt.subtitle}
-				key={restaraunt.id}>
-				{restaraunt.name}
+				data-to={hookah.id}
+				subtitle={hookah.subtitle}
+				key={hookah.id}>
+				{hookah.name}
 			</Cell>
 		))}
 

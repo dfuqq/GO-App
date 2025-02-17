@@ -10,12 +10,16 @@ import {
 	Button,
 } from '@vkontakte/vkui';
 
-import Icon56ErrorOutline from '@vkontakte/icons/dist/56/error_outline';
+import { Icon56ErrorOutline } from '@vkontakte/icons';
 
-export const Attention = ({ id }) => (
+interface Props {
+	id: string;
+}
+
+export const Attention = ({ id }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}>
@@ -92,10 +96,10 @@ export const Attention = ({ id }) => (
 			<Placeholder
 				style={{ paddingBottom: '10px', marginTop: 0 }}
 				icon={<Icon56ErrorOutline />}
-				header='Внимание'
+				title='Внимание'
 				action={
 					<Button
-						size='xl'
+						size='l'
 						mode='primary'
 						href='https://vk.me/romsurdvorov'
 						target='_blank'>

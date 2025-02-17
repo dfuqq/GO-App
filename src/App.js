@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import bridge from '@vkontakte/vk-bridge';
+// import bridge from '@vkontakte/vk-bridge';
 
 import '@vkontakte/vkui/dist/vkui.css';
 
@@ -208,16 +210,16 @@ const App = ({ startPage }) => {
 		changePanel(e);
 	};
 
-	const shareButtonAction = async function () {
-		// bridge.send на кнопке "Поделиться"
-		try {
-			await bridge.send('VKWebAppShare', {
-				link: 'https://vk.com/app7614127',
-			});
-		} catch (error) {
-			console.log('Отмена шера');
-		}
-	};
+	// const shareButtonAction = async function () {
+	// 	// bridge.send на кнопке "Поделиться"
+	// 	try {
+	// 		await bridge.send('VKWebAppShare', {
+	// 			link: 'https://vk.com/app7614127',
+	// 		});
+	// 	} catch (error) {
+	// 		console.log('Отмена шера');
+	// 	}
+	// };
 
 	const changePanel = (e) => {
 		// Управление приложением, смена панелей
@@ -286,79 +288,79 @@ const App = ({ startPage }) => {
 	const [tempCords, setTempCords] = useState([]); // ! Временный массив для получения координат
 	const [geo, setGeo] = useState([]); // ! Основной массив с координатами
 
-	const getCoordinates = async function () {
-		try {
-			setTempCords([]);
-			const getCords = await bridge.send('VKWebAppGetGeodata');
-			if (getCords.available === 1) {
-				// Если координаты доступны
-				tempCords.push(getCords.long);
-				tempCords.push(getCords.lat);
-			} else {
-				// Если координаты разрешены но недоступны
-				showSnackbar('Не получили координаты... :(');
-				setTempCords(null);
-			}
-		} catch (error) {
-			// Если доступ к координатам запрещён
-			console.log('GEO_DENIED');
-			showSnackbar('Не получили координаты... :(');
-			setTempCords(null);
-		}
-		// requestAnimationFrame(Testdva);
-		setGeo(tempCords);
-	};
+	// const getCoordinates = async function () {
+	// 	try {
+	// 		setTempCords([]);
+	// 		const getCords = await bridge.send('VKWebAppGetGeodata');
+	// 		if (getCords.available === 1) {
+	// 			// Если координаты доступны
+	// 			tempCords.push(getCords.long);
+	// 			tempCords.push(getCords.lat);
+	// 		} else {
+	// 			// Если координаты разрешены но недоступны
+	// 			showSnackbar('Не получили координаты... :(');
+	// 			setTempCords(null);
+	// 		}
+	// 	} catch (error) {
+	// 		// Если доступ к координатам запрещён
+	// 		console.log('GEO_DENIED');
+	// 		showSnackbar('Не получили координаты... :(');
+	// 		setTempCords(null);
+	// 	}
+	// 	// requestAnimationFrame(Testdva);
+	// 	setGeo(tempCords);
+	// };
 
 	const nextIntroPage = (e) => setActivePanel(e.currentTarget.dataset.to);
 
-	useEffect(() => {
-		// Парсим данные пользователя
-		async function fetchData() {
-			const userData = await bridge.send('VKWebAppGetUserInfo');
-			// 	} catch (error) {
-			// 		setSnackbar(
-			// 			<Snackbar
-			// 				layout='vertical'
-			// 				onClose={() => setSnackbar(null)}
-			// 				before={
-			// 					<Avatar
-			// 						size={24}
-			// 						style={{
-			// 							backgroundColor: 'var(--dynamic-red)',
-			// 						}}>
-			// 						<Icon24Error fill='#fff' width={14} height={14} />
-			// 					</Avatar>
-			// 				}
-			// 				duration={1000}>
-			// 				Упс, какая-то ошибка... :(
-			// 			</Snackbar>
-			// 		);
-			// 	}
-			// });
-			setUser(userData);
-			setPopout(null);
-		}
-		fetchData();
-		getCoordinates();
+	// useEffect(() => {
+	// 	// Парсим данные пользователя
+	// 	async function fetchData() {
+	// 		const userData = await bridge.send('VKWebAppGetUserInfo');
+	// 		// 	} catch (error) {
+	// 		// 		setSnackbar(
+	// 		// 			<Snackbar
+	// 		// 				layout='vertical'
+	// 		// 				onClose={() => setSnackbar(null)}
+	// 		// 				before={
+	// 		// 					<Avatar
+	// 		// 						size={24}
+	// 		// 						style={{
+	// 		// 							backgroundColor: 'var(--dynamic-red)',
+	// 		// 						}}>
+	// 		// 						<Icon24Error fill='#fff' width={14} height={14} />
+	// 		// 					</Avatar>
+	// 		// 				}
+	// 		// 				duration={1000}>
+	// 		// 				Упс, какая-то ошибка... :(
+	// 		// 			</Snackbar>
+	// 		// 		);
+	// 		// 	}
+	// 		// });
+	// 		setUser(userData);
+	// 		setPopout(null);
+	// 	}
+	// 	fetchData();
+	// 	getCoordinates();
 
-		console.log('Хуле забыл?');
+	// 	console.log('Хуле забыл?');
 
-		window.addEventListener('popstate', () => changePanelWithSwipe()); // Поведение системных кнопок Android при возврате
-	}, []);
+	// 	window.addEventListener('popstate', () => changePanelWithSwipe()); // Поведение системных кнопок Android при возврате
+	// }, []);
 
-	const endIntroWatch = async function () {
-		try {
-			await bridge.send('VKWebAppStorageSet', {
-				key: STORAGE_KEYS.STATUS,
-				value: JSON.stringify({
-					hasSeenIntro: true,
-				}),
-			});
-			setActivePanel('home');
-		} catch (error) {
-			showSnackbar('Упс, какая-то ошибка отправки данных... :(');
-		}
-	};
+	// const endIntroWatch = async function () {
+	// 	try {
+	// 		await bridge.send('VKWebAppStorageSet', {
+	// 			key: STORAGE_KEYS.STATUS,
+	// 			value: JSON.stringify({
+	// 				hasSeenIntro: true,
+	// 			}),
+	// 		});
+	// 		setActivePanel('home');
+	// 	} catch (error) {
+	// 		showSnackbar('Упс, какая-то ошибка отправки данных... :(');
+	// 	}
+	// };
 
 	//! Перекинуть модалку в отдельный компонент
 	const modal = (
@@ -399,36 +401,36 @@ const App = ({ startPage }) => {
 				<Cell
 					onClick={() => setMuseumsFilter(!museumsFilter)}
 					asideContent={
-						museumsFilter ? (
+						museumsFilter ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Музеи
 				</Cell>
 				<Cell
 					onClick={() => setMonumentsFilter(!monumentsFilter)}
 					asideContent={
-						monumentsFilter ? (
+						monumentsFilter ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Памятники
 				</Cell>
 				<Cell
 					onClick={() => setEntertaimentFilter(!entertaimentFilter)}
 					asideContent={
-						entertaimentFilter ? (
+						entertaimentFilter ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Спорт и Развлечения
 				</Cell>
 				<Cell
 					onClick={() => setArchitectureFilter(!architectureFilter)}
 					asideContent={
-						architectureFilter ? (
+						architectureFilter ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Архитектура
 				</Cell>
@@ -456,9 +458,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='cntr'
 					asideContent={
-						area === 'cntr' ? (
+						area === 'cntr' ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Центральный район
 				</Cell>
@@ -466,9 +468,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='west'
 					asideContent={
-						area === 'west' ? (
+						area === 'west' ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Восточный район
 				</Cell>
@@ -476,9 +478,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='nwl'
 					asideContent={
-						area === 'nwl' ? (
+						area === 'nwl' ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Северо-Восточный Жилой район
 				</Cell>
@@ -486,9 +488,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='nl'
 					asideContent={
-						area === 'nl' ? (
+						area === 'nl' ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Северный Жилой район
 				</Cell>
@@ -496,9 +498,9 @@ const App = ({ startPage }) => {
 					onClick={selectAreaInModal}
 					data-area='all'
 					asideContent={
-						area === 'all' ? (
+						area === 'all' ?
 							<Icon24Done fill='var(--accent)' />
-						) : null
+						:	null
 					}>
 					Все районы
 				</Cell>
@@ -521,22 +523,22 @@ const App = ({ startPage }) => {
 							onSwipeBack={swipe}>
 							<Intro
 								id='introodin'
-								fetchedUser={fetchedUser}
+								// fetchedUser={fetchedUser}
 								nextIntroPage={nextIntroPage}
 								snackbarError={snackbar}
 							/>
 							<Introdva
 								id='introdva'
 								nextIntroPage={nextIntroPage}
-								getCoordinates={getCoordinates}
+								// getCoordinates={getCoordinates}
 							/>
 							<Introtri
 								id='introtri'
-								endIntroWatch={endIntroWatch}
+								// endIntroWatch={endIntroWatch}
 							/>
 							<Panels.Home
 								id='home'
-								shareButtonAction={shareButtonAction}
+								// shareButtonAction={shareButtonAction}
 								fetchedUser={fetchedUser}
 								changePanel={changePanel}
 								changePanelToPlaces={changePanelToPlaces}

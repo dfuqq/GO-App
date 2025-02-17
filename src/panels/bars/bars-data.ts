@@ -1,4 +1,11 @@
-export const barsData = [
+export interface Bar {
+	id: string;
+	image: string;
+	subtitle: string;
+	name: string;
+}
+
+export const barsData: Bar[] = [
 	{
 		id: 'audit',
 		image: 'https://sun9-51.userapi.com/-Kmb_WZCU1Kk1jHSBwTyM29ctNZ0e3rhnl_JGw/akw2pX06FJw.jpg',

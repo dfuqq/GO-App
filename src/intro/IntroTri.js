@@ -4,8 +4,13 @@ import { Panel, Button, FixedLayout, Group, Div } from '@vkontakte/vkui';
 
 import Stars from './stars.png';
 
-const IntroTri = ({ id, endIntroWatch }) => (
-	<Panel id={id} centered={true}>
+const IntroTri = ({
+	id,
+	// endIntroWatch
+}) => (
+	<Panel
+		id={id}
+		centered={true}>
 		<div
 			style={{
 				height: '100vh',
@@ -26,7 +31,11 @@ const IntroTri = ({ id, endIntroWatch }) => (
 				</Div>
 				<FixedLayout vertical='bottom'>
 					<Div>
-						<Button size='xl' mode='commerce' onClick={endIntroWatch}>
+						<Button
+							size='xl'
+							mode='commerce'
+							// onClick={endIntroWatch}
+						>
 							Поехали!
 						</Button>
 					</Div>

@@ -12,22 +12,30 @@ import {
 	Separator,
 } from '@vkontakte/vkui';
 
-export const Business = ({ id, changePanel, setActiveView }) => (
-	<Panel id={id}>
+interface Props {
+	nav: string;
+	changePanel: (panel: string, view?: string) => void;
+	// setActiveView: (arg0: string) => void;
+}
+
+export const Business = ({
+	nav,
+	changePanel,
+	// setActiveView
+}: Props) => (
+	<Panel nav={nav}>
 		<PanelHeader
 			before={
 				<PanelHeaderBack
+					label=''
 					onClick={(e) => {
-						setActiveView('home');
-						changePanel(e);
-					}}
-					data-to='home'></PanelHeaderBack>
+						changePanel('home', 'home');
+					}}></PanelHeaderBack>
 			}>
 			Заведения
 		</PanelHeader>
 
 		<Header
-			mode='secondary'
 			style={{
 				userSelect: 'none',
 				msUserSelect: 'none',
@@ -52,7 +60,7 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 					backgroundColor: '#000',
 				}}
 				alt='nyccrd'
-				onClick={changePanel}
+				// onClick={changePanel}
 				data-to='nyccrd'
 			/>
 			<img
@@ -65,7 +73,7 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 					backgroundColor: '#000',
 				}}
 				alt='percicrd'
-				onClick={changePanel}
+				// onClick={changePanel}
 				data-to='percicrd'
 			/>
 			<img
@@ -78,20 +86,19 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 					backgroundColor: '#000',
 				}}
 				alt='auditcrd'
-				onClick={changePanel}
+				// onClick={changePanel}
 				data-to='auditcrd'
 			/>
 		</Gallery>
 
 		<Separator
-			wide
+			size='4xl'
 			style={{ paddingBottom: '10px', marginTop: '10px' }}
 		/>
 
 		<Group style={{ paddingBottom: '12px' }}>
-			<CardGrid>
+			<CardGrid size='s'>
 				<Card
-					size='l'
 					style={{
 						height: 82,
 						backgroundColor: '#000',
@@ -101,12 +108,11 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={changePanel}
+					// onClick={changePanel}
 					data-to='cafes'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Кафе</h3>
 				</Card>
 				<Card
-					size='l'
 					style={{
 						height: 82,
 						backgroundColor: '#000',
@@ -116,12 +122,11 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={changePanel}
+					// onClick={changePanel}
 					data-to='bars'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Бары</h3>
 				</Card>
 				<Card
-					size='l'
 					style={{
 						height: 82,
 						color: '#fff',
@@ -132,14 +137,13 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={changePanel}
+					// onClick={changePanel}
 					data-to='restaraunts'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 						Рестораны
 					</h3>
 				</Card>
 				<Card
-					size='l'
 					style={{
 						height: 82,
 						color: '#fff',
@@ -150,7 +154,7 @@ export const Business = ({ id, changePanel, setActiveView }) => (
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 					}}
-					onClick={changePanel}
+					// onClick={changePanel}
 					data-to='hookah'>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 						Кальянные

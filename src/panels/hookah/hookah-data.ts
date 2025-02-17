@@ -1,4 +1,11 @@
-export const hookahData = [
+export interface HookahItem {
+	id: string;
+	image: string;
+	subtitle: string;
+	name: string;
+}
+
+export const hookahData: HookahItem[] = [
 	{
 		id: 'aloft',
 		image: 'https://sun9-24.userapi.com/DipVCamBoW3mMKHq4aOw-JRz1o7EXRIMxxEqaw/i3gJTDcW6Ts.jpg',

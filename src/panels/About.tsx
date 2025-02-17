@@ -13,10 +13,16 @@ import {
 	Card,
 } from '@vkontakte/vkui';
 
-export const About = ({ id, changePanel, setActiveView }) => (
+interface Props {
+	id: string;
+	changePanel: (e: React.MouseEvent) => void;
+	setActiveView: (arg0: string) => void;
+}
+
+export const About = ({ id, changePanel, setActiveView }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={(e) => {
 						setActiveView('home');
@@ -33,7 +39,6 @@ export const About = ({ id, changePanel, setActiveView }) => (
 			separator='hide'>
 			<Div style={{ display: 'flex', justifyContent: 'center' }}>
 				<Avatar
-					mode='default'
 					size={104}
 					src='https://sun9-26.userapi.com/-1dDyuNbVzSzS-E0cdh4rZKEHUjU7MVmA8j6aw/MtOsN166n84.jpg'
 				/>
@@ -43,12 +48,11 @@ export const About = ({ id, changePanel, setActiveView }) => (
 			</h2>
 		</Group>
 
-		<Separator wide />
+		<Separator size='4xl' />
 
 		<Group separator='hide'>
-			<CardGrid>
+			<CardGrid size='s'>
 				<Card
-					size='s'
 					style={{
 						height: 82,
 						backgroundColor: '#000',
@@ -64,7 +68,6 @@ export const About = ({ id, changePanel, setActiveView }) => (
 					/>
 				</Card>
 				<Card
-					size='s'
 					style={{
 						height: 82,
 						backgroundColor: '#000',
@@ -80,7 +83,6 @@ export const About = ({ id, changePanel, setActiveView }) => (
 					/>
 				</Card>
 				<Card
-					size='s'
 					style={{
 						height: 82,
 						backgroundColor: '#000',
@@ -101,8 +103,8 @@ export const About = ({ id, changePanel, setActiveView }) => (
 		<Group>
 			<Div style={{ paddingBottom: 0 }}>
 				<Button
-					mode='commerce'
-					size='xl'
+					mode='primary'
+					size='l'
 					href='https://vk.cc/atIYtr'
 					target='_blank'>
 					Поддержать
@@ -111,7 +113,7 @@ export const About = ({ id, changePanel, setActiveView }) => (
 			<Div>
 				<Button
 					mode='primary'
-					size='xl'
+					size='l'
 					href='https://vk.me/romsurdvorov'
 					target='_blank'>
 					Связаться

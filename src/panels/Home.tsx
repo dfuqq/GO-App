@@ -1,6 +1,5 @@
-import React, { Fragment, useEffect } from 'react';
-import { platform, ANDROID } from '@vkontakte/vkui';
-import bridge from '@vkontakte/vk-bridge';
+import React, { Fragment } from 'react';
+import { PlatformProvider } from '@vkontakte/vkui';
 
 import {
 	Panel,
@@ -12,54 +11,63 @@ import {
 	Cell,
 } from '@vkontakte/vkui';
 
-import Icon24Info from '@vkontakte/icons/dist/24/info';
-import Icon24ShareOutline from '@vkontakte/icons/dist/24/share_outline';
-import Icon24AddSquareOutline from '@vkontakte/icons/dist/24/add_square_outline';
+import {
+	Icon24Info,
+	Icon24ShareOutline,
+	Icon24AddSquareOutline,
+} from '@vkontakte/icons';
 
-const osName = platform();
+interface Props {
+	nav: string;
+	changePanel: (panel: string, view?: string) => void;
+	// changePanelToPlaces: (e: React.MouseEvent) => void;
+	// shareButtonAction: () => void;
+	// setActiveView: (arg0: string) => void;
+}
 
 export const Home = ({
-	id,
+	nav,
 	changePanel,
-	changePanelToPlaces,
-	shareButtonAction,
-	setActiveView,
-}) => {
-	useEffect(() => {
-		const joinGroup = async function () {
-			await bridge.send('VKWebAppJoinGroup', {
-				group_id: 107414531,
-			});
-		};
+	// changePanelToPlaces,
+	// shareButtonAction,
+	// setActiveView,
+}: Props) => {
+	// useEffect(() => {
+	// 	const joinGroup = async function () {
+	// 		await bridge.send('VKWebAppJoinGroup', {
+	// 			group_id: 107414531,
+	// 		});
+	// 	};
 
-		joinGroup(); //Выполнение bridge.send на подписку при инициализации App
-	}, []);
+	// 	joinGroup(); //Выполнение bridge.send на подписку при инициализации App
+	// }, []);
 
-	const add = async function () {
-		await bridge.send('VKWebAppAddToHomeScreen'); // bridge.send при добавлении на главный экран устройства (Android)
-	};
+	// const add = async function () {
+	// 	await bridge.send('VKWebAppAddToHomeScreen'); // bridge.send при добавлении на главный экран устройства (Android)
+	// };
 
 	return (
-		<Panel id={id}>
+		<Panel nav={nav}>
 			<PanelHeader>GO!</PanelHeader>
 
-			<Group>
+			<Group style={{ margin: 20 }}>
 				<Banner
 					mode='image'
 					size='m'
-					header='Места'
-					subheader={
+					title='Места'
+					subtitle={
 						<span>
 							Лучшие места города
 							<br />
 							уже тут!
 						</span>
 					}
+					style={{ marginBottom: 12 }}
 					actions={
 						<Button
-							mode='overlay_primary'
+							mode='primary'
 							size='l'
-							onClick={changePanelToPlaces}
+							// onClick={changePanelToPlaces}
 							data-to='places'>
 							Посмотреть
 						</Button>
@@ -81,8 +89,8 @@ export const Home = ({
 				<Banner
 					mode='image'
 					size='m'
-					header='Заведения'
-					subheader={
+					title='Заведения'
+					subtitle={
 						<span>
 							Известные заведения
 							<br />
@@ -91,11 +99,11 @@ export const Home = ({
 					}
 					actions={
 						<Button
-							mode='overlay_primary'
+							mode='primary'
 							size='l'
 							onClick={(e) => {
-								setActiveView('business');
-								changePanel(e);
+								// setActiveView('business');
+								changePanel('business', 'business');
 							}}
 							data-to='business'>
 							Узнать
@@ -135,30 +143,32 @@ export const Home = ({
 			/> */}
 			</Group>
 
-			<Group>
+			<Group style={{ margin: 20 }}>
 				<Cell
 					before={<Icon24Info />}
 					onClick={(e) => {
-						setActiveView('about');
-						changePanel(e);
+						// setActiveView('about');
+						// changePanel(e);
 					}}
 					data-to='about'>
 					О приложении
 				</Cell>
 				<Cell
 					before={<Icon24ShareOutline />}
-					onClick={shareButtonAction}>
+					// onClick={shareButtonAction}
+				>
 					Поделиться
 				</Cell>
-				{osName === ANDROID && (
+				<PlatformProvider value='android'>
 					<Fragment>
 						<Cell
 							before={<Icon24AddSquareOutline />}
-							onClick={add}>
+							// onClick={add}
+						>
 							Добавить на экран устройства
 						</Cell>
 					</Fragment>
-				)}
+				</PlatformProvider>
 			</Group>
 
 			<Footer>© РСД, 2020</Footer>

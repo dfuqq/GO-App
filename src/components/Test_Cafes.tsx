@@ -10,24 +10,30 @@ import {
 	Header,
 } from '@vkontakte/vkui';
 import { TestCafesInfoBlock } from './Test_Cafes-infoblock';
-import { TestCafesMap } from './Test_Cafes-map';
 import { TestCafesGalleryImage } from './Test_Cafes-galleryImage';
+import { TestCafesMap } from './Test_Cafes-map';
 
-export const TestCafes = ({ id, geo, item }) => (
+interface Props {
+	id: string;
+	geo: [number, number];
+	item: any;
+}
+
+export const TestCafes = ({ id, geo, item }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}
-			separator={false}>
+			delimiter='auto'>
 			{item.name}
 		</PanelHeader>
 
 		<TestCafesGalleryImage galleryImage={item.galleryImage} />
 
 		<Separator
-			wide
+			size='4xl'
 			style={{ paddingTop: '10px' }}
 		/>
 
@@ -38,7 +44,7 @@ export const TestCafes = ({ id, geo, item }) => (
 			<Div style={{ whiteSpace: 'pre-line' }}>{item.description}</Div>
 		</Group>
 
-		<Separator wide />
+		<Separator size='4xl' />
 
 		<TestCafesInfoBlock item={item} />
 

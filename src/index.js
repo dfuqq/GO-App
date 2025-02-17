@@ -1,7 +1,7 @@
 import 'core-js/features/map';
 import 'core-js/features/set';
 import React from 'react';
-import bridge from '@vkontakte/vk-bridge';
+// import bridge from '@vkontakte/vk-bridge';
 import App from './App';
 
 import { ConfigProvider, AdaptivityProvider } from '@vkontakte/vkui';
@@ -16,70 +16,79 @@ import { createRoot } from 'react-dom/client';
 
 let startPage = 'home';
 
-const STORAGE_KEYS = { STATUS: 'status' };
+// const STORAGE_KEYS = { STATUS: 'status' };
 
-async function getStartScreen() {
-	const storageData = await bridge.send('VKWebAppStorageGet', {
-		keys: Object.values(STORAGE_KEYS),
-	});
-	const data = {};
-	storageData.keys.forEach(({ key, value }) => {
-		try {
-			data[key] = value ? JSON.parse(value) : {};
-			switch (key) {
-				case STORAGE_KEYS.STATUS:
-					if (data[key].hasSeenIntro) {
-						startPage = 'home';
-						createRoot(
-							<ConfigProvider>
-								<AdaptivityProvider>
-									<App startPage={startPage} />,
-								</AdaptivityProvider>
-							</ConfigProvider>,
-							document.getElementById('root')
-						);
-					} else {
-						createRoot(
-							<ConfigProvider>
-								<AdaptivityProvider>
-									<App startPage={startPage} />,
-								</AdaptivityProvider>
-							</ConfigProvider>,
-							document.getElementById('root')
-						);
-					}
-					break;
-				default:
-					createRoot(
-						<ConfigProvider>
-							<AdaptivityProvider>
-								<App startPage={startPage} />,
-							</AdaptivityProvider>
-						</ConfigProvider>,
-						document.getElementById('root')
-					);
-					break;
-			}
-		} catch (error) {
-			console.log(error);
-		}
-	});
-	console.log(true);
-}
+// async function getStartScreen() {
+// 	const storageData = await bridge.send('VKWebAppStorageGet', {
+// 		keys: Object.values(STORAGE_KEYS),
+// 	});
+// 	const data = {};
+// 	storageData.keys.forEach(({ key, value }) => {
+// 		try {
+// 			data[key] = value ? JSON.parse(value) : {};
+// 			switch (key) {
+// 				case STORAGE_KEYS.STATUS:
+// 					if (data[key].hasSeenIntro) {
+// 						startPage = 'home';
+// 						createRoot(
+// 							<ConfigProvider>
+// 								<AdaptivityProvider>
+// 									<App startPage={startPage} />,
+// 								</AdaptivityProvider>
+// 							</ConfigProvider>,
+// 							document.getElementById('root')
+// 						);
+// 					} else {
+// 						createRoot(
+// 							<ConfigProvider>
+// 								<AdaptivityProvider>
+// 									<App startPage={startPage} />,
+// 								</AdaptivityProvider>
+// 							</ConfigProvider>,
+// 							document.getElementById('root')
+// 						);
+// 					}
+// 					break;
+// 				default:
+// 					createRoot(
+// 						<ConfigProvider>
+// 							<AdaptivityProvider>
+// 								<App startPage={startPage} />,
+// 							</AdaptivityProvider>
+// 						</ConfigProvider>,
+// 						document.getElementById('root')
+// 					);
+// 					break;
+// 			}
+// 		} catch (error) {
+// 			console.log(error);
+// 		}
+// 	});
+// 	console.log(true);
+// }
 
-getStartScreen();
+// getStartScreen();
 
 // Init VK  Mini App
-bridge.send('VKWebAppInit');
+// bridge.send('VKWebAppInit');
 
 // Определение темы при инициализации
-bridge.subscribe(({ detail: { type, data } }) => {
-	if (type === 'VKWebAppUpdateConfig') {
-		const schemeAttribute = document.createAttribute('scheme');
-		schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
-		document.body.attributes.setNamedItem(schemeAttribute);
-	}
-});
+// bridge.subscribe(({ detail: { type, data } }) => {
+// 	if (type === 'VKWebAppUpdateConfig') {
+// 		const schemeAttribute = document.createAttribute('scheme');
+// 		schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
+// 		document.body.attributes.setNamedItem(schemeAttribute);
+// 	}
+// });
+
+createRoot(
+	<ConfigProvider>
+		<AdaptivityProvider>
+			<App startPage={startPage} />,
+		</AdaptivityProvider>
+	</ConfigProvider>,
+	document.getElementById('root')
+);
 
 if (process.env.NODE_ENV === 'development') {
 	import('./eruda').then(({ default: eruda }) => {}); //runtime download

@@ -5,17 +5,49 @@ npm-debug.log*
 *.lock
 
 # Dependency directories
+node_modules/
 package-lock.json
-/node_modules
 
 # Optional npm cache directory
 .npm
 
-# Prod Bundle
-/build
+# Next.js build output
+.next/
+out/
 
-.vscode
-.idea
+# Prod Bundle
+build/
 bundle.zip
-vk-hosting-config.json
+
+# Local environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js static cache
+.cache/
+
+# Vercel deployment
+.vercel
+.vercel_build_output
+
+# Debugging & system files
+debug.log
+.DS_Store
+Thumbs.db
+
+# Editor & workspace files
+.vscode/
+.idea/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Next.js specific files
+.next/trace
+.next/cache
+
+# VK Mini Apps hosting config
+vk-hosting

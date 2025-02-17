@@ -6,9 +6,16 @@ import './Intro.css';
 
 import Vidt from './RenderT.mp4';
 
-const Intro = ({ id, snackbarError, fetchedUser, nextIntroPage }) => {
+const Intro = ({
+	id,
+	snackbarError,
+	// fetchedUser,
+	nextIntroPage,
+}) => {
 	return (
-		<Panel id={id} centered={true}>
+		<Panel
+			id={id}
+			centered={true}>
 			<div
 				style={{
 					height: '100vh',
@@ -18,7 +25,7 @@ const Intro = ({ id, snackbarError, fetchedUser, nextIntroPage }) => {
 					alignItems: 'center',
 					justifyContent: 'center',
 				}}>
-				{fetchedUser && (
+				{/* {fetchedUser && (
 					<Fragment>
 						<Group>
 							<Div
@@ -62,7 +69,7 @@ const Intro = ({ id, snackbarError, fetchedUser, nextIntroPage }) => {
 							</Div>
 						</FixedLayout>
 					</Fragment>
-				)}
+				)} */}
 			</div>
 			{snackbarError}
 		</Panel>

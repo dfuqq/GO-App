@@ -10,10 +10,14 @@ import {
 	Button,
 } from '@vkontakte/vkui';
 
-export const Projects = ({ id }) => (
+interface Props {
+	id: string;
+}
+
+export const Projects = ({ id }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}>
@@ -27,7 +31,6 @@ export const Projects = ({ id }) => (
 					target='_blank'
 					rel='noopener noreferrer'>
 					<Avatar
-						mode='default'
 						size={104}
 						src='https://sun9-11.userapi.com/pWCnrYUZF1hUeqvcmnkClwmBvYKNX4Luib0AEA/bqlXyZvNJLM.jpg'
 					/>
@@ -55,7 +58,7 @@ export const Projects = ({ id }) => (
 			<Div>
 				<Button
 					mode='primary'
-					size='xl'
+					size='l'
 					href='https://vk.com/romsurdvorov'
 					target='_blank'>
 					Перейти
@@ -70,7 +73,6 @@ export const Projects = ({ id }) => (
 					target='_blank'
 					rel='noopener noreferrer'>
 					<Avatar
-						mode='default'
 						size={104}
 						src='https://sun9-29.userapi.com/IK5KQVhm5x95dtxqoTLLvTScxL-ciKyJOO0S-g/tE6CkBHndw0.jpg'
 					/>
@@ -100,7 +102,7 @@ export const Projects = ({ id }) => (
 			<Div>
 				<Button
 					mode='primary'
-					size='xl'
+					size='l'
 					href='https://vk.com/romekbdvorov'
 					target='_blank'>
 					Перейти
@@ -115,7 +117,6 @@ export const Projects = ({ id }) => (
 					target='_blank'
 					rel='noopener noreferrer'>
 					<Avatar
-						mode='default'
 						size={104}
 						src='https://sun9-23.userapi.com/V4COqUco6ohYrA7tXNjEMdCU5eJjNT7pRSORVA/NHKHZ2SxZJo.jpg'
 					/>
@@ -134,7 +135,7 @@ export const Projects = ({ id }) => (
 			<Div>
 				<Button
 					mode='primary'
-					size='xl'
+					size='l'
 					href='https://instagram.com/romsurdvorov'
 					target='_blank'>
 					Перейти

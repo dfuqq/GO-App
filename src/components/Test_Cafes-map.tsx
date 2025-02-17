@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react';
 
 import { Group } from '@vkontakte/vkui';
-import { YMaps, Map, Placemark, Circle } from 'react-yandex-maps';
+import { YMaps, Map, Placemark, Circle } from '@pbe/react-yandex-maps';
 
-export const TestCafesMap = ({ geo }) => {
+interface Props {
+	geo: [number, number];
+}
+
+export const TestCafesMap = ({ geo }: Props) => {
 	return (
 		<Group
 			style={{

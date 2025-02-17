@@ -6,8 +6,14 @@ import Think from './think.png';
 
 let check = false;
 
-const IntroDva = ({ id, nextIntroPage, getCoordinates }) => (
-	<Panel id={id} centered={true}>
+const IntroDva = ({
+	id,
+	nextIntroPage,
+	// getCoordinates
+}) => (
+	<Panel
+		id={id}
+		centered={true}>
 		<div
 			style={{
 				height: '100vh',
@@ -33,12 +39,16 @@ const IntroDva = ({ id, nextIntroPage, getCoordinates }) => (
 						чтобы мы смогли показывать тебя на картах.
 					</h4>
 					<Div
-						style={{ padding: 0, display: 'flex', justifyContent: 'center' }}>
+						style={{
+							padding: 0,
+							display: 'flex',
+							justifyContent: 'center',
+						}}>
 						<Button
 							size='m'
 							mode='overlay_primary'
 							onClick={() => {
-								getCoordinates();
+								// getCoordinates();
 								check = true;
 							}}>
 							Дать доступ
@@ -49,7 +59,10 @@ const IntroDva = ({ id, nextIntroPage, getCoordinates }) => (
 					<Div>
 						<Fragment>
 							{!check && (
-								<Button disabled size='xl' mode='commerce'>
+								<Button
+									disabled
+									size='xl'
+									mode='commerce'>
 									Продолжить
 								</Button>
 							)}

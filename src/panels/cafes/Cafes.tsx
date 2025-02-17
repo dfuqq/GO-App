@@ -11,10 +11,24 @@ import {
 import { Disclaimer } from '../../components';
 import { cafesData } from './cafes-data';
 
-export const Cafes = ({ id, changePanel, setActiveCard }) => (
+// FIXME: image => logo with db
+interface CafeProps {
+	id: string;
+	name: string;
+	subtitle: string;
+	image: string;
+}
+
+interface Props {
+	id: string;
+	changePanel: (e: React.MouseEvent) => void;
+	setActiveCard: (cafe: CafeProps) => void;
+}
+
+export const Cafes = ({ id, changePanel, setActiveCard }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}>
@@ -23,7 +37,7 @@ export const Cafes = ({ id, changePanel, setActiveCard }) => (
 
 		{cafesData.map((cafe) => (
 			<Cell
-				expandable
+				chevron='always'
 				before={
 					<Avatar
 						src={cafe.image}
@@ -32,7 +46,8 @@ export const Cafes = ({ id, changePanel, setActiveCard }) => (
 				}
 				onClick={(e) => {
 					changePanel(e);
-					setActiveCard(cafe);
+					// FIXME: code ignore, check with db
+					setActiveCard(cafe as CafeProps);
 				}}
 				data-to='testcaf'
 				subtitle={cafe.subtitle}

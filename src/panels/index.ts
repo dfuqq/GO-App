@@ -1,6 +1,6 @@
 export { About } from './About';
 export { Attention } from './Attention';
-export { Business } from './Business';
+export { Business } from '../components/Business';
 export { Credits } from './Credits';
 export { Home } from './Home';
 export { Places } from './Places';

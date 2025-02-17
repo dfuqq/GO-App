@@ -8,22 +8,27 @@ import {
 	Avatar,
 } from '@vkontakte/vkui';
 import { Disclaimer } from '../../components';
-import { barsData } from './bars-data';
+import { Bar, barsData } from './bars-data';
 
-export const Bars = ({ id, changePanel }) => (
+interface Props {
+	id: string;
+	changePanel: (e: React.MouseEvent) => void;
+}
+
+export const Bars = ({ id, changePanel }: Props) => (
 	<Panel id={id}>
 		<PanelHeader
-			left={
+			before={
 				<PanelHeaderBack
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}
-			separator={false}>
+			delimiter='auto'>
 			Бары
 		</PanelHeader>
 
-		{barsData.map((bar) => (
+		{barsData.map((bar: Bar) => (
 			<Cell
-				expandable
+				chevron='always'
 				before={
 					<Avatar
 						src={bar.image}

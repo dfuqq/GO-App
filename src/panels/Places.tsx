@@ -16,7 +16,20 @@ import {
 	FixedLayout,
 } from '@vkontakte/vkui';
 
-import Icon56InfoOutline from '@vkontakte/icons/dist/56/info_outline';
+import { Icon56InfoOutline } from '@vkontakte/icons/';
+
+interface Props {
+	id: string;
+	changePanel: (e: React.MouseEvent) => void;
+	area: string;
+	openFilters: () => void;
+	openAreaFilters: () => void;
+	parksFilter: boolean;
+	museumsFilter: boolean;
+	monumentsFilter: boolean;
+	entertaimentFilter: boolean;
+	architectureFilter: boolean;
+}
 
 export const Places = ({
 	id,
@@ -29,11 +42,11 @@ export const Places = ({
 	monumentsFilter,
 	entertaimentFilter,
 	architectureFilter,
-}) => {
+}: Props) => {
 	return (
 		<Panel id={id}>
 			<PanelHeader
-				left={
+				before={
 					<PanelHeaderBack
 						onClick={() => window.history.back()}></PanelHeaderBack>
 				}>
@@ -43,7 +56,7 @@ export const Places = ({
 				<Fragment>
 					<Div>
 						<Button
-							size='xl'
+							size='l'
 							mode='primary'
 							onClick={openFilters}>
 							Фильтры
@@ -63,80 +76,80 @@ export const Places = ({
 					{parksFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='agaz'
-								description='Небольшая аллея со скульптурами'>
+								subtitle='Небольшая аллея со скульптурами'>
 								Аллея "Газовиков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gpkio'
-								description='Один из первых парков города'>
+								subtitle='Один из первых парков города'>
 								Городской Парк Культуры и Отдыха
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kedr'
-								description='Популярный городской парк'>
+								subtitle='Популярный городской парк'>
 								Парк "Кедровый Лог"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sdet'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Детства"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='snarod'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Дружбы Народов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='slav'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Мемориал Славы"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='smld'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Молодёжный"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sstar'
-								description='Крупнейший сквер города'>
+								subtitle='Крупнейший сквер города'>
 								Сквер "Старожилов Сургута"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='scentr'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Центральный"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sener'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Энергетиков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='cplos'
-								description='Новая городская площадь'>
+								subtitle='Новая городская площадь'>
 								Центральная городская площадь
 							</Cell>
 						</List>
@@ -144,52 +157,52 @@ export const Places = ({
 					{museumsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sterh'
-								description='Дом современного искусства'>
+								subtitle='Дом современного искусства'>
 								Галерея Современного Искусства "Стерх"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kupec'
-								description='Памятник архитектуры XIX века'>
+								subtitle='Памятник архитектуры XIX века'>
 								Дом Купца Г.С. Клепикова
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='port'
-								description='Площадка для различных мероприятий'>
+								subtitle='Площадка для различных мероприятий'>
 								Культурный Центр "Порт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gzprm'
-								description='Музей развития нефтяной промышленности'>
+								subtitle='Музей развития нефтяной промышленности'>
 								Музей Истории "Газпрома"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kuzn'
-								description='Уникальная городская кузница'>
+								subtitle='Уникальная городская кузница'>
 								Обская Кузница
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='ssur'
-								description='Историко-культурный центр'>
+								subtitle='Историко-культурный центр'>
 								Старый Сургут
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='patr'
-								description='Единственный центр патриотической тематики'>
+								subtitle='Единственный центр патриотической тематики'>
 								Центр Патриотического Наследия
 							</Cell>
 						</List>
@@ -197,94 +210,94 @@ export const Places = ({
 					{monumentsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='mperv'
-								description='Монумент первопроходцам Севера'>
+								subtitle='Монумент первопроходцам Севера'>
 								Монумент "Первым Строителям Нового Города"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='mneft'
-								description='Монумент в честь нефтяных работников'>
+								subtitle='Монумент в честь нефтяных работников'>
 								Монумент "Трудовому Подвигу Нефтяников"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='voinam'
-								description='Монумент погибшим при исполнении долга'>
+								subtitle='Монумент погибшим при исполнении долга'>
 								Памятник "Воинам-Интернационалистам"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='dock'
-								description='Монумент герою детских сказок'>
+								subtitle='Монумент герою детских сказок'>
 								Памятник "Доктору Айболиту"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='narod'
-								description='Монумент в честь дружбы народов'>
+								subtitle='Монумент в честь дружбы народов'>
 								Памятник "Дружбы Народов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pgaz'
-								description='Монумент работникам газодобычи'>
+								subtitle='Монумент работникам газодобычи'>
 								Памятник "Землякам-Газовикам"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='zahar'
-								description='Монумент известному журналисту'>
+								subtitle='Монумент известному журналисту'>
 								Памятник Ивану Захарову
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='osnov'
-								description='Главный монумент города'>
+								subtitle='Главный монумент города'>
 								Памятник Основателям
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pstro'
-								description='Монумент в честь строителей'>
+								subtitle='Монумент в честь строителей'>
 								Памятник "Строителю"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='taras'
-								description='Монумент украинскому поэту'>
+								subtitle='Монумент украинскому поэту'>
 								Памятник Тарасу Шевченко
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='uchit'
-								description='Монумент работникам образования'>
+								subtitle='Монумент работникам образования'>
 								Памятник "Учительнице"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='lis'
-								description='Монумент символу города'>
+								subtitle='Монумент символу города'>
 								Памятник Чёрному Лису
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='human'
-								description='Копия зарубежной скульптуры'>
+								subtitle='Копия зарубежной скульптуры'>
 								Скульптура "Гуманоиды"
 							</Cell>
 						</List>
@@ -292,52 +305,52 @@ export const Places = ({
 					{entertaimentFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bibl'
-								description='Главная библиотека Сургута'>
+								subtitle='Главная библиотека Сургута'>
 								Библиотека им. А.С. Пушкина
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='dneft'
-								description='Крупнейший концертный зал города'>
+								subtitle='Крупнейший концертный зал города'>
 								ДИ "Нефтяник"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='snezh'
-								description='Спортивное ядро города'>
+								subtitle='Спортивное ядро города'>
 								Стадион "Снежинка"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='filarm'
-								description='Главный концертный зал города'>
+								subtitle='Главный концертный зал города'>
 								Сургутская филармония
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='tsgu'
-								description='Один из главных театров города'>
+								subtitle='Один из главных театров города'>
 								Театр СурГУ
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='cmoll'
-								description='Один из крупных городских ТЦ'>
+								subtitle='Один из крупных городских ТЦ'>
 								ТЦ "Сити Молл"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='ckid'
-								description='Популярный концертный зал'>
+								subtitle='Популярный концертный зал'>
 								ЦКИД "Камертон"
 							</Cell>
 						</List>
@@ -345,52 +358,52 @@ export const Places = ({
 					{architectureFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bben'
-								description='Школа изучения иностранных языков'>
+								subtitle='Школа изучения иностранных языков'>
 								Биг-Бен
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gperer'
-								description='Недостроенный офис'>
+								subtitle='Недостроенный офис'>
 								"Газпром Переработка"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gtrans'
-								description='Офис градообразующей компании'>
+								subtitle='Офис градообразующей компании'>
 								"Газпром Трансгаз"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='zags'
-								description='Городской ЗАГС'>
+								subtitle='Городской ЗАГС'>
 								Дворец Торжеств
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sng'
-								description='Офис градообразующей компании'>
+								subtitle='Офис градообразующей компании'>
 								ПАО "Сургутнефтегаз"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='centr'
-								description='Известная точка города'>
+								subtitle='Известная точка города'>
 								ТЦ "City Centre"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='surgu'
-								description='Главный университет города'>
+								subtitle='Главный университет города'>
 								Университет
 							</Cell>
 						</List>
@@ -402,318 +415,318 @@ export const Places = ({
 						!architectureFilter && (
 							<List>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='agaz'
-									description='Небольшая аллея со скульптурами'>
+									subtitle='Небольшая аллея со скульптурами'>
 									Аллея "Газовиков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bibl'
-									description='Главная библиотека Сургута'>
+									subtitle='Главная библиотека Сургута'>
 									Библиотека им. А.С. Пушкина
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bben'
-									description='Школа изучения иностранных языков'>
+									subtitle='Школа изучения иностранных языков'>
 									Биг-Бен
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gperer'
-									description='Недостроенный офис'>
+									subtitle='Недостроенный офис'>
 									"Газпром Переработка"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gtrans'
-									description='Офис градообразующей компании'>
+									subtitle='Офис градообразующей компании'>
 									"Газпром Трансгаз"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sterh'
-									description='Дом современного искусства'>
+									subtitle='Дом современного искусства'>
 									Галерея Современного Искусства "Стерх"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gpkio'
-									description='Один из первых парков города'>
+									subtitle='Один из первых парков города'>
 									Городской Парк Культуры и Отдыха
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='zags'
-									description='Городской ЗАГС'>
+									subtitle='Городской ЗАГС'>
 									Дворец Торжеств
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='dneft'
-									description='Крупнейший концертный зал города'>
+									subtitle='Крупнейший концертный зал города'>
 									ДИ "Нефтяник"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kupec'
-									description='Памятник архитектуры XIX века'>
+									subtitle='Памятник архитектуры XIX века'>
 									Дом Купца Г.С. Клепикова
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='port'
-									description='Площадка для различных мероприятий'>
+									subtitle='Площадка для различных мероприятий'>
 									Культурный Центр "Порт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='mperv'
-									description='Монумент первопроходцам Севера'>
+									subtitle='Монумент первопроходцам Севера'>
 									Монумент "Первым Строителям Нового Города"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='mneft'
-									description='Монумент в честь нефтяных работников'>
+									subtitle='Монумент в честь нефтяных работников'>
 									Монумент "Трудовому Подвигу Нефтяников"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gzprm'
-									description='Музей развития нефтяной промышленности'>
+									subtitle='Музей развития нефтяной промышленности'>
 									Музей Истории "Газпрома"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kuzn'
-									description='Уникальная городская кузница'>
+									subtitle='Уникальная городская кузница'>
 									Обская Кузница
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='voinam'
-									description='Монумент погибшим при исполнении долга'>
+									subtitle='Монумент погибшим при исполнении долга'>
 									Памятник "Воинам-Интернационалистам"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='narod'
-									description='Монумент в честь дружбы народов'>
+									subtitle='Монумент в честь дружбы народов'>
 									Памятник "Дружбы Народов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='dock'
-									description='Монумент герою детских сказок'>
+									subtitle='Монумент герою детских сказок'>
 									Памятник "Доктору Айболиту"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pgaz'
-									description='Монумент работникам газодобычи'>
+									subtitle='Монумент работникам газодобычи'>
 									Памятник "Землякам-Газовикам"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='zahar'
-									description='Монумент известному журналисту'>
+									subtitle='Монумент известному журналисту'>
 									Памятник Ивану Захарову
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='osnov'
-									description='Главный монумент города'>
+									subtitle='Главный монумент города'>
 									Памятник Основателям
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pstro'
-									description='Монумент в честь строителей'>
+									subtitle='Монумент в честь строителей'>
 									Памятник "Строителю"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='taras'
-									description='Монумент украинскому поэту'>
+									subtitle='Монумент украинскому поэту'>
 									Памятник Тарасу Шевченко
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='uchit'
-									description='Монумент работникам образования'>
+									subtitle='Монумент работникам образования'>
 									Памятник "Учительнице"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='lis'
-									description='Монумент символу города'>
+									subtitle='Монумент символу города'>
 									Памятник Чёрному Лису
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kedr'
-									description='Популярный городской парк'>
+									subtitle='Популярный городской парк'>
 									Парк "Кедровый Лог"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sng'
-									description='Офис градообразующей компании'>
+									subtitle='Офис градообразующей компании'>
 									ПАО "Сургутнефтегаз"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sdet'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Детства"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='snarod'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Дружбы Народов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='slav'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Мемориал Славы"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='smld'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Молодёжный"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sstar'
-									description='Крупнейший сквер города'>
+									subtitle='Крупнейший сквер города'>
 									Сквер "Старожилов Сургута"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='scentr'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Центральный"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sener'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Энергетиков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='human'
-									description='Копия зарубежной скульптуры'>
+									subtitle='Копия зарубежной скульптуры'>
 									Скульптура "Гуманоиды"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='snezh'
-									description='Спортивное ядро города'>
+									subtitle='Спортивное ядро города'>
 									Стадион "Снежинка"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='ssur'
-									description='Историко-культурный центр'>
+									subtitle='Историко-культурный центр'>
 									Старый Сургут
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='filarm'
-									description='Главный концертный зал города'>
+									subtitle='Главный концертный зал города'>
 									Сургутская филармония
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='tsgu'
-									description='Один из главных театров города'>
+									subtitle='Один из главных театров города'>
 									Театр СурГУ
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='centr'
-									description='Известная точка города'>
+									subtitle='Известная точка города'>
 									ТЦ "City Centre"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='cmoll'
-									description='Один из крупных городских ТЦ'>
+									subtitle='Один из крупных городских ТЦ'>
 									ТЦ "Сити Молл"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='surgu'
-									description='Главный университет города'>
+									subtitle='Главный университет города'>
 									Университет
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='patr'
-									description='Единственный центр патриотической тематики'>
+									subtitle='Единственный центр патриотической тематики'>
 									Центр Патриотического Наследия
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='cplos'
-									description='Новая городская площадь'>
+									subtitle='Новая городская площадь'>
 									Центральная городская площадь
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='ckid'
-									description='Популярный концертный зал'>
+									subtitle='Популярный концертный зал'>
 									ЦКИД "Камертон"
 								</Cell>
 							</List>
@@ -724,7 +737,7 @@ export const Places = ({
 								<FixedLayout vertical='bottom'>
 									<Div>
 										<Button
-											size='xl'
+											size='l'
 											mode='primary'
 											onClick={openAreaFilters}>
 											Выбрать район
@@ -740,7 +753,7 @@ export const Places = ({
 				<Fragment>
 					<Div>
 						<Button
-							size='xl'
+							size='l'
 							mode='primary'
 							onClick={openFilters}>
 							Фильтры
@@ -760,31 +773,31 @@ export const Places = ({
 					{parksFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='nab'
-								description='Территория бывшего речного вокзала'>
+								subtitle='Территория бывшего речного вокзала'>
 								Набережная Речпорта
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pgeo'
-								description='Парк на юго-востоке города'>
+								subtitle='Парк на юго-востоке города'>
 								Парк "Геологов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='saima'
-								description='Главный парк города'>
+								subtitle='Главный парк города'>
 								Парк "За Саймой"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sgeo'
-								description='Сквер в юго-восточной части города'>
+								subtitle='Сквер в юго-восточной части города'>
 								Сквер "Геологов-Первопроходцев"
 							</Cell>
 						</List>
@@ -792,10 +805,10 @@ export const Places = ({
 					{museumsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='salm'
-								description='Дом-музей первооткрывателя Сибирской нефти'>
+								subtitle='Дом-музей первооткрывателя Сибирской нефти'>
 								Музей Ф.К. Салманова
 							</Cell>
 						</List>
@@ -803,45 +816,45 @@ export const Places = ({
 					{monumentsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='obel'
-								description='Памятный обелиск воинам ВОВ'>
+								subtitle='Памятный обелиск воинам ВОВ'>
 								Обелиск "Ушедшим на Фронт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='budda'
-								description='Монумент в честь будизма'>
+								subtitle='Монумент в честь будизма'>
 								Памятник Будде
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='repres'
-								description='Монумент в честь спецпереселенцов'>
+								subtitle='Монумент в честь спецпереселенцов'>
 								Памятник "Жертвам Репрессий"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='btrud'
-								description='Монумент в честь рыбокомбината'>
+								subtitle='Монумент в честь рыбокомбината'>
 								Памятник "Мужеству Рыбаков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='nerozh'
-								description='Копия зарубежной скульптуры'>
+								subtitle='Копия зарубежной скульптуры'>
 								Памятник "Нерождённым Детям"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='rib'
-								description='Монумент в честь работников тыла'>
+								subtitle='Монумент в честь работников тыла'>
 								Памятник "Труженикам Рыбокомбината"
 							</Cell>
 						</List>
@@ -849,10 +862,10 @@ export const Places = ({
 					{entertaimentFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='stroit'
-								description='Популярный концертный зал'>
+								subtitle='Популярный концертный зал'>
 								Городской Культурный Центр
 							</Cell>
 						</List>
@@ -860,10 +873,10 @@ export const Places = ({
 					{architectureFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='univ'
-								description='Популярная улица Сургута'>
+								subtitle='Популярная улица Сургута'>
 								Университетская
 							</Cell>
 						</List>
@@ -875,94 +888,94 @@ export const Places = ({
 						!architectureFilter && (
 							<List>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='stroit'
-									description='Популярный концертный зал'>
+									subtitle='Популярный концертный зал'>
 									Городской Культурный Центр
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='salm'
-									description='Дом-музей первооткрывателя Сибирской нефти'>
+									subtitle='Дом-музей первооткрывателя Сибирской нефти'>
 									Музей Ф.К. Салманова
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='nab'
-									description='Территория бывшего речного вокзала'>
+									subtitle='Территория бывшего речного вокзала'>
 									Набережная Речпорта
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='obel'
-									description='Памятный обелиск воинам ВОВ'>
+									subtitle='Памятный обелиск воинам ВОВ'>
 									Обелиск "Ушедшим на Фронт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='budda'
-									description='Монумент в честь будизма'>
+									subtitle='Монумент в честь будизма'>
 									Памятник Будде
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='repres'
-									description='Монумент в честь спецпереселенцов'>
+									subtitle='Монумент в честь спецпереселенцов'>
 									Памятник "Жертвам Репрессий"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='btrud'
-									description='Монумент в честь рыбокомбината'>
+									subtitle='Монумент в честь рыбокомбината'>
 									Памятник "Мужеству Рыбаков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='nerozh'
-									description='Копия зарубежной скульптуры'>
+									subtitle='Копия зарубежной скульптуры'>
 									Памятник "Нерождённым Детям"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='rib'
-									description='Монумент в честь работников тыла'>
+									subtitle='Монумент в честь работников тыла'>
 									Памятник "Труженикам Рыбокомбината"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='univ'
-									description='Популярная улица Сургута'>
+									subtitle='Популярная улица Сургута'>
 									Университетская
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pgeo'
-									description='Парк на юго-востоке города'>
+									subtitle='Парк на юго-востоке города'>
 									Парк "Геологов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='saima'
-									description='Главный парк города'>
+									subtitle='Главный парк города'>
 									Парк "За Саймой"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sgeo'
-									description='Сквер в юго-восточной части города'>
+									subtitle='Сквер в юго-восточной части города'>
 									Сквер "Геологов-Первопроходцев"
 								</Cell>
 							</List>
@@ -973,7 +986,7 @@ export const Places = ({
 								<FixedLayout vertical='bottom'>
 									<Div>
 										<Button
-											size='xl'
+											size='l'
 											mode='primary'
 											onClick={openAreaFilters}>
 											Выбрать район
@@ -1000,44 +1013,44 @@ export const Places = ({
 							Северо-Восточный Жилой Район
 						</Header>
 						<Cell
-							expandable
+							chevron='always'
 							onClick={changePanel}
 							data-to='musclx'
-							description='Крупный музейный комплекс'>
+							subtitle='Крупный музейный комплекс'>
 							Музейный Центр
 						</Cell>
 						<Cell
-							expandable
+							chevron='always'
 							onClick={changePanel}
 							data-to='pmed'
-							description='Монумент в честь врачей'>
+							subtitle='Монумент в честь врачей'>
 							Памятник "Медсестре"
 						</Cell>
 						<Cell
-							expandable
+							chevron='always'
 							onClick={changePanel}
 							data-to='smile'
-							description='Монумент в честь эмоции'>
+							subtitle='Монумент в честь эмоции'>
 							Памятник "Улыбке"
 						</Cell>
 						<Cell
-							expandable
+							chevron='always'
 							onClick={changePanel}
 							data-to='vershina'
-							description='Популярный городской ТЦ'>
+							subtitle='Популярный городской ТЦ'>
 							ТЦ "Вершина"
 						</Cell>
 						<Cell
-							expandable
+							chevron='always'
 							onClick={changePanel}
 							data-to='sgusch'
-							description='Монумент популярного продукта'>
+							subtitle='Монумент популярного продукта'>
 							Памятник Сгущёнке
 						</Cell>
 						<FixedLayout vertical='bottom'>
 							<Div>
 								<Button
-									size='xl'
+									size='l'
 									mode='primary'
 									onClick={openAreaFilters}>
 									Выбрать район
@@ -1051,7 +1064,7 @@ export const Places = ({
 				<Fragment>
 					<Div>
 						<Button
-							size='xl'
+							size='l'
 							mode='primary'
 							onClick={openFilters}>
 							Фильтры
@@ -1071,17 +1084,17 @@ export const Places = ({
 					{parksFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pkey'
-								description='Новый популярный парк'>
+								subtitle='Новый популярный парк'>
 								Парк "Новые Ключи"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='chaes'
-								description='Сквер в честь ликвидаторов аварии'>
+								subtitle='Сквер в честь ликвидаторов аварии'>
 								Сквер "Памяти Чернобыльцев"
 							</Cell>
 						</List>
@@ -1089,10 +1102,10 @@ export const Places = ({
 					{museumsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='brmsm'
-								description='Музей создания моста'>
+								subtitle='Музей создания моста'>
 								Музей Югорского Моста
 							</Cell>
 						</List>
@@ -1100,31 +1113,31 @@ export const Places = ({
 					{monumentsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pavia'
-								description='Монумент Сургутскому авиаотряду'>
+								subtitle='Монумент Сургутскому авиаотряду'>
 								Памятник "Авиаторам Сибири"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='poezd'
-								description='Монумент первому тепловозу в городе'>
+								subtitle='Монумент первому тепловозу в городе'>
 								Памятник "Первому поезду"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='polet'
-								description='Скульптура на северном въезде'>
+								subtitle='Скульптура на северном въезде'>
 								Стела "Полёт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='surgut'
-								description='Скульптура на западном въезде'>
+								subtitle='Скульптура на западном въезде'>
 								Стела "Сургут"
 							</Cell>
 						</List>
@@ -1132,24 +1145,24 @@ export const Places = ({
 					{entertaimentFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='smdt'
-								description='Популярный городской театр'>
+								subtitle='Популярный городской театр'>
 								Сургусткий Музыкально-Драматический Театр
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='agora'
-								description='Популярный городской ТЦ'>
+								subtitle='Популярный городской ТЦ'>
 								ТЦ "Агора"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='aura'
-								description='Один из крупных городских ТЦ'>
+								subtitle='Один из крупных городских ТЦ'>
 								ТЦ "Аура"
 							</Cell>
 						</List>
@@ -1157,24 +1170,24 @@ export const Places = ({
 					{architectureFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='aerop'
-								description='Сургутский аэровокзал'>
+								subtitle='Сургутский аэровокзал'>
 								Аэропорт
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='trakt'
-								description='Транспортная артерия города'>
+								subtitle='Транспортная артерия города'>
 								Тюменский Тракт
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bridge'
-								description='Важнейший транспортный узел Сургута'>
+								subtitle='Важнейший транспортный узел Сургута'>
 								Югорский Мост
 							</Cell>
 						</List>
@@ -1186,94 +1199,94 @@ export const Places = ({
 						!architectureFilter && (
 							<List>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='aerop'
-									description='Сургутский аэровокзал'>
+									subtitle='Сургутский аэровокзал'>
 									Аэропорт
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bridge'
-									description='Важнейший транспортный узел Сургута'>
+									subtitle='Важнейший транспортный узел Сургута'>
 									Мост через Обь
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='brmsm'
-									description='Музей создания моста'>
+									subtitle='Музей создания моста'>
 									Музей Югорского Моста
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pavia'
-									description='Монумент Сургутскому авиаотряду'>
+									subtitle='Монумент Сургутскому авиаотряду'>
 									Памятник "Авиаторам Сибири"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='poezd'
-									description='Монумент первому тепловозу в городе'>
+									subtitle='Монумент первому тепловозу в городе'>
 									Памятник "Первому Поезду"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pkey'
-									description='Новый популярный парк'>
+									subtitle='Новый популярный парк'>
 									Парк "Новые Ключи"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='chaes'
-									description='Сквер в честь ликвидаторов аварии'>
+									subtitle='Сквер в честь ликвидаторов аварии'>
 									Сквер "Памяти Чернобыльцев"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='polet'
-									description='Скульптура на северном въезде'>
+									subtitle='Скульптура на северном въезде'>
 									Стела "Полёт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='surgut'
-									description='Скульптура на западном въезде'>
+									subtitle='Скульптура на западном въезде'>
 									Стела "Сургут"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='smdt'
-									description='Популярный городской театр'>
+									subtitle='Популярный городской театр'>
 									Сургутский Музыкально-Драматический Театр
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='agora'
-									description='Популярный городской ТЦ'>
+									subtitle='Популярный городской ТЦ'>
 									ТЦ "Агора"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='aura'
-									description='Один из крупных городских ТЦ'>
+									subtitle='Один из крупных городских ТЦ'>
 									ТЦ "Аура"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='trakt'
-									description='Транспортная артерия города'>
+									subtitle='Транспортная артерия города'>
 									Тюменский Тракт
 								</Cell>
 							</List>
@@ -1284,7 +1297,7 @@ export const Places = ({
 								<FixedLayout vertical='bottom'>
 									<Div>
 										<Button
-											size='xl'
+											size='l'
 											mode='primary'
 											onClick={openAreaFilters}>
 											Выбрать район
@@ -1300,7 +1313,7 @@ export const Places = ({
 				<Fragment>
 					<Div>
 						<Button
-							size='xl'
+							size='l'
 							mode='primary'
 							onClick={openFilters}>
 							Фильтры
@@ -1320,122 +1333,122 @@ export const Places = ({
 					{parksFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='agaz'
-								description='Небольшая аллея со скульптурами'>
+								subtitle='Небольшая аллея со скульптурами'>
 								Аллея "Газовиков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gpkio'
-								description='Один из первых парков города'>
+								subtitle='Один из первых парков города'>
 								Городской Парк Культуры и Отдыха
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='nab'
-								description='Территория бывшего речного вокзала'>
+								subtitle='Территория бывшего речного вокзала'>
 								Набережная Речпорта
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pgeo'
-								description='Парк на юго-востоке города'>
+								subtitle='Парк на юго-востоке города'>
 								Парк "Геологов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='saima'
-								description='Главный парк города'>
+								subtitle='Главный парк города'>
 								Парк "За Саймой"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kedr'
-								description='Популярный городской парк'>
+								subtitle='Популярный городской парк'>
 								Парк "Кедровый Лог"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pkey'
-								description='Новый популярный парк'>
+								subtitle='Новый популярный парк'>
 								Парк "Новые Ключи"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sgeo'
-								description='Сквер в юго-восточной части города'>
+								subtitle='Сквер в юго-восточной части города'>
 								Сквер "Геологов-Первопроходцев"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sdet'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Детства"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='snarod'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Дружбы Народов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='slav'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Мемориал Славы"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='smld'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Молодёжный"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='chaes'
-								description='Сквер в честь ликвидаторов аварии'>
+								subtitle='Сквер в честь ликвидаторов аварии'>
 								Сквер "Памяти Чернобыльцев"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sstar'
-								description='Крупнейший сквер города'>
+								subtitle='Крупнейший сквер города'>
 								Сквер "Старожилов Сургута"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='scentr'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Центральный"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sener'
-								description='Популярный городской сквер'>
+								subtitle='Популярный городской сквер'>
 								Сквер "Энергетиков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='cplos'
-								description='Новая городская площадь'>
+								subtitle='Новая городская площадь'>
 								Центральная городская площадь
 							</Cell>
 						</List>
@@ -1443,73 +1456,73 @@ export const Places = ({
 					{museumsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sterh'
-								description='Дом современного искусства'>
+								subtitle='Дом современного искусства'>
 								Галерея Современного Искусства "Стерх"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kupec'
-								description='Памятник архитектуры XIX века'>
+								subtitle='Памятник архитектуры XIX века'>
 								Дом Купца Г.С. Клепикова
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='port'
-								description='Площадка для различных мероприятий'>
+								subtitle='Площадка для различных мероприятий'>
 								Культурный Центр "Порт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gzprm'
-								description='Музей развития нефтяной промышленности'>
+								subtitle='Музей развития нефтяной промышленности'>
 								Музей Истории "Газпрома"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='brmsm'
-								description='Музей создания моста'>
+								subtitle='Музей создания моста'>
 								Музей Югорского Моста
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='salm'
-								description='Дом-музей первооткрывателя Сибирской нефти'>
+								subtitle='Дом-музей первооткрывателя Сибирской нефти'>
 								Музей Ф.К. Салманова
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='musclx'
-								description='Крупный музейный комплекс'>
+								subtitle='Крупный музейный комплекс'>
 								Музейный Комплекс
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='kuzn'
-								description='Уникальная городская кузница'>
+								subtitle='Уникальная городская кузница'>
 								Обская Кузница
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='ssur'
-								description='Историко-культурный центр'>
+								subtitle='Историко-культурный центр'>
 								Старый Сургут
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='patr'
-								description='Единственный центр патриотической тематики'>
+								subtitle='Единственный центр патриотической тематики'>
 								Центр Патриотического Наследия
 							</Cell>
 						</List>
@@ -1517,185 +1530,185 @@ export const Places = ({
 					{monumentsFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='mneft'
-								description='Монумент в честь нефтяных работников'>
+								subtitle='Монумент в честь нефтяных работников'>
 								Монумент "Трудовому Подвигу Нефтяников"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='mperv'
-								description='Монумент первопроходцам Севера'>
+								subtitle='Монумент первопроходцам Севера'>
 								Монумент "Первым Строителям Нового Города"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='obel'
-								description='Памятный обелиск воинам ВОВ'>
+								subtitle='Памятный обелиск воинам ВОВ'>
 								Обелиск "Ушедшим на Фронт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pavia'
-								description='Монумент Сургутскому авиаотряду'>
+								subtitle='Монумент Сургутскому авиаотряду'>
 								Памятник "Авиаторам Сибири"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='budda'
-								description='Монумент в честь будизма'>
+								subtitle='Монумент в честь будизма'>
 								Памятник Будде
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='voinam'
-								description='Монумент погибшим при исполнении долга'>
+								subtitle='Монумент погибшим при исполнении долга'>
 								Памятник "Воинам-Интернационалистам"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='dock'
-								description='Монумент герою детских сказок'>
+								subtitle='Монумент герою детских сказок'>
 								Памятник "Доктору Айболиту"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='narod'
-								description='Монумент в честь дружбы народов'>
+								subtitle='Монумент в честь дружбы народов'>
 								Памятник "Дружбы Народов"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='repres'
-								description='Монумент в честь спецпереселенцов'>
+								subtitle='Монумент в честь спецпереселенцов'>
 								Памятник "Жертвам Репрессий"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pgaz'
-								description='Монумент работникам газодобычи'>
+								subtitle='Монумент работникам газодобычи'>
 								Памятник "Землякам-Газовикам"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='zahar'
-								description='Монумент известному журналисту'>
+								subtitle='Монумент известному журналисту'>
 								Памятник Ивану Захарову
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pmed'
-								description='Монумент в честь врачей'>
+								subtitle='Монумент в честь врачей'>
 								Памятник "Медсестре"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='btrud'
-								description='Монумент в честь рыбокомбината'>
+								subtitle='Монумент в честь рыбокомбината'>
 								Памятник "Мужеству Рыбаков"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='nerozh'
-								description='Копия зарубежной скульптуры'>
+								subtitle='Копия зарубежной скульптуры'>
 								Памятник "Нерождённым Детям"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='osnov'
-								description='Главный монумент города'>
+								subtitle='Главный монумент города'>
 								Памятник Основателям
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='poezd'
-								description='Монумент первому тепловозу в городе'>
+								subtitle='Монумент первому тепловозу в городе'>
 								Памятник "Первому Поезду"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sgusch'
-								description='Монумeнт популярного продукта'>
+								subtitle='Монумeнт популярного продукта'>
 								Памятник Сгущёнке
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='pstro'
-								description='Монумент в честь строителей'>
+								subtitle='Монумент в честь строителей'>
 								Памятник "Строителю"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='taras'
-								description='Монумент украинскому поэту'>
+								subtitle='Монумент украинскому поэту'>
 								Памятник Тарасу Шевченко
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='rib'
-								description='Монумент в честь работников тыла'>
+								subtitle='Монумент в честь работников тыла'>
 								Памятник "Труженикам Рыбокомбината"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='smile'
-								description='Монумент в честь эмоции'>
+								subtitle='Монумент в честь эмоции'>
 								Памятник "Улыбке"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='uchit'
-								description='Монумент работникам образования'>
+								subtitle='Монумент работникам образования'>
 								Памятник "Учительнице"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='lis'
-								description='Монумент символу города'>
+								subtitle='Монумент символу города'>
 								Памятник Чёрному Лису
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='human'
-								description='Копия зарубежной скульптуры'>
+								subtitle='Копия зарубежной скульптуры'>
 								Скульптура "Гуманоиды"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='polet'
-								description='Скульптура на северном въезде'>
+								subtitle='Скульптура на северном въезде'>
 								Стела "Полёт"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='surgut'
-								description='Скульптура на западном въезде'>
+								subtitle='Скульптура на западном въезде'>
 								Стела "Сургут"
 							</Cell>
 						</List>
@@ -1703,87 +1716,87 @@ export const Places = ({
 					{entertaimentFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bibl'
-								description='Главная библиотека Сургута'>
+								subtitle='Главная библиотека Сургута'>
 								Библиотека им. А.С. Пушкина
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='stroit'
-								description='Популярный концертный зал'>
+								subtitle='Популярный концертный зал'>
 								Городской Культурный Центр
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='dneft'
-								description='Крупнейший концертный зал города'>
+								subtitle='Крупнейший концертный зал города'>
 								ДИ "Нефтяник"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='snezh'
-								description='Спортивное ядро города'>
+								subtitle='Спортивное ядро города'>
 								Стадион "Снежинка"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='smdt'
-								description='Популярный городской театр'>
+								subtitle='Популярный городской театр'>
 								Сургутский Музыкально-Драматический Театр
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='filarm'
-								description='Главный концертный зал города'>
+								subtitle='Главный концертный зал города'>
 								Сургутская филармония
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='tsgu'
-								description='Один из главных театров города'>
+								subtitle='Один из главных театров города'>
 								Театр СурГУ
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='agora'
-								description='Популярный городской ТЦ'>
+								subtitle='Популярный городской ТЦ'>
 								ТЦ "Агора"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='aura'
-								description='Один из крупных городских ТЦ'>
+								subtitle='Один из крупных городских ТЦ'>
 								ТЦ "Аура"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='vershina'
-								description='Популярный городской ТЦ'>
+								subtitle='Популярный городской ТЦ'>
 								ТЦ "Вершина"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='cmoll'
-								description='Один из крупных городских ТЦ'>
+								subtitle='Один из крупных городских ТЦ'>
 								ТЦ "Сити Молл"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='ckid'
-								description='Популярный концертный зал'>
+								subtitle='Популярный концертный зал'>
 								ЦКИД "Камертон"
 							</Cell>
 						</List>
@@ -1791,80 +1804,80 @@ export const Places = ({
 					{architectureFilter && (
 						<List>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='aerop'
-								description='Сургутский аэровокзал'>
+								subtitle='Сургутский аэровокзал'>
 								Аэропорт
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bben'
-								description='Школа изучения иностранных языков'>
+								subtitle='Школа изучения иностранных языков'>
 								Биг-Бен
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gperer'
-								description='Недостроенный офис'>
+								subtitle='Недостроенный офис'>
 								"Газпром Переработка"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='gtrans'
-								description='Офис градообразующей компании'>
+								subtitle='Офис градообразующей компании'>
 								"Газпром Трансгаз"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='zags'
-								description='Городской ЗАГС'>
+								subtitle='Городской ЗАГС'>
 								Дворец Торжеств
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='bridge'
-								description='Важнейший транспортный узел Сургута'>
+								subtitle='Важнейший транспортный узел Сургута'>
 								Мост через Обь
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='sng'
-								description='Офис градообразующей компании'>
+								subtitle='Офис градообразующей компании'>
 								ПАО "Сургутнефтегаз"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='centr'
-								description='Известная точка города'>
+								subtitle='Известная точка города'>
 								ТЦ "City Centre"
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='trakt'
-								description='Транспортная артерия города'>
+								subtitle='Транспортная артерия города'>
 								Тюменский Тракт
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='surgu'
-								description='Главный университет города'>
+								subtitle='Главный университет города'>
 								Университет
 							</Cell>
 							<Cell
-								expandable
+								chevron='always'
 								onClick={changePanel}
 								data-to='univ'
-								description='Популярная улица Сургута'>
+								subtitle='Популярная улица Сургута'>
 								Университетская
 							</Cell>
 						</List>
@@ -1876,535 +1889,535 @@ export const Places = ({
 						!architectureFilter && (
 							<List>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='agaz'
-									description='Небольшая аллея со скульптурами'>
+									subtitle='Небольшая аллея со скульптурами'>
 									Аллея "Газовиков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='aerop'
-									description='Сургутский аэровокзал'>
+									subtitle='Сургутский аэровокзал'>
 									Аэропорт
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bibl'
-									description='Главная библиотека Сургута'>
+									subtitle='Главная библиотека Сургута'>
 									Библиотека им. А.С. Пушкина
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bben'
-									description='Школа изучения иностранных языков'>
+									subtitle='Школа изучения иностранных языков'>
 									Биг-Бен
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gperer'
-									description='Недостроенный офис'>
+									subtitle='Недостроенный офис'>
 									"Газпром Переработка"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gtrans'
-									description='Офис градообразующей компании'>
+									subtitle='Офис градообразующей компании'>
 									"Газпром Трансгаз"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sterh'
-									description='Дом современного искусства'>
+									subtitle='Дом современного искусства'>
 									Галерея Современного Искусства "Стерх"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='stroit'
-									description='Популярный концертный зал'>
+									subtitle='Популярный концертный зал'>
 									Городской Культурный Центр
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gpkio'
-									description='Один из первых парков города'>
+									subtitle='Один из первых парков города'>
 									Городской Парк Культуры и Отдыха
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='zags'
-									description='Городской ЗАГС'>
+									subtitle='Городской ЗАГС'>
 									Дворец Торжеств
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='dneft'
-									description='Крупнейший концертный зал города'>
+									subtitle='Крупнейший концертный зал города'>
 									ДИ "Нефтяник"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kupec'
-									description='Памятник архитектуры XIX века'>
+									subtitle='Памятник архитектуры XIX века'>
 									Дом Купца Г.С. Клепикова
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='port'
-									description='Площадка для различных мероприятий'>
+									subtitle='Площадка для различных мероприятий'>
 									Культурный Центр "Порт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='mperv'
-									description='Монумент первопроходцам Севера'>
+									subtitle='Монумент первопроходцам Севера'>
 									Монумент "Первым Строителям Нового Города"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='mneft'
-									description='Монумент в честь нефтяных работников'>
+									subtitle='Монумент в честь нефтяных работников'>
 									Монумент "Трудовому Подвигу Нефтяников"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='bridge'
-									description='Важнейший транспортный узел Сургута'>
+									subtitle='Важнейший транспортный узел Сургута'>
 									Мост через Обь
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='gzprm'
-									description='Музей развития нефтяной промышленности'>
+									subtitle='Музей развития нефтяной промышленности'>
 									Музей Истории "Газпрома"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='musclx'
-									description='Крупный музейный комплекс'>
+									subtitle='Крупный музейный комплекс'>
 									Музейный Комплекс
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='brmsm'
-									description='Музей создания моста'>
+									subtitle='Музей создания моста'>
 									Музей Югорского Моста
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='salm'
-									description='Дом-музей первооткрывателя Сибирской нефти'>
+									subtitle='Дом-музей первооткрывателя Сибирской нефти'>
 									Музей Ф.К. Салманова
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='nab'
-									description='Территория бывшего речного вокзала'>
+									subtitle='Территория бывшего речного вокзала'>
 									Набережная Речпорта
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='obel'
-									description='Памятный обелиск воинам ВОВ'>
+									subtitle='Памятный обелиск воинам ВОВ'>
 									Обелиск "Ушедшим на Фронт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kuzn'
-									description='Уникальная городская кузница'>
+									subtitle='Уникальная городская кузница'>
 									Обская Кузница
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pavia'
-									description='Монумент Сургутскому авиаотряду'>
+									subtitle='Монумент Сургутскому авиаотряду'>
 									Памятник "Авиаторам Сибири"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='budda'
-									description='Монумент в честь будизма'>
+									subtitle='Монумент в честь будизма'>
 									Памятник Будде
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='voinam'
-									description='Монумент погибшим при исполнении долга'>
+									subtitle='Монумент погибшим при исполнении долга'>
 									Памятник "Воинам-Интернационалистам"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='dock'
-									description='Монумент герою детских сказок'>
+									subtitle='Монумент герою детских сказок'>
 									Памятник "Доктору Айболиту"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='narod'
-									description='Монумент в честь дружбы народов'>
+									subtitle='Монумент в честь дружбы народов'>
 									Памятник "Дружбы Народов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='repres'
-									description='Монумент в честь спецпереселенцов'>
+									subtitle='Монумент в честь спецпереселенцов'>
 									Памятник "Жертвам Репрессий"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pgaz'
-									description='Монумент работникам газодобычи'>
+									subtitle='Монумент работникам газодобычи'>
 									Памятник "Землякам-Газовикам"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='zahar'
-									description='Монумент известному журналисту'>
+									subtitle='Монумент известному журналисту'>
 									Памятник Ивану Захарову
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pmed'
-									description='Монумент в честь врачей'>
+									subtitle='Монумент в честь врачей'>
 									Памятник "Медсестре"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='btrud'
-									description='Монумент в честь рыбокомбината'>
+									subtitle='Монумент в честь рыбокомбината'>
 									Памятник "Мужеству Рыбаков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='nerozh'
-									description='Копия зарубежной скульптуры'>
+									subtitle='Копия зарубежной скульптуры'>
 									Памятник "Нерождённым Детям"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='osnov'
-									description='Главный монумент города'>
+									subtitle='Главный монумент города'>
 									Памятник Основателям
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='poezd'
-									description='Монумент первому тепловозу в городе'>
+									subtitle='Монумент первому тепловозу в городе'>
 									Памятник "Первому Поезду"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sgusch'
-									description='Монумент популярного продукта'>
+									subtitle='Монумент популярного продукта'>
 									Памятник Сгущёнке
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pstro'
-									description='Монумент в честь строителей'>
+									subtitle='Монумент в честь строителей'>
 									Памятник "Строителю"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='taras'
-									description='Монумент украинскому поэту'>
+									subtitle='Монумент украинскому поэту'>
 									Памятник Тарасу Шевченко
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='rib'
-									description='Монумент в честь работников тыла'>
+									subtitle='Монумент в честь работников тыла'>
 									Памятник "Труженикам Рыбокомбината"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='smile'
-									description='Монумент в честь эмоции'>
+									subtitle='Монумент в честь эмоции'>
 									Памятник "Улыбке"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='uchit'
-									description='Монумент работникам образования'>
+									subtitle='Монумент работникам образования'>
 									Памятник "Учительнице"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='lis'
-									description='Монумент символу города'>
+									subtitle='Монумент символу города'>
 									Памятник Чёрному Лису
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sng'
-									description='Офис градообразующей компании'>
+									subtitle='Офис градообразующей компании'>
 									ПАО "Сургутнефтегаз"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pgeo'
-									description='Парк на юго-востоке города'>
+									subtitle='Парк на юго-востоке города'>
 									Парк "Геологов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='saima'
-									description='Главный парк города'>
+									subtitle='Главный парк города'>
 									Парк "За Саймой"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='kedr'
-									description='Популярный городской парк'>
+									subtitle='Популярный городской парк'>
 									Парк "Кедровый Лог"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='pkey'
-									description='Новый популярный парк'>
+									subtitle='Новый популярный парк'>
 									Парк "Новые Ключи"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sgeo'
-									description='Сквер в юго-восточной части города'>
+									subtitle='Сквер в юго-восточной части города'>
 									Сквер "Геологов-Первопроходцев"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sdet'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Детства"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='snarod'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Дружбы Народов"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='slav'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Мемориал Славы"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='smld'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Молодёжный"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='chaes'
-									description='Сквер в честь ликвидаторов аварии'>
+									subtitle='Сквер в честь ликвидаторов аварии'>
 									Сквер "Памяти Чернобыльцев"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sstar'
-									description='Крупнейший сквер города'>
+									subtitle='Крупнейший сквер города'>
 									Сквер "Старожилов Сургута"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='scentr'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Центральный"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='sener'
-									description='Популярный городской сквер'>
+									subtitle='Популярный городской сквер'>
 									Сквер "Энергетиков"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='human'
-									description='Копия зарубежной скульптуры'>
+									subtitle='Копия зарубежной скульптуры'>
 									Скульптура "Гуманоиды"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='snezh'
-									description='Спортивное ядро города'>
+									subtitle='Спортивное ядро города'>
 									Стадион "Снежинка"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='ssur'
-									description='Историко-культурный центр'>
+									subtitle='Историко-культурный центр'>
 									Старый Сургут
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='polet'
-									description='Скульптура на северном въезде'>
+									subtitle='Скульптура на северном въезде'>
 									Стела "Полёт"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='surgut'
-									description='Скульптура на западном въезде'>
+									subtitle='Скульптура на западном въезде'>
 									Стела "Сургут"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='smdt'
-									description='Популярный городской театр'>
+									subtitle='Популярный городской театр'>
 									Сургутский Музыкально-Драматический Театр
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='filarm'
-									description='Главный концертный зал города'>
+									subtitle='Главный концертный зал города'>
 									Сургутская филармония
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='tsgu'
-									description='Один из главных театров города'>
+									subtitle='Один из главных театров города'>
 									Театр СурГУ
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='centr'
-									description='Известная точка города'>
+									subtitle='Известная точка города'>
 									ТЦ "City Centre"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='agora'
-									description='Популярный городской ТЦ'>
+									subtitle='Популярный городской ТЦ'>
 									ТЦ "Агора"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='aura'
-									description='Один из крупных городских ТЦ'>
+									subtitle='Один из крупных городских ТЦ'>
 									ТЦ "Аура"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='vershina'
-									description='Популярный городской ТЦ'>
+									subtitle='Популярный городской ТЦ'>
 									ТЦ "Вершина"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='cmoll'
-									description='Один из крупных городских ТЦ'>
+									subtitle='Один из крупных городских ТЦ'>
 									ТЦ "Сити Молл"
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='trakt'
-									description='Транспортная артерия города'>
+									subtitle='Транспортная артерия города'>
 									Тюменский Тракт
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='surgu'
-									description='Главный университет города'>
+									subtitle='Главный университет города'>
 									Университет
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='univ'
-									description='Популярная улица Сургута'>
+									subtitle='Популярная улица Сургута'>
 									Университетская
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='patr'
-									description='Единственный центр патриотической тематики'>
+									subtitle='Единственный центр патриотической тематики'>
 									Центр Патриотического Наследия
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='cplos'
-									description='Новая городская площадь'>
+									subtitle='Новая городская площадь'>
 									Центральная городская площадь
 								</Cell>
 								<Cell
-									expandable
+									chevron='always'
 									onClick={changePanel}
 									data-to='ckid'
-									description='Популярный концертный зал'>
+									subtitle='Популярный концертный зал'>
 									ЦКИД "Камертон"
 								</Cell>
 							</List>
@@ -2415,7 +2428,7 @@ export const Places = ({
 								<FixedLayout vertical='bottom'>
 									<Div>
 										<Button
-											size='xl'
+											size='l'
 											mode='primary'
 											onClick={openAreaFilters}>
 											Выбрать район
@@ -2430,7 +2443,6 @@ export const Places = ({
 			{area === null && (
 				<Fragment>
 					<Header
-						mode='secondary'
 						style={{
 							userSelect: 'none',
 							msUserSelect: 'none',
@@ -2513,17 +2525,17 @@ export const Places = ({
 					</Gallery>
 
 					<Separator
-						wide
+						size='4xl'
 						style={{ paddingBottom: '10px', marginTop: '10px' }}
 					/>
 
 					<Group>
 						<Placeholder
 							icon={<Icon56InfoOutline />}
-							header='Выберите район'
+							title='Выберите район'
 							action={
 								<Button
-									size='xl'
+									size='l'
 									mode='primary'
 									onClick={openAreaFilters}>
 									Выбрать

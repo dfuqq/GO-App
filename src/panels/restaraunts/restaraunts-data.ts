@@ -1,4 +1,11 @@
-export const restarauntsData = [
+export interface Restaraunt {
+	id: string;
+	image: string;
+	subtitle: string;
+	name: string;
+}
+
+export const restarauntsData: Restaraunt[] = [
 	{
 		id: 'seven',
 		image: 'https://sun9-66.userapi.com/ar7Q0RgYZVtLKMqKAe6kB7dDy3Vv5Llyb2SGyg/VAu_3cgyrCw.jpg',

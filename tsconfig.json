@@ -1,21 +1,43 @@
 {
-	"compilerOptions": {
-		"target": "ES6",
-		"module": "ESNext",
-		"strict": false,
-		"jsx": "react-jsx",
-		"moduleResolution": "node",
-		"baseUrl": "./src",
-		"paths": {
-			"@components/*": ["components/*"]
-		},
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
-		"lib": ["ES6", "DOM", "DOM.Iterable"],
-		// XXX: delete in future
-		"resolveJsonModule": true
-	},
-	"include": ["src/**/*"],
-	"exclude": ["node_modules", "build", "dist"]
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "strict": false,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ES6",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    // XXX: delete in future
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "src/**/*",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
 }

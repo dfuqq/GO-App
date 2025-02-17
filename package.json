@@ -4,9 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"start": "vite preview",
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
 		"tunnel": "npx vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=localhost --port=3000",
 		"prisma:push": "prisma db push",
 		"prisma:studio": "prisma studio",
@@ -27,9 +28,11 @@
 	"dependencies": {
 		"@pbe/react-yandex-maps": "^1.2.5",
 		"@prisma/client": "^6.3.1",
+		"@vkontakte/icons": "^2.166.0",
 		"@vkontakte/vk-bridge": "^2.15.4",
 		"@vkontakte/vk-tunnel": "^0.2.4",
 		"@vkontakte/vkui": "^7.1.2",
+		"next": "^15.1.7",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"typescript": "^5.7.3"
@@ -47,7 +50,8 @@
 		]
 	},
 	"devDependencies": {
-		"@types/react": "^19.0.8",
+		"@types/node": "^22.13.4",
+		"@types/react": "^19.0.9",
 		"@types/react-dom": "^19.0.3",
 		"@typescript-eslint/eslint-plugin": "^8.24.0",
 		"@typescript-eslint/parser": "^8.24.0",
@@ -55,7 +59,6 @@
 		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"prettier": "^3.5.1",
-		"prisma": "^6.3.1",
-		"vite": "^6.1.0"
+		"prisma": "^6.3.1"
 	}
 }
