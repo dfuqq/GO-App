@@ -17,9 +17,12 @@ import {
 	Icon24AddSquareOutline,
 } from '@vkontakte/icons';
 
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 interface Props {
 	nav: string;
-	changePanel: (panel: string, view?: string) => void;
+	// changePanel: (panel: string, view?: string) => void;
 	// changePanelToPlaces: (e: React.MouseEvent) => void;
 	// shareButtonAction: () => void;
 	// setActiveView: (arg0: string) => void;
@@ -27,11 +30,11 @@ interface Props {
 
 export const Home = ({
 	nav,
-	changePanel,
 	// changePanelToPlaces,
 	// shareButtonAction,
 	// setActiveView,
 }: Props) => {
+	const router = useRouter();
 	// useEffect(() => {
 	// 	const joinGroup = async function () {
 	// 		await bridge.send('VKWebAppJoinGroup', {
@@ -122,6 +125,12 @@ export const Home = ({
 						/>
 					}
 				/>
+
+				<Link href='/business'>
+					<Button onClick={() => router.push('/business')}>
+						To Business
+					</Button>
+				</Link>
 
 				{/*	<Banner 
 				mode="image"
