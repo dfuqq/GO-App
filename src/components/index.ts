@@ -1,8 +1,12 @@
 export * from './BusinessItem';
+export { About } from './About';
 export { Bars } from './Bars';
 export { Business } from './Business';
+export { BusinessBannersGallery } from './Business__Banners-Gallery';
+export { BusinessCardGroup } from './Business__Card-Group';
 export { Cafes } from './Cafes';
 export { Disclaimer } from './Disclaimer';
 export { Home } from './Home';
 export { Hookah } from './Hookah';
+export { PanHead } from './PanHead';
 export { Restaraunts } from './Restaraunts';

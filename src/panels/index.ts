@@ -1,9 +1,7 @@
-export { About } from './About';
 export { Attention } from './Attention';
 export { Business } from '../components/Business';
 export { Credits } from './Credits';
 export { Home } from '../components/Home';
 export { Places } from './Places';
 export { Projects } from './Projects';
-export { Hookah } from './hookah/Hookah';
 export { Restaraunts } from '../components/Restaraunts';

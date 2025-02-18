@@ -1,3 +1,4 @@
+'use client';
 import { Fragment } from 'react';
 import { PlatformProvider } from '@vkontakte/vkui';
 
@@ -34,6 +35,8 @@ export const Home = ({
 	// const add = async function () {
 	// 	await bridge.send('VKWebAppAddToHomeScreen'); // bridge.send при добавлении на главный экран устройства (Android)
 	// };
+
+	// TODO: Learn prefetch
 
 	return (
 		<Panel nav={nav}>
@@ -133,14 +136,10 @@ export const Home = ({
 			<Group style={{ margin: 20 }}>
 				<Cell
 					before={<Icon24Info />}
-					onClick={(e) => {
-						// setActiveView('about');
-						// changePanel(e);
-					}}
-					data-to='about'>
+					onClick={() => router.push('/about')}>
 					О приложении
 				</Cell>
-				<Cell
+				{/* <Cell
 					before={<Icon24ShareOutline />}
 					// onClick={shareButtonAction}
 				>
@@ -155,10 +154,10 @@ export const Home = ({
 							Добавить на экран устройства
 						</Cell>
 					</Fragment>
-				</PlatformProvider>
+				</PlatformProvider> */}
 			</Group>
 
-			<Footer>© РСД, 2020</Footer>
+			<Footer>© d_fuq, 2025</Footer>
 		</Panel>
 	);
 };

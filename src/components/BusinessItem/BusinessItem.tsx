@@ -1,16 +1,8 @@
 import React from 'react';
 
-import {
-	Panel,
-	PanelHeader,
-	PanelHeaderBack,
-	Group,
-	Separator,
-	Div,
-	Header,
-} from '@vkontakte/vkui';
+import { Panel, Group, Separator, Div, Header } from '@vkontakte/vkui';
 
-import { BusinessItemImageGallery, BusinessItemInfo } from '..';
+import { BusinessItemImageGallery, BusinessItemInfo, PanHead } from '..';
 
 import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
 
@@ -23,14 +15,7 @@ interface Props {
 // TODO: Map
 export const BusinessItem = ({ nav, business }: Props) => (
 	<Panel nav={nav}>
-		<PanelHeader
-			before={
-				<PanelHeaderBack
-					onClick={() => window.history.back()}></PanelHeaderBack>
-			}
-			delimiter='auto'>
-			{business.name}
-		</PanelHeader>
+		<PanHead title={business.name} />
 
 		<BusinessItemImageGallery imageGallery={business.images} />
 

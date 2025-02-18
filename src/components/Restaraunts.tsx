@@ -1,15 +1,9 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 
-import {
-	Panel,
-	PanelHeader,
-	PanelHeaderBack,
-	Cell,
-	Avatar,
-} from '@vkontakte/vkui';
-import { Disclaimer } from '.';
+import { Panel } from '@vkontakte/vkui';
+import { BusinessesList, Disclaimer, PanHead } from '.';
 
-import { useRouter } from 'next/navigation';
 import { Business } from '@prisma/client';
 
 interface Props {
@@ -27,35 +21,15 @@ export const Restaraunts = ({ nav }: Props) => {
 			.catch((err) => console.error('Ошибка загрузки ресторана:', err));
 	}, []);
 
-	const router = useRouter();
-
 	return (
 		<Panel nav={nav}>
-			<PanelHeader
-				before={
-					<PanelHeaderBack
-						onClick={() => router.back()}></PanelHeaderBack>
-				}
-				delimiter='auto'>
-				Рестораны
-			</PanelHeader>
+			<PanHead title='Рестораны' />
 
 			{data.map((restaraunt: Business) => (
-				<Cell
-					chevron='always'
-					before={
-						<Avatar
-							src={restaraunt.logo}
-							size={56}
-						/>
-					}
-					onClick={() => {
-						router.push(`/business/restaraunts/${restaraunt.slug}`);
-					}}
-					subtitle={restaraunt.subtitle}
-					key={restaraunt.slug}>
-					{restaraunt.name}
-				</Cell>
+				<BusinessesList
+					business={restaraunt}
+					key={restaraunt.slug}
+				/>
 			))}
 
 			<Disclaimer />

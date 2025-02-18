@@ -4,12 +4,12 @@ import {
 	AdaptivityProvider,
 	AppRoot,
 	ConfigProvider,
-	Root,
 	ViewWidth,
 } from '@vkontakte/vkui';
-import { usePathname } from 'next/navigation';
 import React from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
+
+// FIXME: Loadings until data received
 
 export default function RootLayout({
 	children,
