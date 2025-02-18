@@ -1,24 +1,23 @@
-import React from 'react';
 import { Gallery } from '@vkontakte/vkui';
+import { Image } from '@prisma/client';
 
 interface Props {
-	galleryImage: [{ src: string; alt: string }];
+	imageGallery: Image[];
 }
 
-export const TestCafesGalleryImage = ({ galleryImage }: Props) => {
+export const CafeItemImageGallery = ({ imageGallery }: Props) => {
 	return (
 		<Gallery
 			slideWidth='100%'
 			style={{ height: 225 }}
 			align='center'
 			bullets='light'>
-			{/* NOTE: need a key from db (possibly id) */}
-			{galleryImage.map((image, index) => (
+			{imageGallery.map((image, index) => (
 				<img
 					style={{ objectFit: 'contain' }}
 					src={image.src}
 					alt={image.alt}
-					key={index}
+					key={image.id}
 				/>
 			))}
 		</Gallery>

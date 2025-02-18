@@ -1,15 +1,15 @@
 'use client';
 
 import { View } from '@vkontakte/vkui';
-import { Home } from '../../../src/components';
+import { Cafes } from '../../../../src/components/Cafes';
 import React from 'react';
 
-export default function HomePage() {
+export default function CafesPage() {
 	return (
 		<View
 			nav='home'
 			activePanel='home'>
-			<Home nav='home' />
+			<Cafes nav='home' />
 		</View>
 	);
 }

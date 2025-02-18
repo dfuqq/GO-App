@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Div, Cell } from '@vkontakte/vkui';
 
 import {
@@ -9,20 +7,13 @@ import {
 	Icon28PhoneOutline,
 } from '@vkontakte/icons/';
 
-interface CafeItem {
-	hours: string;
-	address: string;
-	priceFrom: number;
-	priceTo: number;
-	phone: string;
-	social: string;
-}
+import { Business } from '@prisma/client';
 
 interface Props {
-	item: CafeItem;
+	cafe: Business;
 }
 
-export const TestCafesInfoBlock = ({ item }: Props) => {
+export const CafeItemInfo = ({ cafe }: Props) => {
 	return (
 		<Div style={{ paddingBottom: 0 }}>
 			<Cell
@@ -32,8 +23,8 @@ export const TestCafesInfoBlock = ({ item }: Props) => {
 						width={24}
 					/>
 				}
-				subtitle={item.hours}>
-				{item.address}
+				subtitle={cafe.hours}>
+				{cafe.address}
 			</Cell>
 			<Cell
 				before={
@@ -42,7 +33,7 @@ export const TestCafesInfoBlock = ({ item }: Props) => {
 						width={24}
 					/>
 				}>
-				{item.priceFrom}-{item.priceTo}₽
+				{cafe.priceFrom}-{cafe.priceTo}₽
 			</Cell>
 			<Cell
 				before={
@@ -51,10 +42,10 @@ export const TestCafesInfoBlock = ({ item }: Props) => {
 						width={24}
 					/>
 				}>
-				{item.phone}
+				{cafe.phone}
 			</Cell>
 			<Cell
-				href='https://instagram.com/ny_coffee_surgut'
+				href={cafe.socialHref}
 				target='_blank'
 				before={
 					<Icon28LogoInstagram
@@ -62,7 +53,7 @@ export const TestCafesInfoBlock = ({ item }: Props) => {
 						width={24}
 					/>
 				}>
-				{item.social}
+				{cafe.social}
 			</Cell>
 		</Div>
 	);

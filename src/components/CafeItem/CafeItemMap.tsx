@@ -7,7 +7,7 @@ interface Props {
 	geo: [number, number];
 }
 
-export const TestCafesMap = ({ geo }: Props) => {
+export const CafeItemMap = ({ geo }: Props) => {
 	return (
 		<Group
 			style={{
