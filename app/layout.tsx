@@ -16,9 +16,6 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const pathname = usePathname(); // Получаем текущий путь
-	const nav = pathname === '/' ? 'home' : pathname.substring(1); // '/' → 'home', '/business' → 'business'
-
 	return (
 		<html lang='ru'>
 			<body>
@@ -26,9 +23,7 @@ export default function RootLayout({
 					platform='ios'
 					transitionMotionEnabled>
 					<AdaptivityProvider viewWidth={ViewWidth.MOBILE}>
-						<AppRoot userSelectMode='disabled'>
-							<Root nav={nav}>{children}</Root>
-						</AppRoot>
+						<AppRoot userSelectMode='disabled'>{children}</AppRoot>
 					</AdaptivityProvider>
 				</ConfigProvider>
 			</body>

@@ -12,155 +12,165 @@ import {
 	Separator,
 } from '@vkontakte/vkui';
 
+import { useRouter } from 'next/navigation';
+
 interface Props {
 	nav: string;
-	changePanel: (panel: string, view?: string) => void;
+	// changePanel: (panel: string, view?: string) => void;
 	// setActiveView: (arg0: string) => void;
 }
 
 export const Business = ({
 	nav,
-	changePanel,
+	// changePanel,
 	// setActiveView
-}: Props) => (
-	<Panel nav={nav}>
-		<PanelHeader
-			before={
-				<PanelHeaderBack
-					label=''
-					onClick={(e) => {
-						changePanel('home', 'home');
-					}}></PanelHeaderBack>
-			}>
-			Заведения
-		</PanelHeader>
+}: Props) => {
+	const router = useRouter();
 
-		<Header
-			style={{
-				userSelect: 'none',
-				msUserSelect: 'none',
-				MozUserSelect: 'none',
-				KhtmlUserSelect: 'none',
-				WebkitUserSelect: 'none',
-				WebkitTouchCallout: 'none',
-			}}>
-			Наши Фавориты
-		</Header>
-		<Gallery
-			slideWidth='92%'
-			style={{ height: 200 }}
-			align='center'>
-			<img
-				src='https://sun9-70.userapi.com/s4wSW493Dz22_UyKJdI9xliZSPP7eFlCEgEwUw/YwVTTUyOHjU.jpg'
-				style={{
-					objectFit: 'contain',
-					borderRadius: '20px',
-					margin: '0 3px',
-					width: '90vw',
-					backgroundColor: '#000',
-				}}
-				alt='nyccrd'
-				// onClick={changePanel}
-				data-to='nyccrd'
-			/>
-			<img
-				src='https://sun9-37.userapi.com/MWnJ1dLsBWOsSTq27KaYqauetFbHDMNsTovfrg/I_PRRNy4UOY.jpg'
-				style={{
-					objectFit: 'contain',
-					borderRadius: '20px',
-					margin: '0 3px',
-					width: '90vw',
-					backgroundColor: '#000',
-				}}
-				alt='percicrd'
-				// onClick={changePanel}
-				data-to='percicrd'
-			/>
-			<img
-				src='https://sun9-5.userapi.com/PxYCwDnkQ0B68iCrmu1ESVaWmv4lq52RuX0Wjg/tFYeMpCJljo.jpg'
-				style={{
-					objectFit: 'contain',
-					borderRadius: '20px',
-					margin: '0 3px',
-					width: '90vw',
-					backgroundColor: '#000',
-				}}
-				alt='auditcrd'
-				// onClick={changePanel}
-				data-to='auditcrd'
-			/>
-		</Gallery>
+	return (
+		<Panel nav={nav}>
+			<PanelHeader
+				before={
+					<PanelHeaderBack
+						label=''
+						onClick={() => {
+							router.back();
+						}}></PanelHeaderBack>
+				}>
+				Заведения
+			</PanelHeader>
 
-		<Separator
-			size='4xl'
-			style={{ paddingBottom: '10px', marginTop: '10px' }}
-		/>
+			<Header
+				style={{
+					userSelect: 'none',
+					msUserSelect: 'none',
+					MozUserSelect: 'none',
+					KhtmlUserSelect: 'none',
+					WebkitUserSelect: 'none',
+					WebkitTouchCallout: 'none',
+				}}>
+				Наши Фавориты
+			</Header>
+			<Gallery
+				slideWidth='92%'
+				style={{ height: 200 }}
+				align='center'>
+				<img
+					src='https://sun9-70.userapi.com/s4wSW493Dz22_UyKJdI9xliZSPP7eFlCEgEwUw/YwVTTUyOHjU.jpg'
+					style={{
+						objectFit: 'contain',
+						borderRadius: '20px',
+						margin: '0 3px',
+						width: '90vw',
+						backgroundColor: '#000',
+					}}
+					alt='nyccrd'
+					// onClick={changePanel}
+					data-to='nyccrd'
+				/>
+				<img
+					src='https://sun9-37.userapi.com/MWnJ1dLsBWOsSTq27KaYqauetFbHDMNsTovfrg/I_PRRNy4UOY.jpg'
+					style={{
+						objectFit: 'contain',
+						borderRadius: '20px',
+						margin: '0 3px',
+						width: '90vw',
+						backgroundColor: '#000',
+					}}
+					alt='percicrd'
+					// onClick={changePanel}
+					data-to='percicrd'
+				/>
+				<img
+					src='https://sun9-5.userapi.com/PxYCwDnkQ0B68iCrmu1ESVaWmv4lq52RuX0Wjg/tFYeMpCJljo.jpg'
+					style={{
+						objectFit: 'contain',
+						borderRadius: '20px',
+						margin: '0 3px',
+						width: '90vw',
+						backgroundColor: '#000',
+					}}
+					alt='auditcrd'
+					// onClick={changePanel}
+					data-to='auditcrd'
+				/>
+			</Gallery>
 
-		<Group style={{ paddingBottom: '12px' }}>
-			<CardGrid size='s'>
-				<Card
-					style={{
-						height: 82,
-						backgroundColor: '#000',
-						backgroundImage:
-							'url(https://sun9-31.userapi.com/QwiMCvuXNIfsqRIW_ZNpfBXHeIwHUHRDVeKVrQ/CX3mBNcTkk0.jpg)',
-						backgroundSize: 210,
-						backgroundPosition: 'right',
-						backgroundRepeat: 'no-repeat',
-					}}
-					// onClick={changePanel}
-					data-to='cafes'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Кафе</h3>
-				</Card>
-				<Card
-					style={{
-						height: 82,
-						backgroundColor: '#000',
-						backgroundImage:
-							'url(https://sun9-27.userapi.com/SDfPljINYE6XYLYPelwVHUUSdqXfsoIzW9RHQQ/TpjWURYqIBs.jpg)',
-						backgroundSize: 180,
-						backgroundPosition: 'right',
-						backgroundRepeat: 'no-repeat',
-					}}
-					// onClick={changePanel}
-					data-to='bars'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>Бары</h3>
-				</Card>
-				<Card
-					style={{
-						height: 82,
-						color: '#fff',
-						backgroundColor: '#000',
-						backgroundImage:
-							'url(https://sun9-19.userapi.com/kcxoaK0ovz_DiphT1v92DYvZkfZrZebgx56rjg/AXjs6e576DM.jpg)',
-						backgroundSize: 180,
-						backgroundPosition: 'right',
-						backgroundRepeat: 'no-repeat',
-					}}
-					// onClick={changePanel}
-					data-to='restaraunts'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
-						Рестораны
-					</h3>
-				</Card>
-				<Card
-					style={{
-						height: 82,
-						color: '#fff',
-						backgroundColor: '#000',
-						backgroundImage:
-							'url(https://sun9-14.userapi.com/c5f5ukJ9v-XBXgTGbqK8D0sumXvlNBS1dNvxxg/YU53ROqkRuI.jpg)',
-						backgroundSize: 180,
-						backgroundPosition: 'right',
-						backgroundRepeat: 'no-repeat',
-					}}
-					// onClick={changePanel}
-					data-to='hookah'>
-					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
-						Кальянные
-					</h3>
-				</Card>
-			</CardGrid>
-		</Group>
-	</Panel>
-);
+			<Separator
+				size='4xl'
+				style={{ paddingBottom: '10px', marginTop: '10px' }}
+			/>
+
+			<Group style={{ paddingBottom: '12px' }}>
+				<CardGrid size='s'>
+					<Card
+						style={{
+							height: 82,
+							backgroundColor: '#000',
+							backgroundImage:
+								'url(https://sun9-31.userapi.com/QwiMCvuXNIfsqRIW_ZNpfBXHeIwHUHRDVeKVrQ/CX3mBNcTkk0.jpg)',
+							backgroundSize: 210,
+							backgroundPosition: 'right',
+							backgroundRepeat: 'no-repeat',
+							cursor: 'pointer',
+						}}
+						onClick={() => router.push('/business/cafes')}>
+						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+							Кафе
+						</h3>
+					</Card>
+					<Card
+						style={{
+							height: 82,
+							backgroundColor: '#000',
+							backgroundImage:
+								'url(https://sun9-27.userapi.com/SDfPljINYE6XYLYPelwVHUUSdqXfsoIzW9RHQQ/TpjWURYqIBs.jpg)',
+							backgroundSize: 180,
+							backgroundPosition: 'right',
+							backgroundRepeat: 'no-repeat',
+						}}
+						// onClick={changePanel}
+						data-to='bars'>
+						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+							Бары
+						</h3>
+					</Card>
+					<Card
+						style={{
+							height: 82,
+							color: '#fff',
+							backgroundColor: '#000',
+							backgroundImage:
+								'url(https://sun9-19.userapi.com/kcxoaK0ovz_DiphT1v92DYvZkfZrZebgx56rjg/AXjs6e576DM.jpg)',
+							backgroundSize: 180,
+							backgroundPosition: 'right',
+							backgroundRepeat: 'no-repeat',
+						}}
+						// onClick={changePanel}
+						data-to='restaraunts'>
+						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+							Рестораны
+						</h3>
+					</Card>
+					<Card
+						style={{
+							height: 82,
+							color: '#fff',
+							backgroundColor: '#000',
+							backgroundImage:
+								'url(https://sun9-14.userapi.com/c5f5ukJ9v-XBXgTGbqK8D0sumXvlNBS1dNvxxg/YU53ROqkRuI.jpg)',
+							backgroundSize: 180,
+							backgroundPosition: 'right',
+							backgroundRepeat: 'no-repeat',
+						}}
+						// onClick={changePanel}
+						data-to='hookah'>
+						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
+							Кальянные
+						</h3>
+					</Card>
+				</CardGrid>
+			</Group>
+		</Panel>
+	);
+};
