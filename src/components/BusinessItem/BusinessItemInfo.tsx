@@ -13,7 +13,7 @@ interface Props {
 	cafe: Business;
 }
 
-export const CafeItemInfo = ({ cafe }: Props) => {
+export const BusinessItemInfo = ({ cafe }: Props) => {
 	return (
 		<Div style={{ paddingBottom: 0 }}>
 			<Cell

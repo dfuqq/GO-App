@@ -5,6 +5,5 @@ export { Credits } from './Credits';
 export { Home } from '../components/Home';
 export { Places } from './Places';
 export { Projects } from './Projects';
-export { Bars } from './bars/Bars';
 export { Hookah } from './hookah/Hookah';
 export { Restaraunts } from './restaraunts/Restaraunts';

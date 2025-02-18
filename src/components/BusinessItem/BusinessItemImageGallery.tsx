@@ -5,7 +5,7 @@ interface Props {
 	imageGallery: Image[];
 }
 
-export const CafeItemImageGallery = ({ imageGallery }: Props) => {
+export const BusinessItemImageGallery = ({ imageGallery }: Props) => {
 	return (
 		<Gallery
 			slideWidth='100%'

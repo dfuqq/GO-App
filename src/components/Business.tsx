@@ -16,15 +16,9 @@ import { useRouter } from 'next/navigation';
 
 interface Props {
 	nav: string;
-	// changePanel: (panel: string, view?: string) => void;
-	// setActiveView: (arg0: string) => void;
 }
 
-export const Business = ({
-	nav,
-	// changePanel,
-	// setActiveView
-}: Props) => {
+export const Business = ({ nav }: Props) => {
 	const router = useRouter();
 
 	return (
@@ -40,17 +34,7 @@ export const Business = ({
 				Заведения
 			</PanelHeader>
 
-			<Header
-				style={{
-					userSelect: 'none',
-					msUserSelect: 'none',
-					MozUserSelect: 'none',
-					KhtmlUserSelect: 'none',
-					WebkitUserSelect: 'none',
-					WebkitTouchCallout: 'none',
-				}}>
-				Наши Фавориты
-			</Header>
+			<Header>Наши Фавориты</Header>
 			<Gallery
 				slideWidth='92%'
 				style={{ height: 200 }}
@@ -128,9 +112,9 @@ export const Business = ({
 							backgroundSize: 180,
 							backgroundPosition: 'right',
 							backgroundRepeat: 'no-repeat',
+							cursor: 'pointer',
 						}}
-						// onClick={changePanel}
-						data-to='bars'>
+						onClick={() => router.push('/business/bars')}>
 						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 							Бары
 						</h3>

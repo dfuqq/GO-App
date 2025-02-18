@@ -7,9 +7,9 @@ import React from 'react';
 export default function CafesPage() {
 	return (
 		<View
-			nav='home'
-			activePanel='home'>
-			<Cafes nav='home' />
+			nav='business'
+			activePanel='cafes'>
+			<Cafes nav='cafes' />
 		</View>
 	);
 }

@@ -10,23 +10,23 @@ export async function GET(
 	{ params }: { params: { nav: string } }
 ) {
 	try {
-		const cafe: BusinessDTO | null = await prisma.business.findUnique({
+		const bar: BusinessDTO | null = await prisma.business.findUnique({
 			where: { slug: params.nav },
 
 			include: { images: true },
 		});
 
-		if (!cafe) {
+		if (!bar) {
 			return NextResponse.json(
-				{ error: 'Cafe not found' },
+				{ error: 'Bar not found' },
 				{ status: 404 }
 			);
 		}
 
-		return NextResponse.json(cafe);
+		return NextResponse.json(bar);
 	} catch (error) {
 		return NextResponse.json(
-			{ error: 'Failed to fetch cafe' },
+			{ error: 'Failed to fetch Bar' },
 			{ status: 500 }
 		);
 	}

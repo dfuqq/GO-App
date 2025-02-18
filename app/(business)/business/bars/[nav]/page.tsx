@@ -7,17 +7,17 @@ import { BusinessItem } from '../../../../../src/components/';
 import { useParams } from 'next/navigation';
 import { BusinessDTO } from '../../../../api/business/cafes/[nav]/route';
 
-export default function CafeItemPage() {
+export default function BarItemPage() {
 	const { nav }: { nav: string } = useParams();
 	const [cafe, setCafe] = useState<BusinessDTO | null>(null);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch(`/api/business/cafes/${nav}`)
+		fetch(`/api/business/bars/${nav}`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.error) {
-					console.error('Ошибка загрузки кафе:', data.error);
+					console.error('Ошибка загрузки бара:', data.error);
 				} else {
 					setCafe(data);
 				}

@@ -10,7 +10,7 @@ import {
 	Header,
 } from '@vkontakte/vkui';
 
-import { CafeItemImageGallery, CafeItemInfo } from '..';
+import { BusinessItemImageGallery, BusinessItemInfo } from '..';
 
 import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
 
@@ -21,7 +21,7 @@ interface Props {
 }
 
 // TODO: Map
-export const CafeItem = ({ nav, cafe }: Props) => (
+export const BusinessItem = ({ nav, cafe }: Props) => (
 	<Panel nav={nav}>
 		<PanelHeader
 			before={
@@ -32,7 +32,7 @@ export const CafeItem = ({ nav, cafe }: Props) => (
 			{cafe.name}
 		</PanelHeader>
 
-		<CafeItemImageGallery imageGallery={cafe.images} />
+		<BusinessItemImageGallery imageGallery={cafe.images} />
 
 		<Separator
 			size='4xl'
@@ -48,7 +48,7 @@ export const CafeItem = ({ nav, cafe }: Props) => (
 
 		<Separator size='4xl' />
 
-		<CafeItemInfo cafe={cafe} />
+		<BusinessItemInfo cafe={cafe} />
 
 		{/* <CafeItemMap geo={geo} /> */}
 	</Panel>

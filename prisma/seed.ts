@@ -1,5 +1,6 @@
 import { prisma } from './prisma-client';
 import { cafesData, cafesImagesData } from './data/cafes-data';
+import { barsData, barsImagesData } from './data/bars-data';
 
 async function up() {
 	await prisma.businessCategory.createMany({
@@ -78,6 +79,29 @@ async function up() {
 		}
 	};
 	pushCafesAndImages();
+
+	const pushBarsAndImages = async () => {
+		try {
+			await Promise.all(
+				barsData.map(async (barData) => {
+					await prisma.business.create({
+						data: { ...barData },
+					});
+				})
+			);
+
+			await Promise.all(
+				barsImagesData.map(async (imageData) => {
+					await prisma.image.create({
+						data: { ...imageData },
+					});
+				})
+			);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+	pushBarsAndImages();
 }
 
 async function down() {
