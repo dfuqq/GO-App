@@ -1,6 +1,12 @@
 import { prisma } from './prisma-client';
 import { cafesData, cafesImagesData } from './data/cafes-data';
 import { barsData, barsImagesData } from './data/bars-data';
+import { hookahsData, hookahsImagesData } from './data/hookahs-data';
+import {
+	restarauntsData,
+	restarauntsImagesData,
+} from './data/restaraunts-data';
+import { Business, Images } from './data/types';
 
 async function up() {
 	await prisma.businessCategory.createMany({
@@ -57,18 +63,21 @@ async function up() {
 		],
 	});
 
-	const pushCafesAndImages = async () => {
+	const pushBusinessAndImages = async (
+		businessesData: Business[],
+		businessesImagesData: Images[]
+	) => {
 		try {
 			await Promise.all(
-				cafesData.map(async (cafeData) => {
+				businessesData.map(async (businessData) => {
 					await prisma.business.create({
-						data: { ...cafeData },
+						data: { ...businessData },
 					});
 				})
 			);
 
 			await Promise.all(
-				cafesImagesData.map(async (imageData) => {
+				businessesImagesData.map(async (imageData) => {
 					await prisma.image.create({
 						data: { ...imageData },
 					});
@@ -78,30 +87,11 @@ async function up() {
 			console.error(error);
 		}
 	};
-	pushCafesAndImages();
 
-	const pushBarsAndImages = async () => {
-		try {
-			await Promise.all(
-				barsData.map(async (barData) => {
-					await prisma.business.create({
-						data: { ...barData },
-					});
-				})
-			);
-
-			await Promise.all(
-				barsImagesData.map(async (imageData) => {
-					await prisma.image.create({
-						data: { ...imageData },
-					});
-				})
-			);
-		} catch (error) {
-			console.error(error);
-		}
-	};
-	pushBarsAndImages();
+	pushBusinessAndImages(cafesData, cafesImagesData);
+	pushBusinessAndImages(barsData, barsImagesData);
+	pushBusinessAndImages(hookahsData, hookahsImagesData);
+	pushBusinessAndImages(restarauntsData, restarauntsImagesData);
 }
 
 async function down() {

@@ -10,12 +10,12 @@ import {
 import { Business } from '@prisma/client';
 
 interface Props {
-	cafe: Business;
+	business: Business;
 }
 
-export const BusinessItemInfo = ({ cafe }: Props) => {
+export const BusinessItemInfo = ({ business }: Props) => {
 	return (
-		<Div style={{ paddingBottom: 0 }}>
+		<Div style={{ paddingBottom: 0, whiteSpace: 'pre-line' }}>
 			<Cell
 				before={
 					<Icon28PlaceOutline
@@ -23,8 +23,9 @@ export const BusinessItemInfo = ({ cafe }: Props) => {
 						width={24}
 					/>
 				}
-				subtitle={cafe.hours}>
-				{cafe.address}
+				subtitle={business.hours}
+				style={{ whiteSpace: 'pre-line' }}>
+				{business.address}
 			</Cell>
 			<Cell
 				before={
@@ -33,7 +34,7 @@ export const BusinessItemInfo = ({ cafe }: Props) => {
 						width={24}
 					/>
 				}>
-				{cafe.priceFrom}-{cafe.priceTo}₽
+				{business.priceFrom}-{business.priceTo}₽
 			</Cell>
 			<Cell
 				before={
@@ -42,10 +43,10 @@ export const BusinessItemInfo = ({ cafe }: Props) => {
 						width={24}
 					/>
 				}>
-				{cafe.phone}
+				{business.phone}
 			</Cell>
 			<Cell
-				href={cafe.socialHref}
+				href={business.socialHref}
 				target='_blank'
 				before={
 					<Icon28LogoInstagram
@@ -53,7 +54,7 @@ export const BusinessItemInfo = ({ cafe }: Props) => {
 						width={24}
 					/>
 				}>
-				{cafe.social}
+				{business.social}
 			</Cell>
 		</Div>
 	);

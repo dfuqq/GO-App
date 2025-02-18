@@ -6,4 +6,4 @@ export { Home } from '../components/Home';
 export { Places } from './Places';
 export { Projects } from './Projects';
 export { Hookah } from './hookah/Hookah';
-export { Restaraunts } from './restaraunts/Restaraunts';
+export { Restaraunts } from '../components/Restaraunts';

@@ -34,7 +34,7 @@ export default function CafeItemPage() {
 	return (
 		<BusinessItem
 			nav={nav}
-			cafe={cafe}
+			business={cafe}
 		/>
 	);
 }

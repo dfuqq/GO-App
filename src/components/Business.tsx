@@ -129,9 +129,9 @@ export const Business = ({ nav }: Props) => {
 							backgroundSize: 180,
 							backgroundPosition: 'right',
 							backgroundRepeat: 'no-repeat',
+							cursor: 'pointer',
 						}}
-						// onClick={changePanel}
-						data-to='restaraunts'>
+						onClick={() => router.push('/business/restaraunts')}>
 						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 							Рестораны
 						</h3>
@@ -146,9 +146,9 @@ export const Business = ({ nav }: Props) => {
 							backgroundSize: 180,
 							backgroundPosition: 'right',
 							backgroundRepeat: 'no-repeat',
+							cursor: 'pointer',
 						}}
-						// onClick={changePanel}
-						data-to='hookah'>
+						onClick={() => router.push('/business/hookahs')}>
 						<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 							Кальянные
 						</h3>

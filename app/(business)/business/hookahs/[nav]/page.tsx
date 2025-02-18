@@ -7,19 +7,19 @@ import { BusinessItem } from '../../../../../src/components/';
 import { useParams } from 'next/navigation';
 import { BusinessDTO } from '../../../../api/business/cafes/[nav]/route';
 
-export default function BarItemPage() {
+export default function CafeItemPage() {
 	const { nav }: { nav: string } = useParams();
-	const [bar, setBar] = useState<BusinessDTO | null>(null);
+	const [hookah, setHookah] = useState<BusinessDTO | null>(null);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch(`/api/business/bars/${nav}`)
+		fetch(`/api/business/restaraunts/${nav}`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.error) {
-					console.error('Ошибка загрузки бара:', data.error);
+					console.error('Ошибка загрузки ресторана:', data.error);
 				} else {
-					setBar(data);
+					setHookah(data);
 				}
 			})
 			.catch((err) => console.error('Ошибка запроса:', err))
@@ -29,12 +29,12 @@ export default function BarItemPage() {
 	// TODO: ScreenSpinner
 	if (loading) return <h1>loading</h1>;
 	// TODO: 404 Page
-	if (!bar) return <h1>404 Not found</h1>;
+	if (!hookah) return <h1>404 Not found</h1>;
 
 	return (
 		<BusinessItem
 			nav={nav}
-			business={bar}
+			business={hookah}
 		/>
 	);
 }

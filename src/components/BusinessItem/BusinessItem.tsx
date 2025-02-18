@@ -17,11 +17,11 @@ import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
 interface Props {
 	nav: string;
 	// geo: [number, number];
-	cafe: BusinessDTO;
+	business: BusinessDTO;
 }
 
 // TODO: Map
-export const BusinessItem = ({ nav, cafe }: Props) => (
+export const BusinessItem = ({ nav, business }: Props) => (
 	<Panel nav={nav}>
 		<PanelHeader
 			before={
@@ -29,10 +29,10 @@ export const BusinessItem = ({ nav, cafe }: Props) => (
 					onClick={() => window.history.back()}></PanelHeaderBack>
 			}
 			delimiter='auto'>
-			{cafe.name}
+			{business.name}
 		</PanelHeader>
 
-		<BusinessItemImageGallery imageGallery={cafe.images} />
+		<BusinessItemImageGallery imageGallery={business.images} />
 
 		<Separator
 			size='4xl'
@@ -42,13 +42,13 @@ export const BusinessItem = ({ nav, cafe }: Props) => (
 		<Group
 			separator='hide'
 			style={{ padding: '0 3vw 20px 3vw' }}
-			header={<Header>{cafe.descriptionHeader}</Header>}>
-			<Div style={{ whiteSpace: 'pre-line' }}>{cafe.description}</Div>
+			header={<Header>{business.descriptionHeader}</Header>}>
+			<Div style={{ whiteSpace: 'pre-line' }}>{business.description}</Div>
 		</Group>
 
 		<Separator size='4xl' />
 
-		<BusinessItemInfo cafe={cafe} />
+		<BusinessItemInfo business={business} />
 
 		{/* <CafeItemMap geo={geo} /> */}
 	</Panel>

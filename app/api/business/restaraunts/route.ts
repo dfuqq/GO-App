@@ -3,11 +3,11 @@ import { findBusiness } from '../../../../src/lib/find-business';
 
 export async function GET() {
 	try {
-		const data = await findBusiness('BAR');
+		const data = await findBusiness('RESTAURANT');
 		return NextResponse.json(data);
 	} catch (error) {
 		return NextResponse.json(
-			{ error: 'Failed to fetch bars' },
+			{ error: 'Failed to fetch cafes' },
 			{ status: 500 }
 		);
 	}

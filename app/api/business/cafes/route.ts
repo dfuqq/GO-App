@@ -1,4 +1,3 @@
-// app/api/cafes/route.ts
 import { NextResponse } from 'next/server';
 import { findBusiness } from '../../../../src/lib/find-business';
 
