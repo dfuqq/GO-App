@@ -40,7 +40,7 @@ export const Home = ({
 
 	return (
 		<Panel nav={nav}>
-			<PanelHeader>GO!</PanelHeader>
+			<PanelHeader fixed={false}>GO!</PanelHeader>
 
 			<Group style={{ margin: 20 }}>
 				<Banner
@@ -59,8 +59,7 @@ export const Home = ({
 						<Button
 							mode='primary'
 							size='l'
-							// onClick={changePanelToPlaces}
-							data-to='places'>
+							onClick={() => router.push('/places')}>
 							Посмотреть
 						</Button>
 					}

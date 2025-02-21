@@ -8,6 +8,7 @@ import { businessCardGroupData } from '../../prisma/data/business__card-group-da
 export const BusinessCardGroup = () => {
 	const router = useRouter();
 
+	// TODO: Flex
 	return (
 		<CardGrid size='s'>
 			{businessCardGroupData.map((cardItem) => (

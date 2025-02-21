@@ -7,5 +7,15 @@ interface Props {
 export const Container: React.FC<React.PropsWithChildren<Props>> = ({
 	children,
 }) => {
-	return <div className={'mx-auto max-w-[1280px]'}>{children}</div>;
+	return (
+		<div
+			style={{
+				maxWidth: '1280px',
+				maxHeight: '100vh',
+				margin: '0 auto',
+				display: 'flex',
+			}}>
+			{children}
+		</div>
+	);
 };

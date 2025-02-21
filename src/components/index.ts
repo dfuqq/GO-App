@@ -1,4 +1,5 @@
-export * from './BusinessItem';
+export * from './BusinessItemComponents';
+export * from './AboutComponents';
 export { About } from './About';
 export { Bars } from './Bars';
 export { Business } from './Business';
@@ -9,4 +10,5 @@ export { Disclaimer } from './Disclaimer';
 export { Home } from './Home';
 export { Hookah } from './Hookah';
 export { PanHead } from './PanHead';
+export { Projects } from './Projects';
 export { Restaraunts } from './Restaraunts';

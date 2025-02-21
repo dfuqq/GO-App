@@ -1,28 +1,18 @@
 import React from 'react';
 
-import {
-	Panel,
-	PanelHeader,
-	PanelHeaderBack,
-	Avatar,
-	Group,
-	Div,
-	Button,
-} from '@vkontakte/vkui';
+import { Panel, Avatar, Group, Div, Button } from '@vkontakte/vkui';
+import { PanHead } from './PanHead';
 
 interface Props {
-	id: string;
+	nav: string;
 }
 
-export const Projects = ({ id }: Props) => (
-	<Panel id={id}>
-		<PanelHeader
-			before={
-				<PanelHeaderBack
-					onClick={() => window.history.back()}></PanelHeaderBack>
-			}>
-			Другие проекты
-		</PanelHeader>
+// XXX: Cleanup
+export const Projects = ({ nav }: Props) => (
+	<Panel
+		nav={nav}
+		centered>
+		<PanHead title='Другие проекты' />
 
 		<Group style={{ textAlign: 'center' }}>
 			<Div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -104,39 +94,6 @@ export const Projects = ({ id }: Props) => (
 					mode='primary'
 					size='l'
 					href='https://vk.com/romekbdvorov'
-					target='_blank'>
-					Перейти
-				</Button>
-			</Div>
-		</Group>
-
-		<Group style={{ textAlign: 'center' }}>
-			<Div style={{ display: 'flex', justifyContent: 'center' }}>
-				<a
-					href='https://instagram.com/romsurdvorov'
-					target='_blank'
-					rel='noopener noreferrer'>
-					<Avatar
-						size={104}
-						src='https://sun9-23.userapi.com/V4COqUco6ohYrA7tXNjEMdCU5eJjNT7pRSORVA/NHKHZ2SxZJo.jpg'
-					/>
-				</a>
-			</Div>
-			<h2>Instagram</h2>
-			<h4
-				style={{
-					paddingLeft: '20px',
-					paddingRight: '20px',
-					fontWeight: 400,
-				}}>
-				Мини-блог паблика,
-				<br />в котором мы иногда рассказываем о грядущих обновлениях.
-			</h4>
-			<Div>
-				<Button
-					mode='primary'
-					size='l'
-					href='https://instagram.com/romsurdvorov'
 					target='_blank'>
 					Перейти
 				</Button>

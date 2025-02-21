@@ -11,7 +11,7 @@ export const BusinessBannersGallery = () => {
 	return (
 		<Gallery
 			slideWidth='92%'
-			style={{ height: 200 }}
+			style={{ maxHeight: '25vh' }}
 			align='center'>
 			{businessBannersGalleryData.map((cardItem) => (
 				<img
@@ -20,8 +20,8 @@ export const BusinessBannersGallery = () => {
 						objectFit: 'contain',
 						borderRadius: '20px',
 						margin: '0 3px',
-						width: '90vw',
 						backgroundColor: '#000',
+						maxHeight: '25vh',
 					}}
 					alt={cardItem.alt}
 					key={cardItem.businessSlug}

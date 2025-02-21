@@ -1,30 +1,18 @@
 import React from 'react';
 
-import {
-	Panel,
-	PanelHeader,
-	PanelHeaderBack,
-	Group,
-	Div,
-	Placeholder,
-	Button,
-} from '@vkontakte/vkui';
+import { Panel, Group, Div, Placeholder, Button } from '@vkontakte/vkui';
 
 import { Icon56ErrorOutline } from '@vkontakte/icons';
+import { PanHead } from 'src/components';
 
 interface Props {
 	id: string;
 }
 
+// XXX: Cleanup
 export const Attention = ({ id }: Props) => (
 	<Panel id={id}>
-		<PanelHeader
-			before={
-				<PanelHeaderBack
-					onClick={() => window.history.back()}></PanelHeaderBack>
-			}>
-			Бизнесам
-		</PanelHeader>
+		<PanHead title='Бизнесам' />
 
 		<Group
 			style={{

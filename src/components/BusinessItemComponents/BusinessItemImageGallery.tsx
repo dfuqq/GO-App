@@ -9,12 +9,12 @@ export const BusinessItemImageGallery = ({ imageGallery }: Props) => {
 	return (
 		<Gallery
 			slideWidth='100%'
-			style={{ height: 225 }}
+			style={{ maxHeight: '50vh' }}
 			align='center'
 			bullets='light'>
-			{imageGallery.map((image, index) => (
+			{imageGallery.map((image) => (
 				<img
-					style={{ objectFit: 'contain' }}
+					style={{ objectFit: 'contain', maxHeight: '50vh' }}
 					src={image.src}
 					alt={image.alt}
 					key={image.id}

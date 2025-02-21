@@ -6,6 +6,7 @@ import { BusinessItem } from '../../../../../src/components/';
 
 import { useParams } from 'next/navigation';
 import { BusinessDTO } from '../../../../api/business/cafes/[nav]/route';
+import { ScreenSpinner } from '@vkontakte/vkui';
 
 export default function CafeItemPage() {
 	const { nav }: { nav: string } = useParams();
@@ -26,8 +27,7 @@ export default function CafeItemPage() {
 			.finally(() => setLoading(false));
 	}, [nav]);
 
-	// TODO: ScreenSpinner
-	if (loading) return <h1>loading</h1>;
+	if (loading) return <ScreenSpinner />;
 	// TODO: 404 Page
 	if (!restaraunt) return <h1>404 Not found</h1>;
 

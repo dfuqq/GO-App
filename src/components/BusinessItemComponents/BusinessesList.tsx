@@ -5,10 +5,11 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 
 interface Props {
+	category: 'bars' | 'cafes' | 'hookahs' | 'restaraunts';
 	business: Business;
 }
 
-export const BusinessesList = ({ business }: Props) => {
+export const BusinessesList = ({ category, business }: Props) => {
 	const router = useRouter();
 
 	return (
@@ -21,7 +22,7 @@ export const BusinessesList = ({ business }: Props) => {
 				/>
 			}
 			onClick={() => {
-				router.push(`/business/cafes/${business.slug}`);
+				router.push(`/business/${category}/${business.slug}`);
 			}}
 			subtitle={business.subtitle}>
 			{business.name}

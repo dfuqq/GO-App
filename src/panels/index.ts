@@ -1,7 +1,2 @@
 export { Attention } from './Attention';
-export { Business } from '../components/Business';
 export { Credits } from './Credits';
-export { Home } from '../components/Home';
-export { Places } from './Places';
-export { Projects } from './Projects';
-export { Restaraunts } from '../components/Restaraunts';

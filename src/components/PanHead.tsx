@@ -10,9 +10,12 @@ interface Props {
 export const PanHead = ({ title }: Props) => {
 	const router = useRouter();
 	return (
+		// TODO: After logo to main
 		<PanelHeader
+			fixed={false}
 			before={
 				<PanelHeaderBack
+					label=''
 					onClick={() => router.back()}></PanelHeaderBack>
 			}>
 			{title}
