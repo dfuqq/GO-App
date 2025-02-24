@@ -5,9 +5,10 @@ import React from 'react';
 
 interface Props {
 	title: string;
+	route?: string;
 }
 
-export const PanHead = ({ title }: Props) => {
+export const PanHead = ({ title, route }: Props) => {
 	const router = useRouter();
 	return (
 		// TODO: After logo to main
@@ -16,7 +17,9 @@ export const PanHead = ({ title }: Props) => {
 			before={
 				<PanelHeaderBack
 					label=''
-					onClick={() => router.back()}></PanelHeaderBack>
+					onClick={() =>
+						route ? router.push(route) : router.back()
+					}></PanelHeaderBack>
 			}>
 			{title}
 		</PanelHeader>

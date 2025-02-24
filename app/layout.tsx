@@ -32,7 +32,7 @@ export default function RootLayout({
 					<ConfigProvider
 						platform='ios'
 						transitionMotionEnabled>
-						<AdaptivityProvider viewWidth={ViewWidth.MOBILE}>
+						<AdaptivityProvider>
 							<AppRoot userSelectMode='disabled'>
 								{children}
 							</AppRoot>

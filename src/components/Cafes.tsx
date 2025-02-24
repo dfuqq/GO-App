@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-import { Panel, ScreenSpinner } from '@vkontakte/vkui';
+import { Group, Panel, ScreenSpinner } from '@vkontakte/vkui';
 
 import { BusinessesList, Disclaimer, PanHead } from '.';
 
@@ -16,6 +16,7 @@ export const Cafes = ({ nav }: Props) => {
 	const [loading, setLoading] = useState(true);
 
 	// Получаем данные с сервера через API
+	// TODO: custom Hook Services
 	useEffect(() => {
 		fetch('/api/business/cafes')
 			.then((res) => res.json())
@@ -30,13 +31,17 @@ export const Cafes = ({ nav }: Props) => {
 
 			{loading && <ScreenSpinner />}
 
-			{data.map((cafe: Business) => (
-				<BusinessesList
-					category='cafes'
-					business={cafe}
-					key={cafe.slug}
-				/>
-			))}
+			{!loading && (
+				<Group>
+					{data.map((cafe: Business) => (
+						<BusinessesList
+							category='cafes'
+							business={cafe}
+							key={cafe.slug}
+						/>
+					))}
+				</Group>
+			)}
 
 			<Disclaimer />
 		</Panel>
