@@ -1,4 +1,5 @@
 import { prisma } from './prisma-client';
+
 import { cafesData, cafesImagesData } from './data/cafes-data';
 import { barsData, barsImagesData } from './data/bars-data';
 import { hookahsData, hookahsImagesData } from './data/hookahs-data';
@@ -6,7 +7,9 @@ import {
 	restarauntsData,
 	restarauntsImagesData,
 } from './data/restaraunts-data';
-import { Business, Images } from './data/types';
+
+import { Business, Images, Places } from './data/types';
+import { placesNwlData, placesNwlImagesData } from './data/places__nwl-data';
 
 async function up() {
 	await prisma.businessCategory.createMany({
@@ -87,11 +90,36 @@ async function up() {
 			console.error(error);
 		}
 	};
-
 	pushBusinessAndImages(cafesData, cafesImagesData);
 	pushBusinessAndImages(barsData, barsImagesData);
 	pushBusinessAndImages(hookahsData, hookahsImagesData);
 	pushBusinessAndImages(restarauntsData, restarauntsImagesData);
+
+	const pushPlacesAndImages = async (
+		placesData: Places[],
+		placesImagesData: Images[]
+	) => {
+		try {
+			await Promise.all(
+				placesData.map(async (nwlData) => {
+					await prisma.place.create({
+						data: { ...nwlData },
+					});
+				})
+			);
+
+			await Promise.all(
+				placesImagesData.map(async (imageData) => {
+					await prisma.image.create({
+						data: { ...imageData },
+					});
+				})
+			);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+	pushPlacesAndImages(placesNwlData, placesNwlImagesData);
 }
 
 async function down() {

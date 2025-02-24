@@ -56,7 +56,12 @@ model Place {
     description       String
     descriptionHeader String
     address           String
+    areaSlug          String
+    area              String
     hours             String?
+    price             String?
+    social            String?
+    socialHref        String?
     categoryId        Int
     category          PlaceCategory @relation(fields: [categoryId], references: [id])
     images            Image[]

@@ -7,13 +7,18 @@ import {
 	Icon28PhoneOutline,
 } from '@vkontakte/icons/';
 
-import { Business } from '@prisma/client';
+import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
+import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
 
 interface Props {
-	business: Business;
+	item: BusinessDTO | PlaceDTO;
 }
 
-export const BusinessItemInfo = ({ business }: Props) => {
+export const BusinessItemInfo = ({ item }: Props) => {
+	const isBusiness = (item: BusinessDTO | PlaceDTO): item is BusinessDTO => {
+		return 'phone' in item && 'priceFrom' in item;
+	};
+
 	return (
 		<Div style={{ paddingBottom: 0, whiteSpace: 'pre-line' }}>
 			<Cell
@@ -23,39 +28,58 @@ export const BusinessItemInfo = ({ business }: Props) => {
 						width={24}
 					/>
 				}
-				subtitle={business.hours}
+				subtitle={item.hours || undefined}
 				style={{ whiteSpace: 'pre-line' }}>
-				{business.address}
+				{item.address}
 			</Cell>
-			<Cell
-				before={
-					<Icon28MoneyCircleOutline
-						height={24}
-						width={24}
-					/>
-				}>
-				{business.priceFrom}-{business.priceTo}₽
-			</Cell>
-			<Cell
-				before={
-					<Icon28PhoneOutline
-						height={24}
-						width={24}
-					/>
-				}>
-				{business.phone}
-			</Cell>
-			<Cell
-				href={business.socialHref}
-				target='_blank'
-				before={
-					<Icon28LogoInstagram
-						height={24}
-						width={24}
-					/>
-				}>
-				{business.social}
-			</Cell>
+
+			{isBusiness(item) ?
+				<Cell
+					before={
+						<Icon28MoneyCircleOutline
+							height={24}
+							width={24}
+						/>
+					}>
+					{item.priceFrom}-{item.priceTo}₽
+				</Cell>
+			: item.price ?
+				<Cell
+					before={
+						<Icon28MoneyCircleOutline
+							height={24}
+							width={24}
+						/>
+					}>
+					{item.price}
+				</Cell>
+			:	null}
+
+			{isBusiness(item) && (
+				<Cell
+					before={
+						<Icon28PhoneOutline
+							height={24}
+							width={24}
+						/>
+					}>
+					{item.phone}
+				</Cell>
+			)}
+
+			{item.social && (
+				<Cell
+					href={item.socialHref}
+					target='_blank'
+					before={
+						<Icon28LogoInstagram
+							height={24}
+							width={24}
+						/>
+					}>
+					{item.social}
+				</Cell>
+			)}
 		</Div>
 	);
 };

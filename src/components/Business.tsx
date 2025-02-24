@@ -3,7 +3,7 @@ import React from 'react';
 import { Panel, Group, Header, Separator } from '@vkontakte/vkui';
 
 import { PanHead } from './PanHead';
-import { BusinessBannersGallery } from './Business__Banners-Gallery';
+import { BannersGallery } from './Banners-Gallery';
 import { BusinessCardGroup } from './Business__Card-Group';
 
 interface Props {
@@ -16,7 +16,7 @@ export const Business = ({ nav }: Props) => {
 			<PanHead title='Заведения' />
 
 			<Header>Наши Фавориты</Header>
-			<BusinessBannersGallery />
+			<BannersGallery category='business' />
 
 			<Separator
 				size='4xl'

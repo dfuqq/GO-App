@@ -5,19 +5,20 @@ import { Panel, Group, Separator, Div, Header } from '@vkontakte/vkui';
 import { BusinessItemImageGallery, BusinessItemInfo, PanHead } from '..';
 
 import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
+import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
 
 interface Props {
 	nav: string;
 	// geo: [number, number];
-	business: BusinessDTO;
+	item: BusinessDTO | PlaceDTO;
 }
 
 // TODO: Map
-export const BusinessItem = ({ nav, business }: Props) => (
+export const BusinessItem = ({ nav, item }: Props) => (
 	<Panel nav={nav}>
-		<PanHead title={business.name} />
+		<PanHead title={item.name} />
 
-		<BusinessItemImageGallery imageGallery={business.images} />
+		<BusinessItemImageGallery imageGallery={item.images} />
 
 		<Separator
 			size='4xl'
@@ -27,13 +28,13 @@ export const BusinessItem = ({ nav, business }: Props) => (
 		<Group
 			separator='hide'
 			style={{ padding: '0 3vw 20px 3vw' }}
-			header={<Header>{business.descriptionHeader}</Header>}>
-			<Div style={{ whiteSpace: 'pre-line' }}>{business.description}</Div>
+			header={<Header>{item.descriptionHeader}</Header>}>
+			<Div style={{ whiteSpace: 'pre-line' }}>{item.description}</Div>
 		</Group>
 
 		<Separator size='4xl' />
 
-		<BusinessItemInfo business={business} />
+		<BusinessItemInfo item={item} />
 
 		{/* <CafeItemMap geo={geo} /> */}
 	</Panel>

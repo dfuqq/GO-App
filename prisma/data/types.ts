@@ -15,9 +15,25 @@ export interface Business {
 	categoryId: number;
 }
 
+export interface Places {
+	slug: string;
+	name: string;
+	subtitle: string;
+	description: string;
+	descriptionHeader: string;
+	address: string;
+	areaSlug: string;
+	area: string;
+	hours?: string;
+	price?: string;
+	social?: string;
+	socialHref?: string;
+	categoryId: number;
+}
+
 export interface Images {
 	src: string;
 	alt: string;
 	businessSlug?: string;
-	placesSlug?: string;
+	placeSlug?: string;
 }
