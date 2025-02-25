@@ -1,10 +1,8 @@
 'use client';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
 import {
 	Panel,
-	Header,
-	Placeholder,
 	Button,
 	Group,
 	Separator,
@@ -12,36 +10,18 @@ import {
 	Div,
 } from '@vkontakte/vkui';
 
-import { Icon56InfoOutline } from '@vkontakte/icons/';
 import { PanHead } from './PanHead';
 import { Modal } from './Modal';
 import { BannersGallery } from './Banners-Gallery';
 import { Place } from '@prisma/client';
-import { PlacesList } from './PlacesList';
+import { PlacesList } from './PlacesComponents/Places__List';
+import { PlacesPlaceholder } from './PlacesComponents/Places__Placeholder';
 
 interface Props {
 	nav: string;
-	// area: string;
-	// openFilters: () => void;
-	// openAreaFilters: () => void;
-	// parksFilter: boolean;
-	// museumsFilter: boolean;
-	// monumentsFilter: boolean;
-	// entertaimentFilter: boolean;
-	// architectureFilter: boolean;
 }
 
-export const Places = ({
-	nav,
-	// area,
-	// 	openFilters,
-	// 	openAreaFilters,
-	// 	parksFilter,
-	// 	museumsFilter,
-	// 	monumentsFilter,
-	// 	entertaimentFilter,
-	// 	architectureFilter,
-}: Props) => {
+export const Places = ({ nav }: Props) => {
 	const [activeModal, setActiveModal] = useState(null);
 	const [isOpenModal, setIsOpenModal] = useState(false);
 	const [data, setData] = useState<Place[]>([]);
@@ -57,15 +37,10 @@ export const Places = ({
 
 			{loading && <ScreenSpinner />}
 
-			<Fragment>
-				<Header>Наши Фавориты</Header>
-
+			<Group>
 				<BannersGallery category='places' />
 
-				<Separator
-					size='4xl'
-					style={{ paddingBottom: '10px', marginTop: '10px' }}
-				/>
+				<Separator size='4xl' />
 
 				<PlacesList
 					activeArea={activeArea}
@@ -85,25 +60,10 @@ export const Places = ({
 				)}
 
 				{!isOpenModal && !activeArea && (
-					<Group>
-						<Placeholder
-							icon={<Icon56InfoOutline />}
-							title='Выберите район'
-							action={
-								<Button
-									size='l'
-									mode='primary'
-									onClick={() => {
-										setIsOpenModal(true);
-										setActiveModal('filters');
-									}}>
-									Выбрать
-								</Button>
-							}>
-							Чтобы показать Вам места, Вы должны выбрать желаемый
-							район
-						</Placeholder>
-					</Group>
+					<PlacesPlaceholder
+						setIsOpenModal={setIsOpenModal}
+						setActiveModal={setActiveModal}
+					/>
 				)}
 
 				{!isOpenModal && activeArea && (
@@ -119,7 +79,7 @@ export const Places = ({
 						</Button>
 					</Div>
 				)}
-			</Fragment>
+			</Group>
 		</Panel>
 	);
 };

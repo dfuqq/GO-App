@@ -14,7 +14,7 @@ interface Props {
 	item: BusinessDTO | PlaceDTO;
 }
 
-export const BusinessItemInfo = ({ item }: Props) => {
+export const LocationItemInfo = ({ item }: Props) => {
 	const isBusiness = (item: BusinessDTO | PlaceDTO): item is BusinessDTO => {
 		return 'phone' in item && 'priceFrom' in item;
 	};

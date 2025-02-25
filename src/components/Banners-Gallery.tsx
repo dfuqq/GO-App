@@ -1,5 +1,5 @@
 'use client';
-import { Gallery } from '@vkontakte/vkui';
+import { Gallery, Header } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -15,50 +15,54 @@ export const BannersGallery = ({ category }: Props) => {
 	const router = useRouter();
 
 	return (
-		<Gallery
-			slideWidth='92%'
-			style={{ maxHeight: '25vh' }}
-			align='center'>
-			{category === 'business' &&
-				businessBannersGalleryData.map((galleryItem) => (
-					<img
-						src={galleryItem.src}
-						style={{
-							objectFit: 'contain',
-							borderRadius: '20px',
-							margin: '0 3px',
-							backgroundColor: '#000',
-							maxHeight: '25vh',
-						}}
-						alt={galleryItem.alt}
-						key={galleryItem.businessSlug}
-						onClick={() =>
-							router.push(
-								`/business/${galleryItem.type}/${galleryItem.businessSlug}`
-							)
-						}
-					/>
-				))}
-			{category === 'places' &&
-				placesBannersGalleryData.map((galleryItem) => (
-					<img
-						src={galleryItem.src}
-						style={{
-							objectFit: 'contain',
-							borderRadius: '20px',
-							margin: '0 3px',
-							backgroundColor: '#000',
-							maxHeight: '25vh',
-						}}
-						alt={galleryItem.alt}
-						key={galleryItem.placeSlug}
-						onClick={() =>
-							router.push(
-								`/places/${galleryItem.area}/${galleryItem.placeSlug}`
-							)
-						}
-					/>
-				))}
-		</Gallery>
+		<>
+			<Header>Наши Фавориты</Header>
+
+			<Gallery
+				slideWidth='92%'
+				style={{ maxHeight: '25vh' }}
+				align='center'>
+				{category === 'business' &&
+					businessBannersGalleryData.map((galleryItem) => (
+						<img
+							src={galleryItem.src}
+							style={{
+								objectFit: 'contain',
+								borderRadius: '20px',
+								margin: '0 3px',
+								backgroundColor: '#000',
+								maxHeight: '25vh',
+							}}
+							alt={galleryItem.alt}
+							key={galleryItem.businessSlug}
+							onClick={() =>
+								router.push(
+									`/business/${galleryItem.type}/${galleryItem.businessSlug}`
+								)
+							}
+						/>
+					))}
+				{category === 'places' &&
+					placesBannersGalleryData.map((galleryItem) => (
+						<img
+							src={galleryItem.src}
+							style={{
+								objectFit: 'contain',
+								borderRadius: '20px',
+								margin: '0 3px',
+								backgroundColor: '#000',
+								maxHeight: '25vh',
+							}}
+							alt={galleryItem.alt}
+							key={galleryItem.placeSlug}
+							onClick={() =>
+								router.push(
+									`/places/${galleryItem.area}/${galleryItem.placeSlug}`
+								)
+							}
+						/>
+					))}
+			</Gallery>
+		</>
 	);
 };

@@ -1,6 +1,6 @@
 'use client';
 import { Place } from '@prisma/client';
-import { Cell, Group, Headline } from '@vkontakte/vkui';
+import { Cell, Div, Headline } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -16,13 +16,17 @@ export const PlacesList = ({ activeArea, data }: Props) => {
 		<>
 			<Headline>{activeArea}</Headline>
 			{activeArea && data.length > 0 && (
-				<Group>
+				<Div>
 					{data.map((place) => (
 						<Cell
 							chevron='always'
 							key={place.slug}
 							subtitle={place.subtitle}
-							style={{ cursor: 'pointer' }}
+							style={{
+								cursor: 'pointer',
+								borderBottom: '1px solid rgb(54, 55, 56)',
+								margin: '4px 0',
+							}}
 							onClick={() =>
 								router.push(
 									`/places/${place.areaSlug}/${place.slug}`
@@ -31,7 +35,7 @@ export const PlacesList = ({ activeArea, data }: Props) => {
 							{place.name}
 						</Cell>
 					))}
-				</Group>
+				</Div>
 			)}
 		</>
 	);

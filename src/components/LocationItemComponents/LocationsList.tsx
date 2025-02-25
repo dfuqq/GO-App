@@ -5,11 +5,11 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 
 interface Props {
-	category: 'bars' | 'cafes' | 'hookahs' | 'restaraunts';
+	category: string;
 	business: Business;
 }
 
-export const BusinessesList = ({ category, business }: Props) => {
+export const LocationsList = ({ category, business }: Props) => {
 	const router = useRouter();
 
 	return (

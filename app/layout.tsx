@@ -1,11 +1,6 @@
 'use client';
 
-import {
-	AdaptivityProvider,
-	AppRoot,
-	ConfigProvider,
-	ViewWidth,
-} from '@vkontakte/vkui';
+import { AdaptivityProvider, AppRoot, ConfigProvider } from '@vkontakte/vkui';
 import React from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
 import { Container } from 'src/components/Container';

@@ -1,8 +1,10 @@
-export * from './BusinessItemComponents';
+export * from './LocationItemComponents';
 export * from './AboutComponents';
+export * from './PlacesComponents';
 export { About } from './About';
 export { Bars } from './Bars';
 export { Business } from './Business';
+export { BusinessType } from './BusinessType';
 export { BannersGallery } from './Banners-Gallery';
 export { BusinessCardGroup } from './Business__Card-Group';
 export { Cafes } from './Cafes';
@@ -11,6 +13,5 @@ export { Home } from './Home';
 export { Hookah } from './Hookah';
 export { PanHead } from './PanHead';
 export { Places } from './Places';
-export { PlacesList } from './PlacesList';
 export { Projects } from './Projects';
 export { Restaraunts } from './Restaraunts';

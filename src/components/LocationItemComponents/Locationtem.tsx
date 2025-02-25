@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Panel, Group, Separator, Div, Header } from '@vkontakte/vkui';
 
-import { BusinessItemImageGallery, BusinessItemInfo, PanHead } from '..';
+import { LocationItemImageGallery, LocationItemInfo, PanHead } from '..';
 
 import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
 import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
@@ -14,16 +14,13 @@ interface Props {
 }
 
 // TODO: Map
-export const BusinessItem = ({ nav, item }: Props) => (
+export const LocationItem = ({ nav, item }: Props) => (
 	<Panel nav={nav}>
 		<PanHead title={item.name} />
 
-		<BusinessItemImageGallery imageGallery={item.images} />
+		<LocationItemImageGallery imageGallery={item.images} />
 
-		<Separator
-			size='4xl'
-			style={{ paddingTop: '10px' }}
-		/>
+		<Separator size='4xl' />
 
 		<Group
 			separator='hide'
@@ -34,7 +31,7 @@ export const BusinessItem = ({ nav, item }: Props) => (
 
 		<Separator size='4xl' />
 
-		<BusinessItemInfo item={item} />
+		<LocationItemInfo item={item} />
 
 		{/* <CafeItemMap geo={geo} /> */}
 	</Panel>

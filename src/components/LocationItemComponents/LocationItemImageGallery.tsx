@@ -5,13 +5,13 @@ interface Props {
 	imageGallery: Image[];
 }
 
-export const BusinessItemImageGallery = ({ imageGallery }: Props) => {
+export const LocationItemImageGallery = ({ imageGallery }: Props) => {
 	return (
 		<Gallery
 			slideWidth='100%'
 			style={{ maxHeight: '50vh' }}
 			align='center'
-			bullets='light'>
+			bullets={imageGallery.length > 1 ? 'light' : null}>
 			{imageGallery.map((image) => (
 				<img
 					style={{ objectFit: 'contain', maxHeight: '50vh' }}

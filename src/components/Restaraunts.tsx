@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Panel, ScreenSpinner } from '@vkontakte/vkui';
-import { BusinessesList, Disclaimer, PanHead } from '.';
+import { LocationsList, Disclaimer, PanHead } from '.';
 
 import { Business } from '@prisma/client';
 
@@ -16,7 +16,7 @@ export const Restaraunts = ({ nav }: Props) => {
 
 	// Получаем данные с сервера через API
 	useEffect(() => {
-		fetch('/api/business/restaraunts')
+		fetch('/api/business?type=Restaraunt')
 			.then((res) => res.json())
 			.then((data) => setData(data))
 			.catch((err) => console.error('Ошибка загрузки ресторана:', err))
@@ -30,7 +30,7 @@ export const Restaraunts = ({ nav }: Props) => {
 			{loading && <ScreenSpinner />}
 
 			{data.map((restaraunt: Business) => (
-				<BusinessesList
+				<LocationsList
 					category='restaraunts'
 					business={restaraunt}
 					key={restaraunt.slug}

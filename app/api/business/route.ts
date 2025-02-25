@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { findPlaces } from '../../../src/lib/find-places';
+import { findBusiness } from '../../../src/lib/find-business';
 
 export async function GET(req: NextRequest) {
 	try {
 		const { searchParams } = new URL(req.url);
-		const area: string = searchParams.get('area');
+		const type: string = searchParams.get('type');
 
-		const data = await findPlaces(area);
+		const data = await findBusiness(type);
 		return NextResponse.json(data);
 	} catch (error) {
 		return NextResponse.json(
-			{ error: 'Failed to fetch places' },
+			{ error: 'Failed to fetch cafes' },
 			{ status: 500 }
 		);
 	}

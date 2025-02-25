@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useParams } from 'next/navigation';
 import { PlaceDTO } from '../../../../../app/api/places/[area]/[nav]/route';
-import { BusinessItem } from '../../../../../src/components';
+import { LocationItem } from '../../../../../src/components';
 
 export default function PlaceItemPage() {
 	const [data, setData] = useState<PlaceDTO | null>(null);
@@ -25,7 +25,7 @@ export default function PlaceItemPage() {
 
 	return (
 		data && (
-			<BusinessItem
+			<LocationItem
 				nav={data.slug}
 				item={data}
 			/>

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import { Panel, Group, Header, Separator } from '@vkontakte/vkui';
+import { Panel, Group, Separator } from '@vkontakte/vkui';
 
 import { PanHead } from './PanHead';
 import { BannersGallery } from './Banners-Gallery';
@@ -15,16 +15,14 @@ export const Business = ({ nav }: Props) => {
 		<Panel nav={nav}>
 			<PanHead title='Заведения' />
 
-			<Header>Наши Фавориты</Header>
-			<BannersGallery category='business' />
+			<Group>
+				<BannersGallery category='business' />
 
-			<Separator
-				size='4xl'
-				style={{ paddingBottom: '10px', marginTop: '10px' }}
-			/>
+				<Separator size='4xl' />
 
-			<Group style={{ paddingBottom: '12px' }}>
-				<BusinessCardGroup />
+				<Fragment>
+					<BusinessCardGroup />
+				</Fragment>
 			</Group>
 		</Panel>
 	);

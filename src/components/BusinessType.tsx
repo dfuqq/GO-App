@@ -9,16 +9,17 @@ import { Business } from '@prisma/client';
 
 interface Props {
 	nav: string;
+	type: string;
+	searchType: string;
 }
 
-export const Cafes = ({ nav }: Props) => {
+export const BusinessType = ({ nav, type, searchType }: Props) => {
 	const [data, setData] = useState<Business[]>([]);
 	const [loading, setLoading] = useState(true);
 
-	// Получаем данные с сервера через API
 	// TODO: custom Hook Services
 	useEffect(() => {
-		fetch('/api/business?type=Cafe')
+		fetch(`/api/business?type=${searchType}`)
 			.then((res) => res.json())
 			.then((data) => setData(data))
 			.catch((err) => console.error('Ошибка загрузки кафе:', err))
@@ -35,7 +36,7 @@ export const Cafes = ({ nav }: Props) => {
 				<Group>
 					{data.map((cafe: Business) => (
 						<LocationsList
-							category='cafes'
+							category={type}
 							business={cafe}
 							key={cafe.slug}
 						/>

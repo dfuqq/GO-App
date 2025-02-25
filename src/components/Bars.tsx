@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Panel, ScreenSpinner } from '@vkontakte/vkui';
-import { BusinessesList, Disclaimer, PanHead } from './';
+import { LocationsList, Disclaimer, PanHead } from './';
 import { Business } from '@prisma/client';
 
 interface Props {
@@ -15,7 +15,7 @@ export const Bars = ({ nav }: Props) => {
 
 	// Получаем данные с сервера через API
 	useEffect(() => {
-		fetch('/api/business/bars')
+		fetch('/api/business?type=Bar')
 			.then((res) => res.json())
 			.then((data) => setData(data))
 			.catch((err) => console.error('Ошибка загрузки кафе:', err))
@@ -29,7 +29,7 @@ export const Bars = ({ nav }: Props) => {
 			{loading && <ScreenSpinner />}
 
 			{data.map((bar: Business) => (
-				<BusinessesList
+				<LocationsList
 					category='bars'
 					business={bar}
 					key={bar.slug}

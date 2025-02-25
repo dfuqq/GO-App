@@ -2,25 +2,25 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { BusinessItem } from '../../../../../src/components/';
+import { LocationItem } from '../../../../../src/components/';
 
 import { useParams } from 'next/navigation';
-import { BusinessDTO } from '../../../../api/business/cafes/[nav]/route';
+import { BusinessDTO } from '../../../../api/business/[type]/[nav]/route';
 import { ScreenSpinner } from '@vkontakte/vkui';
 
-export default function CafeItemPage() {
-	const { nav }: { nav: string } = useParams();
-	const [hookah, setHookah] = useState<BusinessDTO | null>(null);
+export default function BusinessItemPage() {
+	const [data, setData] = useState<BusinessDTO | null>(null);
+	const { type, nav } = useParams<{ type: string; nav: string }>();
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch(`/api/business/restaraunts/${nav}`)
+		fetch(`/api/business/${type}/${nav}`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.error) {
-					console.error('Ошибка загрузки ресторана:', data.error);
+					console.error('Ошибка загрузки бизнеса:', data.error);
 				} else {
-					setHookah(data);
+					setData(data);
 				}
 			})
 			.catch((err) => console.error('Ошибка запроса:', err))
@@ -29,12 +29,12 @@ export default function CafeItemPage() {
 
 	if (loading) return <ScreenSpinner />;
 	// TODO: 404 Page
-	if (!hookah) return <h1>404 Not found</h1>;
+	if (!data) return <h1>404 Not found</h1>;
 
 	return (
-		<BusinessItem
+		<LocationItem
 			nav={nav}
-			business={hookah}
+			item={data}
 		/>
 	);
 }
