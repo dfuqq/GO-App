@@ -67,9 +67,10 @@ export const BusinessItemInfo = ({ item }: Props) => {
 				</Cell>
 			)}
 
-			{item.social && (
+			{/* FIXME: Different Links */}
+			{/* {(item.site) && (
 				<Cell
-					href={item.socialHref}
+					href={item.siteHref}
 					target='_blank'
 					before={
 						<Icon28LogoInstagram
@@ -77,9 +78,9 @@ export const BusinessItemInfo = ({ item }: Props) => {
 							width={24}
 						/>
 					}>
-					{item.social}
+					{item.site}
 				</Cell>
-			)}
+			)} */}
 		</Div>
 	);
 };

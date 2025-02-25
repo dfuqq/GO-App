@@ -10,6 +10,9 @@ import {
 
 import { Business, Images, Places } from './data/types';
 import { placesNwlData, placesNwlImagesData } from './data/places__nwl-data';
+import { placesNlData, placesNlImagesData } from './data/places__nl-data';
+import { placesWestData, placesWestImagesData } from './data/places__west-data';
+import { placesCntrData, placesCntrImagesData } from './data/places__cntr-data';
 
 async function up() {
 	await prisma.businessCategory.createMany({
@@ -120,6 +123,9 @@ async function up() {
 		}
 	};
 	pushPlacesAndImages(placesNwlData, placesNwlImagesData);
+	pushPlacesAndImages(placesNlData, placesNlImagesData);
+	pushPlacesAndImages(placesWestData, placesWestImagesData);
+	pushPlacesAndImages(placesCntrData, placesCntrImagesData);
 }
 
 async function down() {

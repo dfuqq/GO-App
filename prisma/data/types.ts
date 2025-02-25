@@ -26,8 +26,12 @@ export interface Places {
 	area: string;
 	hours?: string;
 	price?: string;
-	social?: string;
-	socialHref?: string;
+	site?: string;
+	siteHref?: string;
+	insta?: string;
+	instaHref?: string;
+	vkHref?: string;
+	utility?: string;
 	categoryId: number;
 }
 

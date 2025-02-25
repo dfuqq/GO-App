@@ -60,11 +60,15 @@ model Place {
     area              String
     hours             String?
     price             String?
-    social            String?
-    socialHref        String?
+    insta             String?
+    instaHref         String?
+    site              String?
+    siteHref          String?
+    vkHref            String?
     categoryId        Int
     category          PlaceCategory @relation(fields: [categoryId], references: [id])
     images            Image[]
+    utility           String?
     createdAt         DateTime      @default(now())
     updatedAt         DateTime      @updatedAt
 
