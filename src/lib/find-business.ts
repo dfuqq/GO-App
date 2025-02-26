@@ -8,6 +8,13 @@ export const findBusiness = async (type: string) => {
 					name: type,
 				},
 			},
+			include: {
+				category: {
+					select: {
+						name: true,
+					},
+				},
+			},
 		});
 
 		return data;

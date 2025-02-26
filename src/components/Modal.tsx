@@ -1,100 +1,62 @@
-import { Place } from '@prisma/client';
-import {
-	FormItem,
-	Group,
-	ModalPage,
-	ModalPageHeader,
-	ModalRoot,
-	Radio,
-	RadioGroup,
-} from '@vkontakte/vkui';
-import { useRouter } from 'next/navigation';
 import React from 'react';
+
+import { Group, ModalPage, ModalPageHeader, ModalRoot } from '@vkontakte/vkui';
+import { ModalFormArea, ModalFormCategory } from '.';
 
 interface Props {
 	activeModal: string;
+	activeArea: string;
+	activeCategories: string;
 	isOpenModal: boolean;
-	setData: (data: Place[]) => void;
-	setLoading: (loading: boolean) => void;
 	setActiveArea: (area: string) => void;
+	setActiveCategories: (category: string) => void;
 	setActiveModal: (modal: string) => void;
 	setIsOpenModal: (isOpenModal: boolean) => void;
 }
 
 export const Modal = ({
 	activeModal,
+	activeArea,
+	activeCategories,
 	isOpenModal,
-	setData,
-	setLoading,
 	setActiveArea,
+	setActiveCategories,
 	setActiveModal,
 	setIsOpenModal,
 }: Props) => {
-	const router = useRouter();
-
 	const handleClose = () => {
 		setActiveModal(null);
 		setIsOpenModal(false);
 	};
 
-	const handleSelect = (e) => {
-		router.push(`/places?area=${e.currentTarget.value}`);
-		setLoading(true);
-
-		fetch(`/api/places?area=${e.currentTarget.value}`)
-			.then((res) => res.json())
-			.then((data) => setData(data))
-			.catch((err) => console.error('Ошибка загрузки мест:', err))
-			.finally(() => setLoading(false));
-
-		setActiveArea(e.currentTarget.value);
-		handleClose();
-	};
 	return (
 		<ModalRoot
 			activeModal={activeModal}
 			onClose={handleClose}>
 			<ModalPage
-				id='filters'
+				id='areaFilters'
 				open={isOpenModal}
 				onClose={handleClose}
 				size='l'>
 				<ModalPageHeader>Район</ModalPageHeader>
 				<Group>
-					<FormItem top='Выберите район'>
-						<RadioGroup>
-							<Radio
-								name='radio'
-								value='CNTR'
-								onChange={(e) => handleSelect(e)}>
-								Центр
-							</Radio>
-							<Radio
-								name='radio'
-								value='NWL'
-								onChange={(e) => handleSelect(e)}>
-								Северо-Восточный Жилой Район
-							</Radio>
-							<Radio
-								name='radio'
-								value='NL'
-								onChange={(e) => handleSelect(e)}>
-								Северный Жилой Район
-							</Radio>
-							<Radio
-								name='radio'
-								value='WEST'
-								onChange={(e) => handleSelect(e)}>
-								Восточный Район
-							</Radio>
-							<Radio
-								name='radio'
-								value='ALL'
-								onChange={(e) => handleSelect(e)}>
-								Все районы
-							</Radio>
-						</RadioGroup>
-					</FormItem>
+					<ModalFormArea
+						activeArea={activeArea}
+						handleClose={handleClose}
+						setActiveCategories={setActiveCategories}
+						setActiveArea={setActiveArea}
+					/>
+				</Group>
+			</ModalPage>
+			<ModalPage id='categoryFilters'>
+				<ModalPageHeader>Категория</ModalPageHeader>
+				<Group>
+					<ModalFormCategory
+						activeArea={activeArea}
+						activeCategories={activeCategories}
+						handleClose={handleClose}
+						setActiveCategories={setActiveCategories}
+					/>
 				</Group>
 			</ModalPage>
 		</ModalRoot>

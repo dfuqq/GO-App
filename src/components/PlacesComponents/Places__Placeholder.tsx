@@ -22,7 +22,7 @@ export const PlacesPlaceholder = ({
 						mode='primary'
 						onClick={() => {
 							setIsOpenModal(true);
-							setActiveModal('filters');
+							setActiveModal('areaFilters');
 						}}>
 						Выбрать
 					</Button>

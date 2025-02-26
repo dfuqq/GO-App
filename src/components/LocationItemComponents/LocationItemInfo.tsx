@@ -7,7 +7,7 @@ import {
 	Icon28PhoneOutline,
 } from '@vkontakte/icons/';
 
-import { BusinessDTO } from 'app/api/business/cafes/[nav]/route';
+import { BusinessDTO } from '../../../app/api/business/[type]/[nav]/route';
 import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
 
 interface Props {
@@ -20,7 +20,11 @@ export const LocationItemInfo = ({ item }: Props) => {
 	};
 
 	return (
-		<Div style={{ paddingBottom: 0, whiteSpace: 'pre-line' }}>
+		<Div
+			style={{
+				marginBottom: '12px',
+				paddingTop: 0,
+			}}>
 			<Cell
 				before={
 					<Icon28PlaceOutline
@@ -30,7 +34,7 @@ export const LocationItemInfo = ({ item }: Props) => {
 				}
 				subtitle={item.hours || undefined}
 				style={{ whiteSpace: 'pre-line' }}>
-				{item.address}
+				<span style={{ whiteSpace: 'pre-line' }}>{item.address}</span>
 			</Cell>
 
 			{isBusiness(item) ?
@@ -51,7 +55,7 @@ export const LocationItemInfo = ({ item }: Props) => {
 							width={24}
 						/>
 					}>
-					{item.price}
+					<span style={{ whiteSpace: 'pre-line' }}>{item.price}</span>
 				</Cell>
 			:	null}
 
@@ -63,9 +67,11 @@ export const LocationItemInfo = ({ item }: Props) => {
 							width={24}
 						/>
 					}>
-					{item.phone}
+					<span style={{ whiteSpace: 'pre-line' }}>{item.phone}</span>
 				</Cell>
 			)}
+
+			{}
 
 			{/* FIXME: Different Links */}
 			{/* {(item.site) && (

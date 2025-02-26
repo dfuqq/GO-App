@@ -27,7 +27,7 @@ export const BannersGalleryItem = ({ galleryItem, category }: Props) => {
 						`/business/${galleryItem.type}/${galleryItem.businessSlug}`
 					)
 				:	router.push(
-						`/places/${galleryItem.area}/${galleryItem.placeSlug}`
+						`/places/${galleryItem.area.toUpperCase()}/${galleryItem.placeSlug}?type=card`
 					)
 			}
 		/>

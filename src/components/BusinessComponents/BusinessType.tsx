@@ -28,20 +28,21 @@ export const BusinessType = ({ nav, type, searchType }: Props) => {
 
 	return (
 		<Panel nav={nav}>
-			<PanHead title='Кафе' />
-
 			{loading && <ScreenSpinner />}
 
 			{!loading && (
-				<Group>
-					{data.map((cafe: Business) => (
-						<LocationsList
-							category={type}
-							business={cafe}
-							key={cafe.slug}
-						/>
-					))}
-				</Group>
+				<>
+					<PanHead title='Кафе' />
+					<Group>
+						{data.map((cafe: Business) => (
+							<LocationsList
+								category={type}
+								business={cafe}
+								key={cafe.slug}
+							/>
+						))}
+					</Group>
+				</>
 			)}
 
 			<Disclaimer />

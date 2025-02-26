@@ -5,8 +5,6 @@ import React from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
 import { Container } from 'src/components/Container';
 
-// FIXME: Loadings until data received
-
 export default function RootLayout({
 	children,
 }: {

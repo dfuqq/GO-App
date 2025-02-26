@@ -1,10 +1,10 @@
 import React from 'react';
-import { PlacesPlaceholder } from '.';
-import { Button, Div } from '@vkontakte/vkui';
+import { PlacesControlsButtons, PlacesPlaceholder } from '.';
 
 interface Props {
 	isOpenModal: boolean;
 	activeArea: string;
+	activeCategories: string;
 	setIsOpenModal: (isOpenModal: boolean) => void;
 	setActiveModal: (modal: string) => void;
 }
@@ -12,6 +12,7 @@ interface Props {
 export const PlacesControls = ({
 	isOpenModal,
 	activeArea,
+	activeCategories,
 	setIsOpenModal,
 	setActiveModal,
 }: Props) => {
@@ -25,17 +26,11 @@ export const PlacesControls = ({
 			)}
 
 			{!isOpenModal && activeArea && (
-				<Div style={{ display: 'flex', justifyContent: 'center' }}>
-					<Button
-						size='l'
-						mode='outline'
-						onClick={() => {
-							setIsOpenModal(true);
-							setActiveModal('filters');
-						}}>
-						Сменить район
-					</Button>
-				</Div>
+				<PlacesControlsButtons
+					activeCategories={activeCategories}
+					setIsOpenModal={setIsOpenModal}
+					setActiveModal={setActiveModal}
+				/>
 			)}
 		</>
 	);

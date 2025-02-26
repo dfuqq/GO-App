@@ -3,7 +3,6 @@ import React from 'react';
 
 export const AboutInfo = () => {
 	return (
-		// TODO: Data to db
 		<Group
 			style={{ textAlign: 'center' }}
 			description='v. 2.0.0'

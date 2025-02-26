@@ -14,7 +14,9 @@ export const PlacesList = ({ activeArea, data }: Props) => {
 
 	return (
 		<>
-			<Headline>{activeArea}</Headline>
+			<Headline style={{ padding: '10px 0 0 20px' }}>
+				{activeArea}
+			</Headline>
 			{activeArea && data.length > 0 && (
 				<Div>
 					{data.map((place) => (
