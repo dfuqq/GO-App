@@ -3,7 +3,7 @@ import { Card, CardGrid } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-import { businessCardGroupData } from '../../prisma/data/business__card-group-data';
+import { businessCardGroupData } from '../../../prisma/data/business__card-group-data';
 
 export const BusinessCardGroup = () => {
 	const router = useRouter();

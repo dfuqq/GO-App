@@ -1,10 +1,7 @@
 import React, { Fragment } from 'react';
 
 import { Panel, Group, Separator } from '@vkontakte/vkui';
-
-import { PanHead } from './PanHead';
-import { BannersGallery } from './Banners-Gallery';
-import { BusinessCardGroup } from './Business__Card-Group';
+import { BannersGallery, BusinessCardGroup, PanHead } from './';
 
 interface Props {
 	nav: string;

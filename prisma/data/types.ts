@@ -41,3 +41,14 @@ export interface Images {
 	businessSlug?: string;
 	placeSlug?: string;
 }
+
+export type ImagesBannersDTO = Images & {
+	area?: 'cntr' | 'nl' | 'nwl' | 'west';
+	category?:
+		| 'parks'
+		| 'museums'
+		| 'monuments'
+		| 'entertainments'
+		| 'architecture';
+	type?: string;
+};

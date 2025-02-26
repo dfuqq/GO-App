@@ -1,8 +1,6 @@
-import { Images } from './types';
+import { ImagesBannersDTO } from './types';
 
-type ImagesDTO = Images & { type: string };
-
-export const businessBannersGalleryData: ImagesDTO[] = [
+export const businessBannersGalleryData: ImagesBannersDTO[] = [
 	{
 		src: 'https://sun9-70.userapi.com/s4wSW493Dz22_UyKJdI9xliZSPP7eFlCEgEwUw/YwVTTUyOHjU.jpg',
 		alt: 'nyccrd',

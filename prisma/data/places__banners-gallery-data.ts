@@ -1,16 +1,6 @@
-import { Images } from './types';
+import { ImagesBannersDTO } from './types';
 
-type ImagesDTO = Images & {
-	area: 'cntr' | 'nl' | 'nwl' | 'west';
-	category:
-		| 'parks'
-		| 'museums'
-		| 'monuments'
-		| 'entertainments'
-		| 'architecture';
-};
-
-export const placesBannersGalleryData: ImagesDTO[] = [
+export const placesBannersGalleryData: ImagesBannersDTO[] = [
 	{
 		src: 'https://sun9-55.userapi.com/yTKHn4Y6ptM-Jz-Y9A0HD-C8gZFMHaZuwS-K7g/KdONUzkzZM4.jpg',
 		alt: 'osnovcrd',

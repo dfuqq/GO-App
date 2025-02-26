@@ -1,21 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 
-import {
-	Panel,
-	Button,
-	Group,
-	Separator,
-	ScreenSpinner,
-	Div,
-} from '@vkontakte/vkui';
+import { Panel, Group, Separator, ScreenSpinner } from '@vkontakte/vkui';
 
-import { PanHead } from './PanHead';
-import { Modal } from './Modal';
-import { BannersGallery } from './Banners-Gallery';
 import { Place } from '@prisma/client';
-import { PlacesList } from './PlacesComponents/Places__List';
-import { PlacesPlaceholder } from './PlacesComponents/Places__Placeholder';
+
+import { BannersGallery, Modal, PanHead, PlacesControls, PlacesList } from './';
 
 interface Props {
 	nav: string;
@@ -59,26 +49,12 @@ export const Places = ({ nav }: Props) => {
 					/>
 				)}
 
-				{!isOpenModal && !activeArea && (
-					<PlacesPlaceholder
-						setIsOpenModal={setIsOpenModal}
-						setActiveModal={setActiveModal}
-					/>
-				)}
-
-				{!isOpenModal && activeArea && (
-					<Div>
-						<Button
-							size='l'
-							mode='primary'
-							onClick={() => {
-								setIsOpenModal(true);
-								setActiveModal('filters');
-							}}>
-							Сменить район
-						</Button>
-					</Div>
-				)}
+				<PlacesControls
+					isOpenModal={isOpenModal}
+					activeArea={activeArea}
+					setIsOpenModal={setIsOpenModal}
+					setActiveModal={setActiveModal}
+				/>
 			</Group>
 		</Panel>
 	);
