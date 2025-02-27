@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+'use client';
+import React from 'react';
 
-import { AspectRatio, Group } from '@vkontakte/vkui';
+import { Group } from '@vkontakte/vkui';
 import { YMaps, Map, Placemark, Circle } from '@pbe/react-yandex-maps';
 
 interface Props {
-	geo: [number, number];
+	geo: number[];
 }
 
 export const LocationItemMap = ({ geo }: Props) => {
@@ -29,10 +30,10 @@ export const LocationItemMap = ({ geo }: Props) => {
 							iconColor: '#000',
 						}}
 					/>
-					{geo[0] !== undefined && (
+					{geo !== null && (
 						<>
 							<Circle
-								defaultGeometry={[[geo[1], geo[0]], 200]}
+								defaultGeometry={[[geo[0], geo[1]], 200]}
 								options={{
 									draggable: false,
 									fillColor: 'rgba(0, 0, 0, 0.5)',

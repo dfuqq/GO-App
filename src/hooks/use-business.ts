@@ -1,6 +1,7 @@
 import { BusinessDTO } from '@/api/business/[type]/[nav]/route';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { getGeolocation } from '@/lib/index';
 
 export const useBusiness = () => {
 	const [data, setData] = useState<BusinessDTO | null>(null);
@@ -21,5 +22,7 @@ export const useBusiness = () => {
 			.finally(() => setLoading(false));
 	}, [nav]);
 
-	return { data, loading, nav };
+	const { geo, geoLoading } = getGeolocation();
+
+	return { data, loading, nav, geo, geoLoading };
 };
