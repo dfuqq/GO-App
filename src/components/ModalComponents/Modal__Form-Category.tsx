@@ -1,6 +1,8 @@
-import { Button, ButtonGroup, Checkbox, Div, FormItem } from '@vkontakte/vkui';
+import { Checkbox, FormItem } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { categoriesList } from 'src/consts';
+import { ModalFormCategoryButtons } from './Modal__Form-Category-Buttons';
 
 interface Props {
 	handleClose: () => void;
@@ -56,55 +58,21 @@ export const ModalFormCategory = ({
 
 	return (
 		<FormItem top='Выберите район'>
-			<Checkbox
-				name='checkbox'
-				value='ARCHITECTURE'
-				checked={selectedCategories?.includes('ARCHITECTURE')}
-				onChange={(e) => handleSelect(e)}>
-				Архитектура
-			</Checkbox>
-			<Checkbox
-				name='checkbox'
-				value='ENTERNTAIMENT'
-				checked={selectedCategories?.includes('ENTERNTAIMENT')}
-				onChange={(e) => handleSelect(e)}>
-				Развлечения
-			</Checkbox>
-			<Checkbox
-				name='checkbox'
-				value='MONUMENT'
-				checked={selectedCategories?.includes('MONUMENT')}
-				onChange={(e) => handleSelect(e)}>
-				Монументы
-			</Checkbox>
-			<Checkbox
-				name='checkbox'
-				value='MUSEUM'
-				checked={selectedCategories?.includes('MUSEUM')}
-				onChange={(e) => handleSelect(e)}>
-				Музеи
-			</Checkbox>
-			<Checkbox
-				name='checkbox'
-				value='PARK'
-				checked={selectedCategories?.includes('PARK')}
-				onChange={(e) => handleSelect(e)}>
-				Парки и скверы
-			</Checkbox>
+			{categoriesList.map(({ value, title }) => (
+				<Checkbox
+					name='checkbox'
+					value={value}
+					key={value}
+					checked={selectedCategories?.includes(value)}
+					onChange={(e) => handleSelect(e)}>
+					{title}
+				</Checkbox>
+			))}
 
-			<ButtonGroup style={{ display: 'flex', justifyContent: 'center' }}>
-				<Button
-					size='l'
-					onClick={() => handleSaveClick()}>
-					Сохранить
-				</Button>
-				<Button
-					size='l'
-					mode='tertiary'
-					onClick={() => handleResetClick()}>
-					Сбросить
-				</Button>
-			</ButtonGroup>
+			<ModalFormCategoryButtons
+				handleSaveClick={handleSaveClick}
+				handleResetClick={handleResetClick}
+			/>
 		</FormItem>
 	);
 };

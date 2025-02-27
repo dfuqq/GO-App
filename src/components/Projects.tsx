@@ -3,12 +3,10 @@ import React from 'react';
 import { Panel, Avatar, Group, Div, Button } from '@vkontakte/vkui';
 import { PanHead } from './PanHead';
 
-interface Props {
-	nav: string;
-}
+import { PageProps } from 'src/@types/page-props';
 
 // XXX: Cleanup
-export const Projects = ({ nav }: Props) => (
+export const Projects = ({ nav }: PageProps) => (
 	<Panel
 		nav={nav}
 		centered>

@@ -6,39 +6,31 @@ import { Group, Panel, ScreenSpinner } from '@vkontakte/vkui';
 import { LocationsList, Disclaimer, PanHead } from '..';
 
 import { Business } from '@prisma/client';
+import { useBusinessType } from 'src/hooks';
 
 interface Props {
 	nav: string;
 	type: string;
+	title: string;
 	searchType: string;
 }
 
-export const BusinessType = ({ nav, type, searchType }: Props) => {
-	const [data, setData] = useState<Business[]>([]);
-	const [loading, setLoading] = useState(true);
-
-	// TODO: custom Hook Services
-	useEffect(() => {
-		fetch(`/api/business?type=${searchType}`)
-			.then((res) => res.json())
-			.then((data) => setData(data))
-			.catch((err) => console.error(`Ошибка загрузки ${type}:`, err))
-			.finally(() => setLoading(false));
-	}, []);
+export const BusinessType = ({ nav, type, title, searchType }: Props) => {
+	const { data, loading } = useBusinessType(type, searchType);
 
 	return (
 		<Panel nav={nav}>
 			{loading && <ScreenSpinner />}
 
+			<PanHead title={title} />
 			{!loading && (
 				<>
-					<PanHead title='Кафе' />
 					<Group>
-						{data.map((cafe: Business) => (
+						{data.map((businessItem: Business) => (
 							<LocationsList
 								category={type}
-								business={cafe}
-								key={cafe.slug}
+								business={businessItem}
+								key={businessItem.slug}
 							/>
 						))}
 					</Group>

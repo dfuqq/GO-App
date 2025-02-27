@@ -14,8 +14,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1000',
 		phone: '68-01-17',
 		logo: 'https://sun9-24.userapi.com/DipVCamBoW3mMKHq4aOw-JRz1o7EXRIMxxEqaw/i3gJTDcW6Ts.jpg',
-		social: '@artloft_hookah_club',
-		socialHref: 'https://instagram.com/artloft_hookah_club',
+		insta: '@artloft_hookah_club',
+		instaHref: 'https://instagram.com/artloft_hookah_club',
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -39,8 +39,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1200',
 		phone: '29-99-93 (пр. Набережный, 52)\n99-99-18 (Республики, 85)',
 		logo: 'https://sun9-22.userapi.com/c-5HUHWFnr4RFjlbtEAh4ZdEjpxiVOlYcw7Y8A/sg67KruP_u0.jpg',
-		social: '@brutal_avenue_hookah_club',
-		socialHref: 'https://instagram.com/brutal_avenue_hookah_club',
+		insta: '@brutal_avenue_hookah_club',
+		instaHref: 'https://instagram.com/brutal_avenue_hookah_club',
 		categoryId: 3,
 	},
 	{
@@ -56,8 +56,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1500',
 		phone: '44-72-27',
 		logo: 'https://sun9-24.userapi.com/_ktY0WfyeGU2jPBl35bn_7j5mQqIi4UtxqN1PA/Pw1E_GIIbKA.jpg',
-		social: '@bakerstreet_universitetskaya',
-		socialHref: 'https://instagram.com/bakerstreet_universitetskaya',
+		insta: '@bakerstreet_universitetskaya',
+		instaHref: 'https://instagram.com/bakerstreet_universitetskaya',
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -86,8 +86,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1300',
 		phone: '71-27-77',
 		logo: 'https://sun9-9.userapi.com/BTn5r1FlTColigjzEbCP4iSzrJVpOjx_5W5m4g/5XyZrK9JiOk.jpg',
-		social: '@hookahplace_surgut',
-		socialHref: 'https://instagram.com/hookahplace_surgut',
+		insta: '@hookahplace_surgut',
+		instaHref: 'https://instagram.com/hookahplace_surgut',
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -111,8 +111,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1500',
 		phone: '97-26-27',
 		logo: 'https://sun9-25.userapi.com/__dHib63Yiq6yr4iF8_cV1uQ19BFkLVcCvp9Yw/0iloCqNBZbM.jpg',
-		social: '@jin_bar_',
-		socialHref: 'https://instagram.com/jin_bar_',
+		insta: '@jin_bar_',
+		instaHref: 'https://instagram.com/jin_bar_',
 		categoryId: 3,
 	},
 	{
@@ -128,8 +128,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1300',
 		phone: '91-42-40',
 		logo: 'https://sun9-56.userapi.com/1QiJWYgY-A95PzKoKOvspaO5OthskjzhxlpC9Q/g84sUBGhIyo.jpg',
-		social: '@lightdym',
-		socialHref: 'https://instagram.com/lightdym',
+		insta: '@lightdym',
+		instaHref: 'https://instagram.com/lightdym',
 		categoryId: 3,
 	},
 	{
@@ -145,8 +145,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1000',
 		phone: '+7 (996) 329-07-04',
 		logo: 'https://sun9-14.userapi.com/lx3XL8VEbH38oRtZoFDbeZyRuoE50UDUKeZ3BA/fS1oGPsdBLo.jpg',
-		social: '@myata_surgut',
-		socialHref: 'https://instagram.com/myata_surgut',
+		insta: '@myata_surgut',
+		instaHref: 'https://instagram.com/myata_surgut',
 		categoryId: 3,
 		// NOTE: Credits
 		// Footer>
@@ -170,8 +170,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1500',
 		phone: '+7 (922) 419‒08‒36',
 		logo: 'https://sun9-76.userapi.com/-_FW6QnLQImd0CWCaWC_1YB6q1GGBmV9UPdHIg/KOz5AA_SmdA.jpg',
-		social: '@marmelad_surgut',
-		socialHref: 'https://instagram.com/marmelad_surgut',
+		insta: '@marmelad_surgut',
+		instaHref: 'https://instagram.com/marmelad_surgut',
 		categoryId: 3,
 		//   NOTE: Credits
 		// <Footer>
@@ -205,8 +205,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1300',
 		phone: '64-06-88',
 		logo: 'https://sun9-1.userapi.com/uPuAm_M-c9ko2ZJr3c_AN4rJ3liJabAjiC8Kow/T3BrfMOY1WA.jpg',
-		social: '@the_office_surgut',
-		socialHref: 'https://instagram.com/the_office_surgut',
+		insta: '@the_office_surgut',
+		instaHref: 'https://instagram.com/the_office_surgut',
 		categoryId: 3,
 	},
 	{
@@ -222,8 +222,8 @@ export const hookahsData: Business[] = [
 		priceTo: '1200',
 		phone: '37-47-07',
 		logo: 'https://sun9-48.userapi.com/GCsVQ0QjfESsMDNWhjca0YBT_aaBCTqVBMEVUQ/2Py4Zx5kxMk.jpg',
-		social: '@parobarshop',
-		socialHref: 'https://instagram.com/parobarshop',
+		insta: '@parobarshop',
+		instaHref: 'https://instagram.com/parobarshop',
 		categoryId: 3,
 	},
 ];

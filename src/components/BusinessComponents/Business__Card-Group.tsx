@@ -1,5 +1,5 @@
 'use client';
-import { Card, CardGrid } from '@vkontakte/vkui';
+import { Card, Flex } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -8,9 +8,12 @@ import { businessCardGroupData } from '../../../prisma/data/business__card-group
 export const BusinessCardGroup = () => {
 	const router = useRouter();
 
-	// TODO: Flex
 	return (
-		<CardGrid size='s'>
+		<Flex
+			align='center'
+			justify='center'
+			gap='l'
+			style={{ marginBottom: '12px' }}>
 			{businessCardGroupData.map((cardItem) => (
 				<Card
 					style={{
@@ -21,14 +24,15 @@ export const BusinessCardGroup = () => {
 						backgroundPosition: 'right',
 						backgroundRepeat: 'no-repeat',
 						cursor: 'pointer',
+						minWidth: '250px',
 					}}
 					onClick={() => router.push(`/business/${cardItem.type}`)}
-					key={cardItem.title}>
+					key={cardItem.type}>
 					<h3 style={{ color: '#fff', paddingLeft: '12px' }}>
 						{cardItem.title}
 					</h3>
 				</Card>
 			))}
-		</CardGrid>
+		</Flex>
 	);
 };

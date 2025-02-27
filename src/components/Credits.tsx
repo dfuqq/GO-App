@@ -9,13 +9,10 @@ import {
 	Avatar,
 	SimpleCell,
 } from '@vkontakte/vkui';
+import { PageProps } from 'src/@types/page-props';
 
-interface Props {
-	id: string;
-}
-
-export const Credits = ({ id }: Props) => (
-	<Panel id={id}>
+export const Credits = ({ nav }: PageProps) => (
+	<Panel nav={nav}>
 		<PanelHeader
 			before={
 				<PanelHeaderBack

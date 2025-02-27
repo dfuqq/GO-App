@@ -1,4 +1,5 @@
 import { prisma } from '../../prisma/prisma-client';
+import { getCategoriesArray } from './get-categories-array';
 
 export const findPlacesByArea = async (areaSlug: string) => {
 	try {
@@ -16,6 +17,7 @@ export const findPlacesByArea = async (areaSlug: string) => {
 		return data;
 	} catch (error) {
 		console.error(error);
+		throw error;
 	}
 };
 
@@ -23,13 +25,7 @@ export const findPlacesByCategory = async (
 	areaSlug: string,
 	categories: string
 ) => {
-	const categoriesSearch = categories
-		.split(',')
-		.map(
-			(category) =>
-				category.charAt(0).toUpperCase() +
-				category.slice(1).toLowerCase()
-		);
+	const categoriesArray = getCategoriesArray(categories);
 
 	try {
 		if (areaSlug === 'ALL') {
@@ -37,7 +33,7 @@ export const findPlacesByCategory = async (
 				where: {
 					category: {
 						name: {
-							in: categoriesSearch,
+							in: categoriesArray,
 						},
 					},
 				},
@@ -54,7 +50,7 @@ export const findPlacesByCategory = async (
 					{
 						category: {
 							name: {
-								in: categoriesSearch,
+								in: categoriesArray,
 							},
 						},
 					},

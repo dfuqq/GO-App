@@ -10,8 +10,8 @@ export interface Business {
 	priceTo: string;
 	phone: string;
 	logo: string;
-	social: string;
-	socialHref: string;
+	insta: string;
+	instaHref: string;
 	categoryId: number;
 }
 
@@ -40,6 +40,20 @@ export interface Images {
 	alt: string;
 	businessSlug?: string;
 	placeSlug?: string;
+}
+
+export interface Card {
+	src: string;
+	title: string;
+	type: string;
+}
+
+export interface BannerProps {
+	title: string;
+	subtitle: string;
+	buttonText: string;
+	buttonLink: string;
+	backgroundImage: string;
 }
 
 export type ImagesBannersDTO = Images & {

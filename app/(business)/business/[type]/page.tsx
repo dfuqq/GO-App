@@ -5,6 +5,7 @@ import React from 'react';
 
 import { BusinessType } from '../../../../src/components';
 import { useParams } from 'next/navigation';
+import { findBusinessTitle } from 'src/lib/find-business-title';
 
 export default function BusinessTypePage() {
 	const params = useParams();
@@ -19,6 +20,7 @@ export default function BusinessTypePage() {
 			<BusinessType
 				nav='businessType'
 				type={type}
+				title={findBusinessTitle(type)}
 				searchType={searchType}
 			/>
 		</View>

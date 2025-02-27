@@ -2,11 +2,9 @@ import React, { Fragment } from 'react';
 
 import { Panel, Group, Separator } from '@vkontakte/vkui';
 import { BannersGallery, BusinessCardGroup, PanHead } from './';
+import { PageProps } from 'src/@types/page-props';
 
-interface Props {
-	nav: string;
-}
-export const Business = ({ nav }: Props) => {
+export const Business = ({ nav }: PageProps) => {
 	return (
 		<Panel nav={nav}>
 			<PanHead

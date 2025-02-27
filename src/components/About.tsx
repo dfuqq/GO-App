@@ -3,12 +3,9 @@ import React from 'react';
 import { Panel, Separator, Group } from '@vkontakte/vkui';
 
 import { AboutButtons, AboutCardGroup, AboutInfo, PanHead } from './';
+import { PageProps } from 'src/@types/page-props';
 
-interface Props {
-	nav: string;
-}
-
-export const About = ({ nav }: Props) => {
+export const About = ({ nav }: PageProps) => {
 	return (
 		<Panel nav={nav}>
 			<PanHead title='О приложении' />
@@ -19,9 +16,9 @@ export const About = ({ nav }: Props) => {
 
 			<Group separator='hide'>
 				<AboutCardGroup />
-			</Group>
 
-			<Group>
+				<Separator size='4xl' />
+
 				<AboutButtons />
 			</Group>
 		</Panel>

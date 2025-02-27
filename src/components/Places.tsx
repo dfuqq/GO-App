@@ -7,12 +7,9 @@ import { Place } from '@prisma/client';
 
 import { BannersGallery, Modal, PanHead, PlacesControls, PlacesList } from './';
 import { useSearchParams } from 'next/navigation';
+import { PageProps } from 'src/@types/page-props';
 
-interface Props {
-	nav: string;
-}
-
-export const Places = ({ nav }: Props) => {
+export const Places = ({ nav }: PageProps) => {
 	const [activeModal, setActiveModal] = useState(null);
 	const [isOpenModal, setIsOpenModal] = useState(false);
 	const [data, setData] = useState<Place[]>([]);
@@ -24,12 +21,6 @@ export const Places = ({ nav }: Props) => {
 
 	useEffect(() => {
 		setLoading(true);
-		console.log(
-			activeCategories,
-			typeof activeCategories,
-			activeCategories?.length
-		);
-
 		fetch(`/api/places?area=${activeArea}&categories=${activeCategories}`)
 			.then((res) => res.json())
 			.then((data) => setData(data))

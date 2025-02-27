@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { Group } from '@vkontakte/vkui';
+import { AspectRatio, Group } from '@vkontakte/vkui';
 import { YMaps, Map, Placemark, Circle } from '@pbe/react-yandex-maps';
 
 interface Props {
@@ -17,9 +17,11 @@ export const LocationItemMap = ({ geo }: Props) => {
 			}}>
 			<YMaps>
 				<Map
-					defaultState={{ center: [61.247272, 73.405787], zoom: 17 }}
-					width='90vw'
-					height='60vh'>
+					defaultState={{
+						center: [61.247272, 73.405787],
+						zoom: 17,
+					}}
+					style={{ width: '100vw', height: '39vh' }}>
 					<Placemark
 						defaultGeometry={[61.247272, 73.405787]}
 						defaultOptions={{
@@ -28,7 +30,7 @@ export const LocationItemMap = ({ geo }: Props) => {
 						}}
 					/>
 					{geo[0] !== undefined && (
-						<Fragment>
+						<>
 							<Circle
 								defaultGeometry={[[geo[1], geo[0]], 200]}
 								options={{
@@ -39,7 +41,7 @@ export const LocationItemMap = ({ geo }: Props) => {
 									strokeWidth: 2,
 								}}
 							/>
-						</Fragment>
+						</>
 					)}
 				</Map>
 			</YMaps>

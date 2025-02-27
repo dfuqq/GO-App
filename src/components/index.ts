@@ -14,6 +14,8 @@ export * from './BannersComponents';
 export * from './LocationItemComponents';
 export * from './PlacesComponents';
 
+export { Attention } from './Attention';
+export { Credits } from './Credits';
 export { Disclaimer } from './Disclaimer';
 export { PanHead } from './PanHead';
 export { Places } from './Places';

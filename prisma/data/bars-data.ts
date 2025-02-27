@@ -14,8 +14,8 @@ export const barsData: Business[] = [
 		priceTo: '1500',
 		phone: '97-16-97',
 		logo: 'https://sun9-51.userapi.com/-Kmb_WZCU1Kk1jHSBwTyM29ctNZ0e3rhnl_JGw/akw2pX06FJw.jpg',
-		social: '@auditorium_bar',
-		socialHref: 'https://instagram.com/auditorium_bar',
+		insta: '@auditorium_bar',
+		instaHref: 'https://instagram.com/auditorium_bar',
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -39,8 +39,8 @@ export const barsData: Business[] = [
 		priceTo: '1500',
 		phone: '97-21-97',
 		logo: 'https://sun9-67.userapi.com/OgH4ppSJzOMVl1CtJfexnFu5u4FxXS0ty1bTqA/5A6ooYN8t-g.jpg',
-		social: '@spoi_ptichka',
-		socialHref: 'https://instagram.com/spoi_ptichka',
+		insta: '@spoi_ptichka',
+		instaHref: 'https://instagram.com/spoi_ptichka',
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -70,8 +70,8 @@ export const barsData: Business[] = [
 		priceTo: '1700',
 		phone: '77-27-23',
 		logo: 'https://sun9-59.userapi.com/YJCR_u0sZSi_AEzMvl_K4WUrrUz-mt9p0DAsOQ/G6ODls_C3KY.jpg',
-		social: '@thedockpub',
-		socialHref: 'https://instagram.com/thedockpub',
+		insta: '@thedockpub',
+		instaHref: 'https://instagram.com/thedockpub',
 		categoryId: 1,
 	},
 	{
@@ -87,8 +87,8 @@ export const barsData: Business[] = [
 		priceTo: '1300',
 		phone: '55-07-33',
 		logo: 'https://sun9-49.userapi.com/6xo6WRxThel1qfItqfEu6c2cIleE463-TZan0A/-FDMQKDPPws.jpg',
-		social: '@frankbarwine',
-		socialHref: 'https://instagram.com/frankbarwine',
+		insta: '@frankbarwine',
+		instaHref: 'https://instagram.com/frankbarwine',
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -112,8 +112,8 @@ export const barsData: Business[] = [
 		priceTo: '1000',
 		phone: '60-85-04',
 		logo: 'https://sun9-21.userapi.com/xRE-QWPwTIAYhQzua3vXvWTabbSg3dCdZp92hg/KXMDSSx6DNg.jpg',
-		social: '@hopspub_surgut',
-		socialHref: 'https://instagram.com/hopspub_surgut',
+		insta: '@hopspub_surgut',
+		instaHref: 'https://instagram.com/hopspub_surgut',
 		categoryId: 1,
 	},
 	{
@@ -129,8 +129,8 @@ export const barsData: Business[] = [
 		priceTo: '1000',
 		phone: '+7 (982) 413-35-45',
 		logo: 'https://sun9-65.userapi.com/x8H0lEqbCjHRV8tI7HyHYD9pdLMAF4YHyGgkTQ/pYNOT6cdM6c.jpg',
-		social: '@jawsspot_sgt_',
-		socialHref: 'https://instagram.com/jawsspot_sgt_',
+		insta: '@jawsspot_sgt_',
+		instaHref: 'https://instagram.com/jawsspot_sgt_',
 		categoryId: 1,
 	},
 	{
@@ -146,8 +146,8 @@ export const barsData: Business[] = [
 		priceTo: '1200',
 		phone: '91-07-47',
 		logo: 'https://sun9-10.userapi.com/5xqutv_9ySVYKy4C2GEelLQ6QwtryOyKElW-dQ/W6FFDB0HZQE.jpg',
-		social: '@nightbarmars',
-		socialHref: 'https://instagram.com/nightbarmars',
+		insta: '@nightbarmars',
+		instaHref: 'https://instagram.com/nightbarmars',
 		categoryId: 1,
 	},
 	{
@@ -163,8 +163,8 @@ export const barsData: Business[] = [
 		priceTo: '1300',
 		phone: '63-38-96',
 		logo: 'https://sun9-70.userapi.com/zCXyc32tczkB12zfilAfnUmMM_manbhlQHmlrg/Bsgu8al1lK4.jpg',
-		social: '@two.pint.bar.surgut',
-		socialHref: 'https://instagram.com/two.pint.bar.surgut',
+		insta: '@two.pint.bar.surgut',
+		instaHref: 'https://instagram.com/two.pint.bar.surgut',
 		categoryId: 1,
 	},
 	{
@@ -180,8 +180,8 @@ export const barsData: Business[] = [
 		priceTo: '900',
 		phone: '55-07-33',
 		logo: 'https://sun9-13.userapi.com/1baYZMSy2v_rWw3L-txxR6fjBJ6dGNn110PLvw/NWXCxaGtz3w.jpg',
-		social: '@rockburger_bar',
-		socialHref: 'https://instagram.com/rockburger_bar',
+		insta: '@rockburger_bar',
+		instaHref: 'https://instagram.com/rockburger_bar',
 		categoryId: 1,
 	},
 	{
@@ -197,8 +197,8 @@ export const barsData: Business[] = [
 		priceTo: '800',
 		phone: '94-56-00 (Профсоюзов 11)\n93-74-79 (Ленина 50/1)',
 		logo: 'https://sun9-24.userapi.com/EC8ZBXY2fHTL3UfGtR1UspeNWTPPn7u9_sgtYQ/LqSyTccgFuI.jpg',
-		social: '@shashlikoff_surgut',
-		socialHref: 'https://instagram.com/shashlikoff_surgut',
+		insta: '@shashlikoff_surgut',
+		instaHref: 'https://instagram.com/shashlikoff_surgut',
 		categoryId: 1,
 	},
 ];

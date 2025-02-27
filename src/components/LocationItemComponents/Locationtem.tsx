@@ -3,11 +3,15 @@ import React from 'react';
 
 import { Panel, Group, Separator, Div, Header } from '@vkontakte/vkui';
 
-import { LocationItemImageGallery, LocationItemInfo, PanHead } from '..';
+import {
+	LocationItemImageGallery,
+	LocationItemInfo,
+	LocationItemMap,
+	PanHead,
+} from '..';
 
 import { BusinessDTO } from '../../../app/api/business/[type]/[nav]/route';
 import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
-import { useRouter, useSearchParams } from 'next/navigation';
 
 interface Props {
 	nav: string;
@@ -42,7 +46,8 @@ export const LocationItem = ({ nav, item }: Props) => {
 
 			<LocationItemInfo item={item} />
 
-			{/* <CafeItemMap geo={geo} /> */}
+			{/* TODO: Add Geo to all Items */}
+			<LocationItemMap geo={[73.405787, 61.247272]} />
 		</Panel>
 	);
 };

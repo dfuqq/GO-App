@@ -1,8 +1,4 @@
-interface Card {
-	src: string;
-	title: string;
-	type: string;
-}
+import { Card } from './types';
 
 export const businessCardGroupData: Card[] = [
 	{

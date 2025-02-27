@@ -4,14 +4,11 @@ import { Panel, Group, Div, Placeholder, Button } from '@vkontakte/vkui';
 
 import { Icon56ErrorOutline } from '@vkontakte/icons';
 import { PanHead } from 'src/components';
-
-interface Props {
-	id: string;
-}
+import { PageProps } from 'src/@types/page-props';
 
 // XXX: Cleanup
-export const Attention = ({ id }: Props) => (
-	<Panel id={id}>
+export const Attention = ({ nav }: PageProps) => (
+	<Panel nav={nav}>
 		<PanHead title='Бизнесам' />
 
 		<Group
@@ -89,7 +86,7 @@ export const Attention = ({ id }: Props) => (
 					<Button
 						size='l'
 						mode='primary'
-						href='https://vk.me/romsurdvorov'
+						href='https://t.me/d_fuq'
 						target='_blank'>
 						Написать
 					</Button>

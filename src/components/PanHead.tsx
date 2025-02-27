@@ -17,6 +17,7 @@ export const PanHead = ({ title, route }: Props) => {
 			before={
 				<PanelHeaderBack
 					label=''
+					aria-label='Back'
 					onClick={() =>
 						route ? router.push(route) : router.back()
 					}></PanelHeaderBack>

@@ -1,10 +1,4 @@
-export interface BannerProps {
-	title: string;
-	subtitle: string;
-	buttonText: string;
-	buttonLink: string;
-	backgroundImage: string;
-}
+import { BannerProps } from './types';
 
 export const bannersData: BannerProps[] = [
 	{

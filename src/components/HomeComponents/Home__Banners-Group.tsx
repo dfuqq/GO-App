@@ -7,7 +7,7 @@ import { HomeBannersGroupItem } from './';
 
 export const HomeBannersGroup = () => {
 	return (
-		<Group style={{ margin: 20 }}>
+		<Group style={{ margin: '10px 20px 0 20px' }}>
 			{bannersData.map((banner) => (
 				<HomeBannersGroupItem
 					banner={banner}

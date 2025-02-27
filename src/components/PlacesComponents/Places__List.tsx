@@ -3,6 +3,8 @@ import { Place } from '@prisma/client';
 import { Cell, Div, Headline } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { PlacesListNotFound } from '.';
+import { getAreaTitle } from 'src/lib';
 
 interface Props {
 	activeArea: string;
@@ -15,7 +17,7 @@ export const PlacesList = ({ activeArea, data }: Props) => {
 	return (
 		<>
 			<Headline style={{ padding: '10px 0 0 20px' }}>
-				{activeArea}
+				{getAreaTitle(activeArea)}
 			</Headline>
 			{activeArea && data.length > 0 && (
 				<Div>
@@ -39,6 +41,7 @@ export const PlacesList = ({ activeArea, data }: Props) => {
 					))}
 				</Div>
 			)}
+			{activeArea && data.length === 0 && <PlacesListNotFound />}
 		</>
 	);
 };

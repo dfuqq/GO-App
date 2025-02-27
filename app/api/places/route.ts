@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import {
-	findPlacesByArea,
-	findPlacesByCategory,
-} from '../../../src/lib/find-places';
+import { findPlacesByArea, findPlacesByCategory } from '../../../src/lib';
 
 export async function GET(req: NextRequest) {
 	try {
