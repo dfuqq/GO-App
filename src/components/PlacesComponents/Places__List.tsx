@@ -4,7 +4,7 @@ import { Cell, Div, Headline } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { PlacesListNotFound } from '.';
-import { getAreaTitle } from 'src/lib';
+import { getAreaTitle } from '@/lib/get-area-title';
 
 interface Props {
 	activeArea: string;

@@ -1,9 +1,9 @@
 'use client';
-import { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Group, Panel, ScreenSpinner } from '@vkontakte/vkui';
 
-import { LocationsList, Disclaimer, PanHead } from '..';
+import { LocationsList, Disclaimer, PanHead } from '@/components/index';
 
 import { Business } from '@prisma/client';
 import { useBusinessType } from 'src/hooks';

@@ -2,8 +2,13 @@ import React from 'react';
 
 import { Panel, Separator, Group } from '@vkontakte/vkui';
 
-import { AboutButtons, AboutCardGroup, AboutInfo, PanHead } from './';
-import { PageProps } from 'src/@types/page-props';
+import {
+	AboutButtons,
+	AboutCardGroup,
+	AboutInfo,
+	PanHead,
+} from '@/components/index';
+import { PageProps } from '@/src/@types/page-props';
 
 export const About = ({ nav }: PageProps) => {
 	return (

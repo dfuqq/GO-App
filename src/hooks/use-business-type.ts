@@ -5,7 +5,6 @@ export const useBusinessType = (type: string, searchType: string) => {
 	const [data, setData] = useState<Business[]>([]);
 	const [loading, setLoading] = useState(true);
 
-	// TODO: custom Hook Services
 	useEffect(() => {
 		fetch(`/api/business?type=${searchType}`)
 			.then((res) => res.json())

@@ -12,9 +12,9 @@ import {
 import { Icon24Info } from '@vkontakte/icons';
 
 import { useRouter } from 'next/navigation';
-import { HomeBannersGroup } from './';
+import { HomeBannersGroup } from '@/components/index';
 import { useEffect } from 'react';
-import { PageProps } from 'src/@types/page-props';
+import { PageProps } from '@/src/@types/page-props';
 
 export const Home = ({ nav }: PageProps) => {
 	const router = useRouter();
@@ -23,8 +23,6 @@ export const Home = ({ nav }: PageProps) => {
 		const routesToPrefetch: string[] = ['/business', '/about'];
 		routesToPrefetch.forEach((route) => router.prefetch(route));
 	}, []);
-
-	// TODO: Learn prefetch
 
 	return (
 		<Panel nav={nav}>

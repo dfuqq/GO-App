@@ -1,11 +1,11 @@
 import { Gallery, Header } from '@vkontakte/vkui';
 import React from 'react';
 
-import { businessBannersGalleryData } from '../../../prisma/data/business__banners-gallery-data';
-import { placesBannersGalleryData } from '../../../prisma/data/places__banners-gallery-data';
-import { ImagesBannersDTO } from 'prisma/data/types';
+import { businessBannersGalleryData } from '@/prisma/data/business__banners-gallery-data';
+import { placesBannersGalleryData } from '@/prisma/data/places__banners-gallery-data';
+import { ImagesBannersDTO } from '@/prisma/data/types';
 
-import { BannersGalleryItem } from './';
+import { BannersGalleryItem } from '@/components/index';
 
 interface Props {
 	category: 'business' | 'places';

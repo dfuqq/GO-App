@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Group } from '@vkontakte/vkui';
 
-import { bannersData } from '../../../prisma/data/home__banners-group-data';
+import { bannersData } from '@/prisma/data/home__banners-group-data';
 import { HomeBannersGroupItem } from './';
 
 export const HomeBannersGroup = () => {

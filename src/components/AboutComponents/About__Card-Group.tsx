@@ -2,7 +2,7 @@
 
 import { Card, CardGrid } from '@vkontakte/vkui';
 import React from 'react';
-import { aboutCardGroupData } from '../../../prisma/data/about__card-group-data';
+import { aboutCardGroupData } from '@/prisma/data/about__card-group-data';
 import { useRouter } from 'next/navigation';
 
 export const AboutCardGroup = () => {

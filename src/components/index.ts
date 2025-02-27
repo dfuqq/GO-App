@@ -16,6 +16,7 @@ export * from './PlacesComponents';
 
 export { Attention } from './Attention';
 export { Credits } from './Credits';
+export { Container } from './Container';
 export { Disclaimer } from './Disclaimer';
 export { PanHead } from './PanHead';
 export { Places } from './Places';

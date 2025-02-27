@@ -2,7 +2,7 @@ import { Checkbox, FormItem } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { categoriesList } from 'src/consts';
-import { ModalFormCategoryButtons } from './Modal__Form-Category-Buttons';
+import { ModalFormCategoryButtons } from './';
 
 interface Props {
 	handleClose: () => void;

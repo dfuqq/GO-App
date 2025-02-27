@@ -8,10 +8,10 @@ import {
 	LocationItemInfo,
 	LocationItemMap,
 	PanHead,
-} from '..';
+} from '@/components/index';
 
-import { BusinessDTO } from '../../../app/api/business/[type]/[nav]/route';
-import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
+import { BusinessDTO } from '@/api/business/[type]/[nav]/route';
+import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
 
 interface Props {
 	nav: string;
@@ -19,7 +19,6 @@ interface Props {
 	item: BusinessDTO | PlaceDTO;
 }
 
-// TODO: Map
 export const LocationItem = ({ nav, item }: Props) => {
 	return (
 		<Panel nav={nav}>

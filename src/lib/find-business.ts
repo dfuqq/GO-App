@@ -1,4 +1,4 @@
-import { prisma } from '../../prisma/prisma-client';
+import { prisma } from '@/prisma/prisma-client';
 
 export const findBusiness = async (type: string) => {
 	try {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Group, ModalPage, ModalPageHeader, ModalRoot } from '@vkontakte/vkui';
-import { ModalFormArea, ModalFormCategory } from '.';
+import { ModalFormArea, ModalFormCategory } from '@/components/index';
 
 interface Props {
 	activeModal: string;

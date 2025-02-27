@@ -3,7 +3,7 @@
 import { AdaptivityProvider, AppRoot, ConfigProvider } from '@vkontakte/vkui';
 import React from 'react';
 import '@vkontakte/vkui/dist/vkui.css';
-import { Container } from 'src/components/Container';
+import { Container } from '../src/components';
 
 export default function RootLayout({
 	children,

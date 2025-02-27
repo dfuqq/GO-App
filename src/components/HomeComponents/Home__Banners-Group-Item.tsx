@@ -1,6 +1,6 @@
 import { Banner, Button } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
-import { BannerProps } from 'prisma/data/types';
+import { BannerProps } from '@/prisma/data/types';
 import React from 'react';
 
 interface Props {

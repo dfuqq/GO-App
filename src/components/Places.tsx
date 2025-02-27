@@ -5,9 +5,15 @@ import { Panel, Group, Separator, ScreenSpinner } from '@vkontakte/vkui';
 
 import { Place } from '@prisma/client';
 
-import { BannersGallery, Modal, PanHead, PlacesControls, PlacesList } from './';
+import {
+	BannersGallery,
+	Modal,
+	PanHead,
+	PlacesControls,
+	PlacesList,
+} from '@/components/index';
 import { useSearchParams } from 'next/navigation';
-import { PageProps } from 'src/@types/page-props';
+import { PageProps } from '@/src/@types/page-props';
 
 export const Places = ({ nav }: PageProps) => {
 	const [activeModal, setActiveModal] = useState(null);

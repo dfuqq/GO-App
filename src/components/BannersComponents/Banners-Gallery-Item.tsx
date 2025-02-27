@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import { ImagesBannersDTO } from 'prisma/data/types';
+import { ImagesBannersDTO } from '@/prisma/data/types';
 import React from 'react';
 
 interface Props {

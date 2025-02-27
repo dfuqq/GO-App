@@ -4,10 +4,10 @@ import {
 	Icon24PlaceOutline,
 } from '@vkontakte/icons';
 import { Cell } from '@vkontakte/vkui';
-import { BusinessDTO } from 'app/api/business/[type]/[nav]/route';
-import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
+import { BusinessDTO } from '@/api/business/[type]/[nav]/route';
+import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
 import React from 'react';
-import { getIsBusiness } from 'src/lib/get-is-business';
+import { getIsBusiness } from '@/lib/get-is-business';
 
 interface Props {
 	item: BusinessDTO | PlaceDTO;

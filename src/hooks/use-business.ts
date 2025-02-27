@@ -1,4 +1,4 @@
-import { BusinessDTO } from 'app/api/business/[type]/[nav]/route';
+import { BusinessDTO } from '@/api/business/[type]/[nav]/route';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

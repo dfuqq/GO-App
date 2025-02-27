@@ -9,7 +9,7 @@ import {
 	Avatar,
 	SimpleCell,
 } from '@vkontakte/vkui';
-import { PageProps } from 'src/@types/page-props';
+import { PageProps } from '@/src/@types/page-props';
 
 export const Credits = ({ nav }: PageProps) => (
 	<Panel nav={nav}>

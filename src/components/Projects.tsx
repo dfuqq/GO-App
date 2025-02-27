@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Panel, Avatar, Group, Div, Button } from '@vkontakte/vkui';
-import { PanHead } from './PanHead';
+import { PanHead } from '@/components/index';
 
-import { PageProps } from 'src/@types/page-props';
+import { PageProps } from '@/src/@types/page-props';
 
 // XXX: Cleanup
 export const Projects = ({ nav }: PageProps) => (

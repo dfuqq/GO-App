@@ -2,9 +2,12 @@ import { Div, Cell } from '@vkontakte/vkui';
 
 import { Icon24InfoCircleOutline } from '@vkontakte/icons/';
 
-import { BusinessDTO } from '../../../app/api/business/[type]/[nav]/route';
-import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
-import { LocationItemInfoContacts, LocationItemInfoLinks } from '.';
+import { BusinessDTO } from '@/api/business/[type]/[nav]/route';
+import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
+import {
+	LocationItemInfoContacts,
+	LocationItemInfoLinks,
+} from '@/components/index';
 
 interface Props {
 	item: BusinessDTO | PlaceDTO;

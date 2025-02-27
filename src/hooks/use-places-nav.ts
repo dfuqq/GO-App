@@ -1,4 +1,4 @@
-import { PlaceDTO } from 'app/api/places/[area]/[nav]/route';
+import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

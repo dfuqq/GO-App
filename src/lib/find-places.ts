@@ -1,5 +1,5 @@
-import { prisma } from '../../prisma/prisma-client';
-import { getCategoriesArray } from './get-categories-array';
+import { prisma } from '@/prisma/prisma-client';
+import { getCategoriesArray } from './';
 
 export const findPlacesByArea = async (areaSlug: string) => {
 	try {

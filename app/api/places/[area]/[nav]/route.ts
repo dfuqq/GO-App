@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '../../../../../prisma/prisma-client';
+import { prisma } from '@/prisma/prisma-client';
 import { Image } from '@prisma/client';
-import { Places } from '../../../../../prisma/data/types';
+import { Places } from '@/prisma/data/types';
 
 export type PlaceDTO = Places & {
 	images: Image[];

@@ -3,8 +3,8 @@ import React from 'react';
 import { Panel, Group, Div, Placeholder, Button } from '@vkontakte/vkui';
 
 import { Icon56ErrorOutline } from '@vkontakte/icons';
-import { PanHead } from 'src/components';
-import { PageProps } from 'src/@types/page-props';
+import { PanHead } from '@/components/index';
+import { PageProps } from '@/src/@types/page-props';
 
 // XXX: Cleanup
 export const Attention = ({ nav }: PageProps) => (

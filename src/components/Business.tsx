@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
 import { Panel, Group, Separator } from '@vkontakte/vkui';
-import { BannersGallery, BusinessCardGroup, PanHead } from './';
-import { PageProps } from 'src/@types/page-props';
+import { BannersGallery, BusinessCardGroup, PanHead } from '@/components/index';
+import { PageProps } from '@/src/@types/page-props';
 
 export const Business = ({ nav }: PageProps) => {
 	return (
