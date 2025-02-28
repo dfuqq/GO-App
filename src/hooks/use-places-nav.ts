@@ -22,6 +22,6 @@ export const usePlacesNav = () => {
 			.finally(() => setLoading(false));
 	}, [area, nav]);
 
-	const { geo, geoLoading } = useGeolocation();
-	return { data, loading, geo, geoLoading };
+	const { geo, geoLoading, geoError } = useGeolocation();
+	return { data, loading, geo, geoLoading, geoError };
 };
