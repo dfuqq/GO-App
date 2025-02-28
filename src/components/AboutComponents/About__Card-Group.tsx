@@ -4,6 +4,7 @@ import { Card, CardGrid } from '@vkontakte/vkui';
 import React from 'react';
 import { aboutCardGroupData } from '@/prisma/data/about__card-group-data';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export const AboutCardGroup = () => {
 	const router = useRouter();
@@ -20,10 +21,12 @@ export const AboutCardGroup = () => {
 					}}
 					key={card.alt}
 					onClick={() => router.push(`/about/${card.route}`)}>
-					<img
-						style={{ height: 82, width: 82 }}
+					<Image
 						src={card.src}
 						alt={card.alt}
+						height={82}
+						width={82}
+						unoptimized
 					/>
 				</Card>
 			))}

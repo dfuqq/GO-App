@@ -4,7 +4,7 @@ import React from 'react';
 export const AboutInfo = () => {
 	return (
 		<Group
-			style={{ textAlign: 'center' }}
+			style={{ textAlign: 'center', margin: '0 20px' }}
 			description='v. 2.0.0'
 			separator='hide'>
 			<Div style={{ display: 'flex', justifyContent: 'center' }}>

@@ -23,18 +23,26 @@ export const BannersGallery = ({ category }: Props) => {
 
 			<Gallery
 				slideWidth='92%'
-				style={{ maxHeight: '25vh' }}
+				style={{ height: '33vw', minHeight: '15vh', maxHeight: '33vh' }}
 				align='center'>
 				{galleryData.map((galleryItem: ImagesBannersDTO) => (
-					<BannersGalleryItem
-						galleryItem={galleryItem}
-						category={category}
-						key={
-							category === 'business' ?
-								galleryItem.businessSlug
-							:	galleryItem.placeSlug
-						}
-					/>
+					<div
+						key={galleryItem.src}
+						style={{
+							position: 'relative',
+							width: '100%',
+							height: '100%',
+						}}>
+						<BannersGalleryItem
+							galleryItem={galleryItem}
+							category={category}
+							key={
+								category === 'business' ?
+									galleryItem.businessSlug
+								:	galleryItem.placeSlug
+							}
+						/>
+					</div>
 				))}
 			</Gallery>
 		</>

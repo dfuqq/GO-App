@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '../../../../../prisma/prisma-client';
 import { Business, Image, Placemark } from '@prisma/client';
 
@@ -9,12 +9,13 @@ export type BusinessDTO = Business & {
 
 // FIXME: await params
 export async function GET(
-	req: Request,
-	{ params }: { params: { nav: string } }
+	req: NextRequest,
+	{ params }: { params: Promise<{ type: string; nav: string }> }
 ) {
 	try {
+		const { nav } = await params;
 		const business: BusinessDTO | null = await prisma.business.findUnique({
-			where: { slug: params.nav },
+			where: { slug: nav },
 
 			include: { images: true, placemarks: true },
 		});
@@ -28,6 +29,7 @@ export async function GET(
 
 		return NextResponse.json(business);
 	} catch (error) {
+		console.error(error);
 		return NextResponse.json(
 			{ error: 'Failed to fetch cafe' },
 			{ status: 500 }

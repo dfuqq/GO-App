@@ -11,7 +11,7 @@ export const useBusinessType = (type: string, searchType: string) => {
 			.then((data) => setData(data))
 			.catch((err) => console.error(`Ошибка загрузки ${type}:`, err))
 			.finally(() => setLoading(false));
-	}, []);
+	}, [type, searchType]);
 
 	return { data, loading };
 };

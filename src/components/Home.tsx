@@ -22,7 +22,7 @@ export const Home = ({ nav }: PageProps) => {
 	useEffect(() => {
 		const routesToPrefetch: string[] = ['/business', '/about'];
 		routesToPrefetch.forEach((route) => router.prefetch(route));
-	}, []);
+	}, [router]);
 
 	return (
 		<Panel nav={nav}>

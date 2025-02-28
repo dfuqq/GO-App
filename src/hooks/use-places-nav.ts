@@ -1,7 +1,7 @@
 import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getGeolocation } from '@/lib/index';
+import { useGeolocation } from './use-geolocation';
 
 export const usePlacesNav = () => {
 	const [data, setData] = useState<PlaceDTO | null>(null);
@@ -22,6 +22,6 @@ export const usePlacesNav = () => {
 			.finally(() => setLoading(false));
 	}, [area, nav]);
 
-	const { geo, geoLoading } = getGeolocation();
+	const { geo, geoLoading } = useGeolocation();
 	return { data, loading, geo, geoLoading };
 };

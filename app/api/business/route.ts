@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
 		const data = await findBusiness(type);
 		return NextResponse.json(data);
 	} catch (error) {
+		console.error(error);
 		return NextResponse.json(
 			{ error: 'Failed to fetch businesses' },
 			{ status: 500 }

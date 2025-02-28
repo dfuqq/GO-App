@@ -24,6 +24,7 @@ export const PlacesControlsButtons = ({
 				borderRadius: '10px',
 				border: '0.1px solid #535354',
 				zIndex: '10',
+				margin: '0 6px',
 			}}>
 			<Button
 				size='l'

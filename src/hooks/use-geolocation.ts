@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-export const getGeolocation = () => {
+export const useGeolocation = () => {
 	const [geo, setGeo] = useState<number[] | null>(null);
 	const [geoLoading, setGeoLoading] = useState(true);
 	const [geoError, setGeoError] = useState(false);

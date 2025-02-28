@@ -19,7 +19,9 @@ export const About = ({ nav }: PageProps) => {
 
 			<Separator size='4xl' />
 
-			<Group separator='hide'>
+			<Group
+				separator='hide'
+				style={{ margin: '0 20px' }}>
 				<AboutCardGroup />
 
 				<Separator size='4xl' />

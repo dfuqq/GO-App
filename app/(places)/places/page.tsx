@@ -2,14 +2,16 @@
 
 import { View } from '@vkontakte/vkui';
 import { Places } from '../../../src/components/Places';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 export default function PlacesPage() {
 	return (
-		<View
-			nav='places'
-			activePanel='places'>
-			<Places nav='places' />
-		</View>
+		<Suspense>
+			<View
+				nav='places'
+				activePanel='places'>
+				<Places nav='places' />
+			</View>
+		</Suspense>
 	);
 }

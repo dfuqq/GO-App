@@ -1,6 +1,7 @@
 import { useRouter } from 'next/navigation';
 import { ImagesBannersDTO } from '@/prisma/data/types';
 import React from 'react';
+import Image from 'next/image';
 
 interface Props {
 	galleryItem: ImagesBannersDTO;
@@ -11,15 +12,15 @@ export const BannersGalleryItem = ({ galleryItem, category }: Props) => {
 	const router = useRouter();
 
 	return (
-		<img
+		<Image
 			src={galleryItem.src}
 			style={{
 				objectFit: 'contain',
 				borderRadius: '20px',
 				margin: '0 3px',
 				backgroundColor: '#000',
-				maxHeight: '25vh',
 			}}
+			fill={true}
 			alt={galleryItem.alt}
 			onClick={() =>
 				category === 'business' ?
@@ -30,6 +31,7 @@ export const BannersGalleryItem = ({ galleryItem, category }: Props) => {
 						`/places/${galleryItem.area.toUpperCase()}/${galleryItem.placeSlug}?type=card`
 					)
 			}
+			unoptimized
 		/>
 	);
 };
