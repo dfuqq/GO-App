@@ -2,13 +2,17 @@
 import React from 'react';
 
 import { Group } from '@vkontakte/vkui';
-import { YMaps, Map, Placemark, Circle } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Circle } from '@pbe/react-yandex-maps';
+import { BusinessDTO } from '@/app/api/business/[type]/[nav]/route';
+import { PlaceDTO } from '@/app/api/places/[area]/[nav]/route';
+import { LocationItemMapPlacemarks } from './LocationItem__Map-Placemarks';
 
 interface Props {
 	geo: number[];
+	item: BusinessDTO | PlaceDTO;
 }
 
-export const LocationItemMap = ({ geo }: Props) => {
+export const LocationItemMap = ({ item, geo }: Props) => {
 	return (
 		<Group
 			style={{
@@ -19,17 +23,12 @@ export const LocationItemMap = ({ geo }: Props) => {
 			<YMaps>
 				<Map
 					defaultState={{
-						center: [61.247272, 73.405787],
-						zoom: 17,
+						center: (item as BusinessDTO).geo,
+						zoom: (item as BusinessDTO).zoom || 17,
 					}}
 					style={{ width: '100vw', height: '39vh' }}>
-					<Placemark
-						defaultGeometry={[61.247272, 73.405787]}
-						defaultOptions={{
-							preset: 'islands#circleIcon',
-							iconColor: '#000',
-						}}
-					/>
+					<LocationItemMapPlacemarks item={item as BusinessDTO} />
+
 					{geo !== null && (
 						<>
 							<Circle

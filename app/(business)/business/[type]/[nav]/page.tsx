@@ -1,23 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
-import { LocationItem } from '../../../../../src/components/';
+import {
+	LocationItem,
+	LocationItemGeoError,
+} from '../../../../../src/components/';
 import { ScreenSpinner } from '@vkontakte/vkui';
-import { useBusiness } from 'src/hooks';
+import { useBusiness } from '../../../../../src/hooks';
 
 export default function BusinessItemPage() {
-	const { data, loading, nav, geo, geoLoading } = useBusiness();
+	const [ignoreError, setIgnoreError] = useState(false);
+	const { data, loading, nav, geo, geoLoading, geoError } = useBusiness();
 
-	if (loading || geoLoading) return <ScreenSpinner />;
+	if (loading || (geoLoading && !geoError)) return <ScreenSpinner />;
 	// TODO: 404 Page
 	if (!data) return <h1>404 Not found</h1>;
 
-	return (
-		<LocationItem
-			geo={geo}
-			nav={nav}
-			item={data}
-		/>
-	);
+	if (geoError && !ignoreError)
+		return <LocationItemGeoError setIgnoreError={setIgnoreError} />;
+
+	if ((geoError && ignoreError) || (!geoError && data))
+		return (
+			<LocationItem
+				nav={nav}
+				geo={geo}
+				item={data}
+			/>
+		);
 }

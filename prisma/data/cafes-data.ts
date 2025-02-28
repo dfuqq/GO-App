@@ -1,4 +1,4 @@
-import { Business, Images } from './types';
+import { Business, Images, Placemarks } from './types';
 
 export const cafesData: Business[] = [
 	{
@@ -16,6 +16,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-19.userapi.com/QlrHYrnSYimVruI0aytyvpx7M5Uj2Vpj6Yls7w/AKiGv9x6vh8.jpg',
 		insta: '@ny_coffee_surgut',
 		instaHref: 'https://instagram.com/ny_coffee_surgut',
+		geo: [61.247272, 73.405787],
 		categoryId: 2,
 	},
 	{
@@ -33,6 +34,8 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-26.userapi.com/JLQqgcG4PwD2jIJZCN3eD_-JYssZ3HPFWMZVeA/mdjleC0STG4.jpg',
 		insta: '@travelerscoffeesurgut',
 		instaHref: 'https://instagram.com/travelerscoffeesurgut',
+		geo: [61.258479, 73.391443],
+		zoom: 12.5,
 		categoryId: 2,
 	},
 	{
@@ -50,6 +53,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-22.userapi.com/IJ6V1x3zFKXu0bvehgovZEaQ7p7H9Ono9HP1wQ/7naj9IeTKj4.jpg',
 		insta: '@academy_of_taste',
 		instaHref: 'https://instagram.com/academy_of_taste',
+		geo: [61.246266, 73.406547],
 		categoryId: 2,
 	},
 	{
@@ -67,6 +71,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-63.userapi.com/NeuIamfZ41psyXoBY9DIqGxc6w_CpwafxgXecg/9jyrHQC1ukY.jpg',
 		insta: '@botanicacafe',
 		instaHref: 'https://instagram.com/botanicacafe',
+		geo: [61.240119, 73.404912],
 		categoryId: 2,
 	},
 	{
@@ -84,6 +89,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-46.userapi.com/ZkDGMCkOfGHrXBmYatlVWFeAZwwdZ8ZG1qGClA/V2dJXbx-2YY.jpg',
 		insta: '@dovlatov_cafe',
 		instaHref: 'https://instagram.com/dovlatov_cafe',
+		geo: [61.249482, 73.408726],
 		categoryId: 2,
 	},
 	{
@@ -101,6 +107,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-49.userapi.com/o3f_rsOSg7AJAcbqS378krASkisMg6WvRQzPqQ/n3hvUqn0RcE.jpg',
 		insta: '@dobraya_kofeynya',
 		instaHref: 'https://instagram.com/dobraya_kofeynya',
+		geo: [61.239483, 73.392344],
 		categoryId: 2,
 	},
 	{
@@ -118,6 +125,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-2.userapi.com/43tYe8dy4gn41kK2g-DyThxyadRPqXjqRZFXsA/7yt-QpsMOEM.jpg',
 		insta: '@zerno_surgut',
 		instaHref: 'https://instagram.com/zerno_surgut',
+		geo: [61.249804, 73.440842],
 		categoryId: 2,
 	},
 	{
@@ -135,6 +143,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-41.userapi.com/ZmAdch4EcttzJycEb6Ggo6MNw--EhJTU5bZJRA/Y9J607NMdTw.jpg',
 		insta: '@kofein_surgut',
 		instaHref: 'https://instagram.com/kofein_surgut',
+		geo: [61.248671, 73.402112],
 		categoryId: 2,
 	},
 	{
@@ -152,6 +161,7 @@ export const cafesData: Business[] = [
 		logo: 'https://sun9-46.userapi.com/ClJn2-tpDd0UWhRO_CFjrBni6e2X6-PgFNzMAQ/whLThYAHzsU.jpg',
 		insta: '@endorfin.coffee',
 		instaHref: 'https://instagram.com/endorfin.coffee',
+		geo: [61.249394, 73.429283],
 		categoryId: 2,
 	},
 ];
@@ -327,4 +337,10 @@ export const cafesImagesData: Images[] = [
 		alt: "Cafe's Exterior",
 		businessSlug: 'endorf',
 	},
+];
+
+export const cafesPlacemarksData: Placemarks[] = [
+	{ latitude: 61.254789, longitude: 73.392651, businessSlug: 'trvls' },
+	{ latitude: 61.266427, longitude: 73.370178, businessSlug: 'trvls' },
+	{ latitude: 61.250818, longitude: 73.401331, businessSlug: 'trvls' },
 ];

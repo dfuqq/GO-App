@@ -1,14 +1,19 @@
 import { prisma } from './prisma-client';
 
-import { cafesData, cafesImagesData } from './data/cafes-data';
-import { barsData, barsImagesData } from './data/bars-data';
+import {
+	cafesData,
+	cafesImagesData,
+	cafesPlacemarksData,
+} from './data/cafes-data';
+import { barsData, barsImagesData, barsPlacemarksData } from './data/bars-data';
 import { hookahsData, hookahsImagesData } from './data/hookahs-data';
 import {
 	restarauntsData,
 	restarauntsImagesData,
+	restarauntsPlacemarksData,
 } from './data/restaraunts-data';
 
-import { Business, Images, Places } from './data/types';
+import { Business, Images, Placemarks, Places } from './data/types';
 import { placesNwlData, placesNwlImagesData } from './data/places__nwl-data';
 import { placesNlData, placesNlImagesData } from './data/places__nl-data';
 import { placesWestData, placesWestImagesData } from './data/places__west-data';
@@ -71,7 +76,8 @@ async function up() {
 
 	const pushBusinessAndImages = async (
 		businessesData: Business[],
-		businessesImagesData: Images[]
+		businessesImagesData: Images[],
+		businessPlacemarksData?: Placemarks[]
 	) => {
 		try {
 			await Promise.all(
@@ -89,14 +95,27 @@ async function up() {
 					});
 				})
 			);
+
+			businessPlacemarksData &&
+				(await Promise.all(
+					businessPlacemarksData?.map(async (placemarkData) => {
+						await prisma.placemark.create({
+							data: { ...placemarkData },
+						});
+					})
+				));
 		} catch (error) {
 			console.error(error);
 		}
 	};
-	pushBusinessAndImages(cafesData, cafesImagesData);
-	pushBusinessAndImages(barsData, barsImagesData);
+	pushBusinessAndImages(cafesData, cafesImagesData, cafesPlacemarksData);
+	pushBusinessAndImages(barsData, barsImagesData, barsPlacemarksData);
 	pushBusinessAndImages(hookahsData, hookahsImagesData);
-	pushBusinessAndImages(restarauntsData, restarauntsImagesData);
+	pushBusinessAndImages(
+		restarauntsData,
+		restarauntsImagesData,
+		restarauntsPlacemarksData
+	);
 
 	const pushPlacesAndImages = async (
 		placesData: Places[],
@@ -134,6 +153,7 @@ async function down() {
 	await prisma.$executeRaw`TRUNCATE TABLE "businesses" RESTART IDENTITY CASCADE`;
 	await prisma.$executeRaw`TRUNCATE TABLE "places" RESTART IDENTITY CASCADE`;
 	await prisma.$executeRaw`TRUNCATE TABLE "images" RESTART IDENTITY CASCADE`;
+	await prisma.$executeRaw`TRUNCATE TABLE "placemarks" RESTART IDENTITY CASCADE`;
 }
 
 async function main() {

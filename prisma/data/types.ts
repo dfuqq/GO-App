@@ -12,6 +12,8 @@ export interface Business {
 	logo: string;
 	insta: string;
 	instaHref: string;
+	geo: number[];
+	zoom?: number;
 	categoryId: number;
 }
 
@@ -32,6 +34,7 @@ export interface Places {
 	instaHref?: string;
 	vkHref?: string;
 	utility?: string;
+	// geo: number[];
 	categoryId: number;
 }
 
@@ -40,6 +43,12 @@ export interface Images {
 	alt: string;
 	businessSlug?: string;
 	placeSlug?: string;
+}
+
+export interface Placemarks {
+	latitude: number;
+	longitude: number;
+	businessSlug: string;
 }
 
 export interface Card {

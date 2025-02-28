@@ -1,25 +1,27 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const getGeolocation = () => {
-	const [geo, setGeo] = useState<number[]>(null);
+	const [geo, setGeo] = useState<number[] | null>(null);
 	const [geoLoading, setGeoLoading] = useState(true);
+	const [geoError, setGeoError] = useState(false);
 
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(
-			(position) => {
-				setGeo([position.coords.latitude, position.coords.longitude]);
-				setGeoLoading(false);
-			},
-			(error) => {
-				console.error(error);
-				console.error(error.message);
-				console.error(error.code);
-				setGeoLoading(false);
-			},
-			{ timeout: 10000 }
-		);
-	}
-
-	return { geo, geoLoading };
+	useEffect(() => {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(position) => {
+					setGeo([
+						position.coords.latitude,
+						position.coords.longitude,
+					]);
+					setGeoLoading(false);
+				},
+				(error) => {
+					console.error(error.message, error.code);
+					setGeoError(true);
+				}
+			);
+		}
+	}, []);
+	return { geo, geoLoading, geoError };
 };

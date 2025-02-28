@@ -43,10 +43,25 @@ model Business {
     images            Image[]
     insta             String?
     instaHref         String?
+    geo               Float[]
+    zoom              Float?
+    placemarks        Placemark[]
     createdAt         DateTime         @default(now())
     updatedAt         DateTime         @updatedAt
 
     @@map("businesses")
+}
+
+model Placemark {
+    id           Int       @id @default(autoincrement())
+    latitude     Float
+    longitude    Float
+    businessSlug String?
+    business     Business? @relation(fields: [businessSlug], references: [slug])
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+
+    @@map("placemarks")
 }
 
 model Place {

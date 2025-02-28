@@ -46,7 +46,10 @@ export const LocationItem = ({ nav, item, geo }: Props) => {
 			<LocationItemInfo item={item} />
 
 			{/* TODO: Add Geo to all Items */}
-			<LocationItemMap geo={geo} />
+			<LocationItemMap
+				item={item}
+				geo={geo}
+			/>
 		</Panel>
 	);
 };

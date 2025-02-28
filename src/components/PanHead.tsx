@@ -1,5 +1,6 @@
 'use client';
-import { PanelHeader, PanelHeaderBack } from '@vkontakte/vkui';
+import { Icon24HomeOutline } from '@vkontakte/icons';
+import { Div, PanelHeader, PanelHeaderBack } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
@@ -21,6 +22,13 @@ export const PanHead = ({ title, route }: Props) => {
 					onClick={() =>
 						route ? router.push(route) : router.back()
 					}></PanelHeaderBack>
+			}
+			after={
+				<Div
+					style={{ cursor: 'pointer' }}
+					onClick={() => router.push('/')}>
+					<Icon24HomeOutline />
+				</Div>
 			}>
 			{title}
 		</PanelHeader>

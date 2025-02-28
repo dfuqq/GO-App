@@ -1,4 +1,4 @@
-import { Business, Images } from './types';
+import { Business, Images, Placemarks } from './types';
 
 export const barsData: Business[] = [
 	{
@@ -16,6 +16,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-51.userapi.com/-Kmb_WZCU1Kk1jHSBwTyM29ctNZ0e3rhnl_JGw/akw2pX06FJw.jpg',
 		insta: '@auditorium_bar',
 		instaHref: 'https://instagram.com/auditorium_bar',
+		geo: [61.259651, 73.402797],
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -41,6 +42,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-67.userapi.com/OgH4ppSJzOMVl1CtJfexnFu5u4FxXS0ty1bTqA/5A6ooYN8t-g.jpg',
 		insta: '@spoi_ptichka',
 		instaHref: 'https://instagram.com/spoi_ptichka',
+		geo: [61.259651, 73.402797],
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -72,6 +74,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-59.userapi.com/YJCR_u0sZSi_AEzMvl_K4WUrrUz-mt9p0DAsOQ/G6ODls_C3KY.jpg',
 		insta: '@thedockpub',
 		instaHref: 'https://instagram.com/thedockpub',
+		geo: [61.246867, 73.417275],
 		categoryId: 1,
 	},
 	{
@@ -89,6 +92,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-49.userapi.com/6xo6WRxThel1qfItqfEu6c2cIleE463-TZan0A/-FDMQKDPPws.jpg',
 		insta: '@frankbarwine',
 		instaHref: 'https://instagram.com/frankbarwine',
+		geo: [61.234299, 73.438364],
 		categoryId: 1,
 		// NOTE: Credits
 		// <Footer>
@@ -114,6 +118,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-21.userapi.com/xRE-QWPwTIAYhQzua3vXvWTabbSg3dCdZp92hg/KXMDSSx6DNg.jpg',
 		insta: '@hopspub_surgut',
 		instaHref: 'https://instagram.com/hopspub_surgut',
+		geo: [61.259638, 73.402769],
 		categoryId: 1,
 	},
 	{
@@ -131,6 +136,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-65.userapi.com/x8H0lEqbCjHRV8tI7HyHYD9pdLMAF4YHyGgkTQ/pYNOT6cdM6c.jpg',
 		insta: '@jawsspot_sgt_',
 		instaHref: 'https://instagram.com/jawsspot_sgt_',
+		geo: [61.24848, 73.418264],
 		categoryId: 1,
 	},
 	{
@@ -148,6 +154,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-10.userapi.com/5xqutv_9ySVYKy4C2GEelLQ6QwtryOyKElW-dQ/W6FFDB0HZQE.jpg',
 		insta: '@nightbarmars',
 		instaHref: 'https://instagram.com/nightbarmars',
+		geo: [61.273842, 73.408996],
 		categoryId: 1,
 	},
 	{
@@ -165,6 +172,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-70.userapi.com/zCXyc32tczkB12zfilAfnUmMM_manbhlQHmlrg/Bsgu8al1lK4.jpg',
 		insta: '@two.pint.bar.surgut',
 		instaHref: 'https://instagram.com/two.pint.bar.surgut',
+		geo: [61.254515, 73.387993],
 		categoryId: 1,
 	},
 	{
@@ -182,6 +190,7 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-13.userapi.com/1baYZMSy2v_rWw3L-txxR6fjBJ6dGNn110PLvw/NWXCxaGtz3w.jpg',
 		insta: '@rockburger_bar',
 		instaHref: 'https://instagram.com/rockburger_bar',
+		geo: [61.234229, 73.438707],
 		categoryId: 1,
 	},
 	{
@@ -199,6 +208,8 @@ export const barsData: Business[] = [
 		logo: 'https://sun9-24.userapi.com/EC8ZBXY2fHTL3UfGtR1UspeNWTPPn7u9_sgtYQ/LqSyTccgFuI.jpg',
 		insta: '@shashlikoff_surgut',
 		instaHref: 'https://instagram.com/shashlikoff_surgut',
+		geo: [61.262673, 73.385365],
+		zoom: 13,
 		categoryId: 1,
 	},
 ];
@@ -442,6 +453,19 @@ export const barsImagesData: Images[] = [
 	{
 		src: 'https://sun9-14.userapi.com/fiVyqWqfVhDrM8lMMvy7KNLB_4oAbUqfrrhuyA/dXIT_O1lrxE.jpg',
 		alt: "Restaraunt's Food",
+		businessSlug: 'off',
+	},
+];
+
+export const barsPlacemarksData: Placemarks[] = [
+	{
+		latitude: 61.269424,
+		longitude: 73.382403,
+		businessSlug: 'off',
+	},
+	{
+		latitude: 61.255827,
+		longitude: 73.388001,
 		businessSlug: 'off',
 	},
 ];

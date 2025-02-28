@@ -1,4 +1,4 @@
-import { Business, Images } from './types';
+import { Business, Images, Placemarks } from './types';
 
 export const restarauntsData: Business[] = [
 	{
@@ -16,6 +16,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-47.userapi.com/-q33_rAJyraSXCEi4rUn_5QpHF5zBASnFg7tqg/2rz-jl8qMlg.jpg',
 		insta: '@admiral_surgut',
 		instaHref: 'https://instagram.com/admiral_surgut',
+		geo: [61.240099, 73.439709],
 		categoryId: 4,
 	},
 	{
@@ -33,6 +34,8 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-46.userapi.com/1ohUXFFUZFuDu1oBa5_3QOVSRyLYNJ-zZLf1fw/QDm_9T3nkrc.jpg',
 		insta: '@divansaray',
 		instaHref: 'https://instagram.com/divansaray',
+		geo: [61.263517, 73.364393],
+		zoom: 12,
 		categoryId: 4,
 	},
 	{
@@ -50,6 +53,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-15.userapi.com/oXqFG9X-_Qtf3wgwOeveEFOMbRnNZd_5h9l6Dg/gQv4vknS0LY.jpg',
 		insta: '@hurma_restaurant',
 		instaHref: 'https://instagram.com/hurma_restaurant',
+		geo: [61.259565, 73.40264],
 		categoryId: 4,
 	},
 	{
@@ -67,6 +71,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-60.userapi.com/EDzD8tjkaL2ae9QAzLPmV5LWClASDmaAM-j2-g/fx61ftA9SkQ.jpg',
 		insta: '@pub_joint',
 		instaHref: 'https://instagram.com/pub_joint',
+		geo: [61.254411, 73.388833],
 		categoryId: 4,
 	},
 	{
@@ -84,6 +89,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-52.userapi.com/2LIIqfX74xid_M8ALa4AyOc6XT_SFjHbLtfxeA/r8I7Dyjfa68.jpg',
 		insta: '@the.kitcha',
 		instaHref: 'https://instagram.com/the.kitcha',
+		geo: [61.23902, 73.387947],
 		categoryId: 4,
 	},
 	{
@@ -101,6 +107,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-53.userapi.com/oFIB4-tsfqipTy4F05k7FQE7DIeu62uoPaEMqg/9kRy4FKb2ww.jpg',
 		insta: '@medved_ugol',
 		instaHref: 'https://instagram.com/medved_ugol',
+		geo: [61.285953, 73.340385],
 		categoryId: 4,
 	},
 	{
@@ -118,6 +125,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-32.userapi.com/8n8drZhGibwuiYwi7ToEAzZS5e7HToQTRFUhYA/Tc7yLhslnF4.jpg',
 		insta: '@mishka.bar',
 		instaHref: 'https://instagram.com/mishka.bar',
+		geo: [61.258592, 73.403162],
 		categoryId: 4,
 	},
 	{
@@ -135,6 +143,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-44.userapi.com/xdDobtfintMpBnYWGm57dTjR6q4Ssl91kaHtuw/Xp1P_aABMjk.jpg',
 		insta: '@peoplessurgut',
 		instaHref: 'https://instagram.com/peoplessurgut',
+		geo: [61.25861, 73.399991],
 		categoryId: 4,
 	},
 	{
@@ -152,6 +161,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-60.userapi.com/SV5_fFlVTO_hMZS6t6p6Ev46qUwHdZx8f-ci3w/RzJX3o6_9Gw.jpg',
 		insta: '@perchinisurgut',
 		instaHref: 'https://instagram.com/perchinisurgut',
+		geo: [61.250747, 73.40139],
 		categoryId: 4,
 	},
 	{
@@ -169,6 +179,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-33.userapi.com/wDlX2axe9PUWrt5bmSOksB6fllregb9pSr4jsw/2LzCqPDSIRQ.jpg',
 		insta: '@pivnayanomer1',
 		instaHref: 'https://instagram.com/pivnayanomer1',
+		geo: [61.256504, 73.431698],
 		categoryId: 4,
 	},
 	{
@@ -186,6 +197,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-66.userapi.com/ar7Q0RgYZVtLKMqKAe6kB7dDy3Vv5Llyb2SGyg/VAu_3cgyrCw.jpg',
 		insta: '@cafeseven',
 		instaHref: 'https://instagram.com/cafeseven',
+		geo: [61.256331, 73.431445],
 		categoryId: 4,
 	},
 	{
@@ -203,6 +215,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-70.userapi.com/ea5w4gibHw-L2CO4YMMQ13HAYPmLb0-vRQv_kg/JI1_4bZuT3U.jpg',
 		insta: '@la_storia_restaurant',
 		instaHref: 'https://instagram.com/la_storia_restaurant',
+		geo: [61.261294, 73.365622],
 		categoryId: 4,
 	},
 	{
@@ -220,6 +233,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-50.userapi.com/gne9rMFIhzLLliMulStRKo-iWzw3fEJtYcp6dw/UROj-kmPiw4.jpg',
 		insta: '@veranda_surgut',
 		instaHref: 'https://instagram.com/veranda_surgut',
+		geo: [61.254809, 73.383906],
 		categoryId: 4,
 	},
 	{
@@ -237,6 +251,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-50.userapi.com/PUPp9VI8n-l8Ouj-jB_Ur0tjQWxFlaZdxes3tw/VB0HxWdyDvQ.jpg',
 		insta: '@restoran_navysote',
 		instaHref: 'https://instagram.com/restoran_navysote',
+		geo: [61.235115, 73.398997],
 		categoryId: 4,
 	},
 	{
@@ -254,6 +269,7 @@ export const restarauntsData: Business[] = [
 		logo: 'https://sun9-51.userapi.com/SYLmgfMQie1mPT0Jc1-FXHCr3O4-tGnEpEZPdw/mGHqoTk24Sg.jpg',
 		insta: '@wooden_restobar',
 		instaHref: 'https://instagram.com/wooden_restobar',
+		geo: [61.237985, 73.405767],
 		categoryId: 4,
 	},
 ];
@@ -629,4 +645,9 @@ export const restarauntsImagesData: Images[] = [
 		alt: "Restaraunt's Interior",
 		businessSlug: 'wdn',
 	},
+];
+
+export const restarauntsPlacemarksData: Placemarks[] = [
+	{ latitude: 61.250263, longitude: 73.370409, businessSlug: 'ds' },
+	{ latitude: 61.277243, longitude: 73.367255, businessSlug: 'ds' },
 ];

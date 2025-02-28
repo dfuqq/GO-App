@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '../../../../../prisma/prisma-client';
-import { Business, Image } from '@prisma/client';
+import { Business, Image, Placemark } from '@prisma/client';
 
-export type BusinessDTO = Business & { images: Image[] };
+export type BusinessDTO = Business & {
+	images: Image[];
+	placemarks: Placemark[];
+};
 
 // FIXME: await params
 export async function GET(
@@ -13,7 +16,7 @@ export async function GET(
 		const business: BusinessDTO | null = await prisma.business.findUnique({
 			where: { slug: params.nav },
 
-			include: { images: true },
+			include: { images: true, placemarks: true },
 		});
 
 		if (!business) {

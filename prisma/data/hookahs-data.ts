@@ -16,6 +16,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-24.userapi.com/DipVCamBoW3mMKHq4aOw-JRz1o7EXRIMxxEqaw/i3gJTDcW6Ts.jpg',
 		insta: '@artloft_hookah_club',
 		instaHref: 'https://instagram.com/artloft_hookah_club',
+		geo: [61.248846, 73.404621],
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -41,6 +42,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-22.userapi.com/c-5HUHWFnr4RFjlbtEAh4ZdEjpxiVOlYcw7Y8A/sg67KruP_u0.jpg',
 		insta: '@brutal_avenue_hookah_club',
 		instaHref: 'https://instagram.com/brutal_avenue_hookah_club',
+		geo: [61.258616, 73.356503],
 		categoryId: 3,
 	},
 	{
@@ -58,6 +60,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-24.userapi.com/_ktY0WfyeGU2jPBl35bn_7j5mQqIi4UtxqN1PA/Pw1E_GIIbKA.jpg',
 		insta: '@bakerstreet_universitetskaya',
 		instaHref: 'https://instagram.com/bakerstreet_universitetskaya',
+		geo: [61.25046, 73.443114],
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -88,6 +91,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-9.userapi.com/BTn5r1FlTColigjzEbCP4iSzrJVpOjx_5W5m4g/5XyZrK9JiOk.jpg',
 		insta: '@hookahplace_surgut',
 		instaHref: 'https://instagram.com/hookahplace_surgut',
+		geo: [61.25448, 73.436439],
 		categoryId: 3,
 		// NOTE: Credits
 		// <Footer>
@@ -113,6 +117,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-25.userapi.com/__dHib63Yiq6yr4iF8_cV1uQ19BFkLVcCvp9Yw/0iloCqNBZbM.jpg',
 		insta: '@jin_bar_',
 		instaHref: 'https://instagram.com/jin_bar_',
+		geo: [61.238362, 73.403822],
 		categoryId: 3,
 	},
 	{
@@ -130,6 +135,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-56.userapi.com/1QiJWYgY-A95PzKoKOvspaO5OthskjzhxlpC9Q/g84sUBGhIyo.jpg',
 		insta: '@lightdym',
 		instaHref: 'https://instagram.com/lightdym',
+		geo: [61.255536, 73.435487],
 		categoryId: 3,
 	},
 	{
@@ -147,6 +153,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-14.userapi.com/lx3XL8VEbH38oRtZoFDbeZyRuoE50UDUKeZ3BA/fS1oGPsdBLo.jpg',
 		insta: '@myata_surgut',
 		instaHref: 'https://instagram.com/myata_surgut',
+		geo: [61.257635, 73.42004],
 		categoryId: 3,
 		// NOTE: Credits
 		// Footer>
@@ -172,6 +179,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-76.userapi.com/-_FW6QnLQImd0CWCaWC_1YB6q1GGBmV9UPdHIg/KOz5AA_SmdA.jpg',
 		insta: '@marmelad_surgut',
 		instaHref: 'https://instagram.com/marmelad_surgut',
+		geo: [61.245305, 73.450069],
 		categoryId: 3,
 		//   NOTE: Credits
 		// <Footer>
@@ -207,6 +215,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-1.userapi.com/uPuAm_M-c9ko2ZJr3c_AN4rJ3liJabAjiC8Kow/T3BrfMOY1WA.jpg',
 		insta: '@the_office_surgut',
 		instaHref: 'https://instagram.com/the_office_surgut',
+		geo: [61.239877, 73.392422],
 		categoryId: 3,
 	},
 	{
@@ -224,6 +233,7 @@ export const hookahsData: Business[] = [
 		logo: 'https://sun9-48.userapi.com/GCsVQ0QjfESsMDNWhjca0YBT_aaBCTqVBMEVUQ/2Py4Zx5kxMk.jpg',
 		insta: '@parobarshop',
 		instaHref: 'https://instagram.com/parobarshop',
+		geo: [61.271302, 73.356131],
 		categoryId: 3,
 	},
 ];
