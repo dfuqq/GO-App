@@ -41,12 +41,27 @@ model Business {
     categoryId        Int
     category          BusinessCategory @relation(fields: [categoryId], references: [id])
     images            Image[]
-    social            String?
-    socialHref        String?
+    insta             String?
+    instaHref         String?
+    geo               Float[]
+    zoom              Float?
+    placemarks        Placemark[]
     createdAt         DateTime         @default(now())
     updatedAt         DateTime         @updatedAt
 
     @@map("businesses")
+}
+
+model Placemark {
+    id           Int       @id @default(autoincrement())
+    latitude     Float
+    longitude    Float
+    businessSlug String?
+    business     Business? @relation(fields: [businessSlug], references: [slug])
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+
+    @@map("placemarks")
 }
 
 model Place {
@@ -56,10 +71,21 @@ model Place {
     description       String
     descriptionHeader String
     address           String
+    areaSlug          String
+    area              String
     hours             String?
+    price             String?
+    insta             String?
+    instaHref         String?
+    site              String?
+    siteHref          String?
+    vkHref            String?
     categoryId        Int
     category          PlaceCategory @relation(fields: [categoryId], references: [id])
     images            Image[]
+    geo               Float[]
+    zoom              Float?
+    utility           String?
     createdAt         DateTime      @default(now())
     updatedAt         DateTime      @updatedAt
 
