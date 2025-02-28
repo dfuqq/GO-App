@@ -18,6 +18,7 @@ export { Attention } from './Attention';
 export { Credits } from './Credits';
 export { Container } from './Container';
 export { Disclaimer } from './Disclaimer';
+export { NotFoundPlaceholder } from './Not-Found__Placeholder';
 export { PanHead } from './PanHead';
 export { Places } from './Places';
 export { Projects } from './Projects';

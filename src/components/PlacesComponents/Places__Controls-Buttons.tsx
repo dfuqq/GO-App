@@ -43,7 +43,7 @@ export const PlacesControlsButtons = ({
 				}}
 				after={
 					activeCategories !== '' ?
-						<Counter>{activeCategories.split(',').length}</Counter>
+						<Counter>{activeCategories?.split(',').length}</Counter>
 					:	null
 				}>
 				Выбрать категорию

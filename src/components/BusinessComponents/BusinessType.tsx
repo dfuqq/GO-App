@@ -7,6 +7,7 @@ import { LocationsList, Disclaimer, PanHead } from '@/components/index';
 
 import { Business } from '@prisma/client';
 import { useBusinessType } from 'src/hooks';
+import { notFound } from 'next/navigation';
 
 interface Props {
 	nav: string;
@@ -20,10 +21,13 @@ export const BusinessType = ({ nav, type, title, searchType }: Props) => {
 
 	return (
 		<Panel nav={nav}>
+			{!loading && data.length < 1 && notFound()}
+
 			{loading && <ScreenSpinner />}
 
 			<PanHead title={title} />
-			{!loading && (
+
+			{!loading && data && (
 				<>
 					<Group>
 						{data.map((businessItem: Business) => (

@@ -8,14 +8,16 @@ import {
 } from '../../../../../src/components/';
 import { ScreenSpinner } from '@vkontakte/vkui';
 import { useBusiness } from '../../../../../src/hooks';
+import { notFound } from 'next/navigation';
 
 export default function BusinessItemPage() {
 	const [ignoreError, setIgnoreError] = useState(false);
 	const { data, loading, nav, geo, geoLoading, geoError } = useBusiness();
 
+	if (!data) return notFound();
+
 	if (loading || (geoLoading && !geoError)) return <ScreenSpinner />;
 	// TODO: 404 Page
-	if (!data) return <h1>404 Not found</h1>;
 
 	if (geoError && !ignoreError)
 		return <LocationItemGeoError setIgnoreError={setIgnoreError} />;
