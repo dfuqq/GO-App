@@ -1,15 +1,17 @@
 import { BusinessDTO } from '@/app/api/business/[type]/[nav]/route';
+import { PlaceDTO } from '@/app/api/places/[area]/[nav]/route';
+import { getIsBusiness } from '@/src/lib/get-is-business';
 import { Placemark } from '@pbe/react-yandex-maps';
 import React from 'react';
 
 interface Props {
-	item: BusinessDTO;
+	item: BusinessDTO | PlaceDTO;
 }
 
 export const LocationItemMapPlacemarks = ({ item }: Props) => {
 	return (
 		<>
-			{item.placemarks.length > 0 ?
+			{getIsBusiness(item) && item.placemarks.length > 0 ?
 				item.placemarks.map((placemark) => (
 					<Placemark
 						key={placemark.id}

@@ -15,7 +15,7 @@ import { PlaceDTO } from '@/api/places/[area]/[nav]/route';
 
 interface Props {
 	nav: string;
-	geo: number[];
+	geo: number[] | null;
 	item: BusinessDTO | PlaceDTO;
 }
 
@@ -46,10 +46,12 @@ export const LocationItem = ({ nav, item, geo }: Props) => {
 			<LocationItemInfo item={item} />
 
 			{/* TODO: Add Geo to all Items */}
-			<LocationItemMap
-				item={item}
-				geo={geo}
-			/>
+			{item.geo && (
+				<LocationItemMap
+					item={item}
+					geo={geo}
+				/>
+			)}
 		</Panel>
 	);
 };

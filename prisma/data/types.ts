@@ -34,7 +34,8 @@ export interface Places {
 	instaHref?: string;
 	vkHref?: string;
 	utility?: string;
-	// geo: number[];
+	geo: number[];
+	zoom?: number;
 	categoryId: number;
 }
 

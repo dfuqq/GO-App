@@ -83,6 +83,8 @@ model Place {
     categoryId        Int
     category          PlaceCategory @relation(fields: [categoryId], references: [id])
     images            Image[]
+    geo               Float[]
+    zoom              Float?
     utility           String?
     createdAt         DateTime      @default(now())
     updatedAt         DateTime      @updatedAt

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { Group } from '@vkontakte/vkui';
-import { YMaps, Map, Circle } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Circle, Placemark } from '@pbe/react-yandex-maps';
 import { BusinessDTO } from '@/app/api/business/[type]/[nav]/route';
 import { PlaceDTO } from '@/app/api/places/[area]/[nav]/route';
 import { LocationItemMapPlacemarks } from './LocationItem__Map-Placemarks';
@@ -27,7 +27,7 @@ export const LocationItemMap = ({ item, geo }: Props) => {
 						zoom: (item as BusinessDTO).zoom || 17,
 					}}
 					style={{ width: '100vw', height: '39vh' }}>
-					<LocationItemMapPlacemarks item={item as BusinessDTO} />
+					<LocationItemMapPlacemarks item={item} />
 
 					{geo !== null && (
 						<>

@@ -14,7 +14,7 @@ export default function BusinessItemPage() {
 	const [ignoreError, setIgnoreError] = useState(false);
 	const { data, loading, nav, geo, geoLoading, geoError } = useBusiness();
 
-	if (!data) return notFound();
+	if (!loading && !data) return notFound();
 
 	if (loading || (geoLoading && !geoError)) return <ScreenSpinner />;
 	// TODO: 404 Page
