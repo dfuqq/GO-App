@@ -1,7 +1,9 @@
-import { Banner, Button } from '@vkontakte/vkui';
+import { Banner } from '@vkontakte/vkui';
 import { useRouter } from 'next/navigation';
 import { BannerProps } from '@/prisma/data/types';
 import React from 'react';
+
+import { Button } from '../ui';
 
 interface Props {
 	banner: BannerProps;
@@ -23,11 +25,9 @@ export const HomeBannersGroupItem = ({ banner }: Props) => {
 			style={{ marginBottom: 12 }}
 			actions={
 				<Button
-					mode='primary'
-					size='l'
-					onClick={() => router.push(banner.buttonLink)}>
-					{banner.buttonText}
-				</Button>
+					text={banner.buttonText}
+					onClick={() => router.push(banner.buttonLink)}
+				/>
 			}
 			background={
 				<div
