@@ -2,7 +2,7 @@ import { ImagesBannersDTO } from './types';
 
 export const businessBannersGalleryData: ImagesBannersDTO[] = [
 	{
-		src: 'https://sun9-70.userapi.com/s4wSW493Dz22_UyKJdI9xliZSPP7eFlCEgEwUw/YwVTTUyOHjU.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/nyccrd.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL255Y2NyZC53ZWJwIiwiaWF0IjoxNzQyMTQwMDA4LCJleHAiOjIwNTc1MDAwMDh9.ZpCYaHXidMWWc63upvVnYD7pSdL1iq5F0XNkW1Tagc0',
 		alt: 'nyccrd',
 		businessSlug: 'nyc',
 		type: 'cafes',

@@ -67,8 +67,8 @@ export const Button = ({ text, variant = 'primary', onClick }: Props) => {
 						padding: '20px 32px',
 						fontWeight: 'normal',
 						fontSize: '20px',
-						background: 'none',
-						border: '1px solid gray',
+						background: hover ? 'rgba(20,20,20,1)' : 'none',
+						border: hover ? '1px solid white' : '1px solid gray',
 						borderRadius: '25px',
 						color: 'white',
 						display: 'inline flex',
@@ -76,6 +76,7 @@ export const Button = ({ text, variant = 'primary', onClick }: Props) => {
 						justifyContent: 'center',
 						whiteSpace: 'nowrap',
 						cursor: 'pointer',
+						transition: 'border 0.5s ease, background 0.5s ease',
 					}}
 					onMouseEnter={() => setHover(!hover)}
 					onMouseLeave={() => setHover(!hover)}>

@@ -13,7 +13,7 @@ export const cafesData: Business[] = [
 		priceFrom: '90',
 		priceTo: '600',
 		phone: '78-60-30',
-		logo: 'https://sun9-19.userapi.com/QlrHYrnSYimVruI0aytyvpx7M5Uj2Vpj6Yls7w/AKiGv9x6vh8.jpg',
+		logo: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/nyclogo.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL255Y2xvZ28ud2VicCIsImlhdCI6MTc0MjE0MDA1MSwiZXhwIjoyMDU3NTAwMDUxfQ.oNIkVgaMsxIJ6oIr8P9gpUoAG01Xq3lbR97Ot6RyMpc',
 		insta: '@ny_coffee_surgut',
 		instaHref: 'https://instagram.com/ny_coffee_surgut',
 		geo: [61.247272, 73.405787],
@@ -168,32 +168,32 @@ export const cafesData: Business[] = [
 
 export const cafesImagesData: Images[] = [
 	{
-		src: 'https://sun9-3.userapi.com/QcpKjNghCUWGwwTL8T_311MQzRw25pzNTPB0BQ/KjFpfJ3m7bk.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/KjFpfJ3m7bk.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL0tqRnBmSjNtN2JrLndlYnAiLCJpYXQiOjE3NDIxNDAzMDgsImV4cCI6MjA1NzUwMDMwOH0.mscnnAJm_9N5Hzg-OG0DrtQPrHTzAw2_QCdciIlqWjo',
 		alt: "Cafe's Logo",
 		businessSlug: 'nyc',
 	},
 	{
-		src: 'https://sun9-31.userapi.com/wfyAe7NBPg_yJOiPhL5bifp6juyY0uRkTlg8fg/rNRxQkxQxcI.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/rNRxQkxQxcI.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL3JOUnhRa3hReGNJLndlYnAiLCJpYXQiOjE3NDIxNDAzNTgsImV4cCI6MjA1NzUwMDM1OH0.S4IX4JrBdaTB3MST1sEto-N6YK2MYDbiGuEhxBs3qbA',
 		alt: "Cafe's Interior",
 		businessSlug: 'nyc',
 	},
 	{
-		src: 'https://sun9-49.userapi.com/AlHsmofxzdixzdNBAScYSdoGkbACOB58LWI3zw/lJtr7E4DP7s.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/lJtr7E4DP7s.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL2xKdHI3RTREUDdzLndlYnAiLCJpYXQiOjE3NDIxNDAzNzcsImV4cCI6MjA1NzUwMDM3N30.3aWlSMuwkUSa6MPsNcLR5AI0G-R6-LJbsDyWddeNyiw',
 		alt: "Cafe's Interior",
 		businessSlug: 'nyc',
 	},
 	{
-		src: 'https://sun9-14.userapi.com/Rg27RFFWZcBLLo2SATTaecTM67TwvpjMJO1VtQ/IqdX4RrEYp8.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/IqdX4RrEYp8.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL0lxZFg0UnJFWXA4LndlYnAiLCJpYXQiOjE3NDIxNDA0MTgsImV4cCI6MjA1NzUwMDQxOH0.JzOuXtzL5cDAjM1o_NGCuvRzaNS3P-qoAIeIPdao4JU',
 		alt: "Cafe's Interior",
 		businessSlug: 'nyc',
 	},
 	{
-		src: 'https://sun9-50.userapi.com/nEJgYGNMDRP-2jLRkzgLMbIZMSGtZLc4CZouIg/_8xx-W56j0g.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/8xx-W56j0g.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljLzh4eC1XNTZqMGcud2VicCIsImlhdCI6MTc0MjE0MDQzNiwiZXhwIjoyMDU3NTAwNDM2fQ.KjNfXB9keX4eHWABlCgiUNNVTfiKfm2rnu6RUzbR468',
 		alt: "Cafe's Staff",
 		businessSlug: 'nyc',
 	},
 	{
-		src: 'https://sun9-30.userapi.com/BnpZW69LDjZ1KGfTN0GkAEI8AqbRwBdxidjkaw/isv_G2DkwjA.jpg',
+		src: 'https://avtuouhmxpfgxhxjztld.supabase.co/storage/v1/object/sign/go-images/nyc/isv_G2DkwjA.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJnby1pbWFnZXMvbnljL2lzdl9HMkRrd2pBLndlYnAiLCJpYXQiOjE3NDIxNDA0NTksImV4cCI6MjA1NzUwMDQ1OX0.IUJHaQns0C1h7oETUjjoeruZECSaRatX3ZCp6I0yuh8',
 		alt: "Cafe's Food",
 		businessSlug: 'nyc',
 	},
