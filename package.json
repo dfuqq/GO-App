@@ -2,7 +2,6 @@
 	"name": "go",
 	"version": "2.0.0b",
 	"description": "Beta version of refactored guide-app of city Surgut",
-	"type": "module",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -15,7 +14,7 @@
 		"postinstall": "prisma generate"
 	},
 	"prisma": {
-		"seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+		"seed": "ts-node prisma/seed.ts"
 	},
 	"keywords": [
 		"Travel",
@@ -27,7 +26,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@pbe/react-yandex-maps": "^1.2.5",
-		"@prisma/client": "^6.3.1",
+		"@prisma/client": "^6.5.0",
 		"@vkontakte/icons": "^2.166.0",
 		"@vkontakte/vk-tunnel": "^0.2.4",
 		"@vkontakte/vkui": "^7.1.2",
@@ -60,7 +59,7 @@
 		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"prettier": "^3.5.1",
-		"prisma": "^6.3.1",
+		"prisma": "^6.5.0",
 		"ts-node": "^10.9.2"
 	}
 }
